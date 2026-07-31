@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 9 · Check Determinístico
-Versão: v1.4 · Gate obrigatório · `skill-09-check-deterministico.md`
+Versão: v1.5 · Gate obrigatório · `skill-09-check-deterministico.md`
 
 Binary checks only — cite observable evidence. No “parece ok”.
 

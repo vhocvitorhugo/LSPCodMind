@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 4 · Analisador de Regras
-Versão: v1.4 · Arquivo: `skill-04-analisador-regras.md`
+Versão: v1.5 · Arquivo: `skill-04-analisador-regras.md`
 
 Apply Router globals. Do not restate them.
 

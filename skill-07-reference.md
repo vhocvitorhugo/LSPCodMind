@@ -7,7 +7,7 @@ description: >-
 ---
 
 # Skill 7 Reference · Esqueletos e âncoras
-Versão: v1.4 · Progressive disclosure for Skill 7
+Versão: v1.5 · Progressive disclosure for Skill 7
 
 Confirm signatures in Skill 6 before labeling `confirmada`.
 

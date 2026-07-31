@@ -7,7 +7,7 @@ description: >-
 ---
 
 # Skill 6 Reference · Links e aliases
-Versão: v1.4 · Progressive disclosure for Skill 6
+Versão: v1.5 · Progressive disclosure for Skill 6
 
 ## Index
 

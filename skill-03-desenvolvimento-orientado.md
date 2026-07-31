@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 3 · Desenvolvimento Orientado
-Versão: v1.4 · Arquivo: `skill-03-desenvolvimento-orientado.md`
+Versão: v1.5 · Arquivo: `skill-03-desenvolvimento-orientado.md`
 
 Apply Router globals. Do not restate them.
 

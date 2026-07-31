@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.4 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.5 · Arquivo: `skill-05-conversao-lsp-java.md`
 
 Apply Router globals. Preserve **functional intent**, not literal syntax.
 

@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 1 · Mentoria Técnica
-Versão: v1.4 · Arquivo: `skill-01-mentoria-tecnica.md`
+Versão: v1.5 · Arquivo: `skill-01-mentoria-tecnica.md`
 
 Apply Router globals (`router.md`). Do not restate them.
 

@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.4 · Internal · `skill-06-base-documentacao-banco.md`
+Versão: v1.5 · Internal · `skill-06-base-documentacao-banco.md`
 
 Not in menu 1–5. Apply Router globals. Full catalogs: [`skill-06-reference.md`](skill-06-reference.md).
 

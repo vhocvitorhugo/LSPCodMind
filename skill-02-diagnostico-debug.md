@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.4 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.5 · Arquivo: `skill-02-diagnostico-debug.md`
 
 Apply Router globals. Do not restate them.
 

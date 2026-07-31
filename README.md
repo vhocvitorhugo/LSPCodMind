@@ -1,62 +1,94 @@
 <h1 align="center">LSPCodMind</h1>
 
 <p align="center">
-  <b>O Framework Definitivo de Agente de IA para Senior Sistemas: LSP, Engenharia Reversa e Conversão LSP → Java</b>
+  <b>Framework de Agente de IA para Senior Sistemas: LSP, Engenharia Reversa e Conversão LSP → Java</b>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/SENIOR_SISTEMAS-HCM_%7C_ERP-blue?style=for-the-badge" alt="Senior Sistemas" />
   <img src="https://img.shields.io/badge/LSP-5.10.4-orange?style=for-the-badge" alt="LSP 5.10.4" />
   <img src="https://img.shields.io/badge/JAVA-17%2B-red?style=for-the-badge" alt="Java 17+" />
-  <img src="https://img.shields.io/badge/LSPCodMind-v13.0-success?style=for-the-badge" alt="LSPCodMind v13.0" />
+  <img src="https://img.shields.io/badge/LSPCodMind-v1.5-success?style=for-the-badge" alt="LSPCodMind v1.5" />
 </p>
 
 ---
 
-O **LSPCodMind** é um framework avançado de agente de IA arquitetado em formato modular de *Router + Skills*, projetado especificamente para a plataforma **Senior Sistemas**. Atuando com postura técnica de nível Senior, o sistema é focado no diagnóstico de regras, engenharia reversa de código legado, desenvolvimento orientado e conversão assistida de regras LSP para o novo Editor de Regras Java do **Senior HCM** (Controle de Ponto e Refeitório).
+O **LSPCodMind** é um framework de agente em formato modular **Router + Skills**, focado na plataforma **Senior Sistemas**: diagnóstico de regras, engenharia reversa de legado, desenvolvimento orientado e conversão assistida LSP → Java no **Senior HCM** (Controle de Ponto e Refeitório).
+
+**Versão atual: v1.5** — skills no estilo [skills.sh](https://www.skills.sh/) (frontmatter YAML, descriptions WHAT+WHEN, progressive disclosure), gate obrigatório de conformidade (**Skill 9**) antes de publicar regras geradas ou convertidas.
 
 ---
 
-## 🚀 Principais Funcionalidades
+## Principais funcionalidades
 
-- **🎓 Mentoria Técnica**: Explicação didática e aplicável de conceitos, sintaxe LSP, boas práticas de desenvolvimento, arquitetura Senior e navegação de recursos.
-- **🔍 Diagnóstico e Debug**: Análise profunda de erros, exceções, logs de execução, falhas de integração, vazamento de cursores e gargalos de performance.
-- **🛠️ Desenvolvimento Orientado**: Criação, estruturação e refatoração de regras LSP e rotinas Senior com validações de segurança e comentários por blocos lógicos.
-- **🧬 Analisador de Regras**: Engenharia reversa de regras legadas, mapeamento completo de variáveis, identificação de dependências e análise do fluxo de negócio.
-- **🔄 Conversão LSP para Java**: Migração assistida e integral de regras LSP para Java (HCM 6.10.4 / Gestão do Ponto), com inventário prévio de variáveis, mapeamento de métodos do `ContextoApuracao` e entrega consolidada sem fracionamento.
-
----
-
-## 🛠️ Arquitetura do Agente & Referências Técnicas
-
-O projeto é guiado pelo **Prompt Router** central (`router.md`) que controla as interações e roteia os pedidos do usuário para as skills técnicas corretas:
-
-- **Router Central (`router.md`)**: Autoridade de menu principal, desempate de fluxos, política de evidência e controle de continuidade.
-- **Base de Documentação e Banco (`skill-06-base-documentacao-banco.md`)**: Centralizador de links oficiais autorizados Senior, apostilas complementares de treinamento (LSP, APO, Rubi) e dicionário de dados (aliases/domínios ERP e HCM).
-- **Base de Conversão LSP → Java (`skill-07-base-conversao-lsp-java.md`)**: Catálogo operacional de 224 variáveis/métodos do contexto de apuração e repositório de exemplos sanitizados de conversão real.
-- **Testes de Comportamento (`skill-08-testes-comportamento.md`)**: Suite interna de testes de QA para validação do comportamento do agente.
+- **Mentoria Técnica** — conceitos, sintaxe LSP, arquitetura Senior, documentação e boas práticas  
+- **Diagnóstico e Debug** — erros, logs, exceções, integrações, cursores e performance  
+- **Desenvolvimento Orientado** — criação/refatoração de regras LSP com código completo comentado + gate Skill 9  
+- **Analisador de Regras** — engenharia reversa, variáveis, fluxo de negócio e riscos  
+- **Conversão LSP → Java** — inventário, mapeamento, fases A/B/C, entrega consolidada (HCM 6.10.4 / Gestão do Ponto) + gate Skill 9  
+- **Check Determinístico (Skill 9)** — auditoria PASS/FAIL antes de apresentar regra gerada, convertida ou corrigida  
 
 ---
 
-## 📁 Estrutura de Arquivos do Repositório
+## Arquitetura
 
-| Arquivo | Função / Responsabilidade |
+O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo, proibição de Senior SQL 2 e o gate Skill 9.
+
+| Papel | Arquivo | Menu? |
+| :--- | :--- | :--- |
+| Router (autoridade global) | [`router.md`](router.md) | — |
+| Skills 1–5 (fluxos do usuário) | [`skill-01`](skill-01-mentoria-tecnica.md) … [`skill-05`](skill-05-conversao-lsp-java.md) | Sim |
+| Base docs + links + aliases | [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) + [`skill-06-reference.md`](skill-06-reference.md) | Não |
+| Base conversão HCM/Ponto | [`skill-07-base-conversao-lsp-java.md`](skill-07-base-conversao-lsp-java.md) + [`skill-07-reference.md`](skill-07-reference.md) | Não |
+| QA de comportamento do agente | [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Não |
+| Check determinístico (gate) | [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Automático |
+
+### Contrato operacional
+
+1. Router escolhe o fluxo (árvore de decisão).  
+2. Skills 1–5 respondem com `Evidência` / `Bases consultadas`.  
+3. Skill 5: fases **A** (inventário) → **B** (formato) → **C** (Java); publicação só após Skill 9.  
+4. Skills 2/3 com código de regra: gate Skill 9 antes de publicar.  
+5. Skill 8 só na manutenção do treinamento (não no atendimento).  
+
+---
+
+## Estrutura do repositório
+
+| Arquivo | Responsabilidade |
 | :--- | :--- |
-| [`README.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/README.md) | Documentação oficial e apresentação do repositório |
-| [`router.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/router.md) | Router central de controle, menu e direcionamento de fluxos |
-| [`skill-01-mentoria-tecnica.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-01-mentoria-tecnica.md) | Skill 1 — Mentoria Técnica e Boas Práticas |
-| [`skill-02-diagnostico-debug.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-02-diagnostico-debug.md) | Skill 2 — Diagnóstico, Logs e Debugging |
-| [`skill-03-desenvolvimento-orientado.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-03-desenvolvimento-orientado.md) | Skill 3 — Criação e Refatoração de Regras LSP |
-| [`skill-04-analisador-regras.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-04-analisador-regras.md) | Skill 4 — Engenharia Reversa e Análise de Regras |
-| [`skill-05-conversao-lsp-java.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-05-conversao-lsp-java.md) | Skill 5 — Conversão Assistida LSP para Java |
-| [`skill-06-base-documentacao-banco.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-06-base-documentacao-banco.md) | Base Interna 6 — Links Autorizados, Apostilas e Banco de Dados |
-| [`skill-07-base-conversao-lsp-java.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-07-base-conversao-lsp-java.md) | Base Interna 7 — Catálogo Operacional de Conversão + Exemplos |
-| [`skill-08-testes-comportamento.md`](file:///Users/vitorhugo/Meu%20Drive/Projetos/Agent%20StartSe/skill-08-testes-comportamento.md) | Base Interna 8 — Suite de Testes de Comportamento |
+| [`README.md`](README.md) | Documentação e versão do projeto |
+| [`router.md`](router.md) | Regras globais, menu canônico, roteamento |
+| [`skill-01-mentoria-tecnica.md`](skill-01-mentoria-tecnica.md) | Mentoria |
+| [`skill-02-diagnostico-debug.md`](skill-02-diagnostico-debug.md) | Diagnóstico e debug |
+| [`skill-03-desenvolvimento-orientado.md`](skill-03-desenvolvimento-orientado.md) | Desenvolvimento |
+| [`skill-04-analisador-regras.md`](skill-04-analisador-regras.md) | Analisador de regras |
+| [`skill-05-conversao-lsp-java.md`](skill-05-conversao-lsp-java.md) | Conversão LSP → Java |
+| [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Base docs (operacional) |
+| [`skill-06-reference.md`](skill-06-reference.md) | Catálogo de links e aliases |
+| [`skill-07-base-conversao-lsp-java.md`](skill-07-base-conversao-lsp-java.md) | Base conversão (operacional) |
+| [`skill-07-reference.md`](skill-07-reference.md) | Esqueletos e âncoras Java |
+| [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Testes de comportamento |
+| [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Check determinístico |
 
 ---
 
-## 🔒 Diretrizes Críticas e Políticas Globais
+## Diretrizes críticas
 
-- **Proibição de Senior SQL 2**: É terminantemente proibido o uso de Senior SQL 2 em regras com queries SQL ou conversões.
-- **Política de Evidência**: Nenhuma função, tabela ou equivalência técnica é inventada; incertezas são sinalizadas com limites claros de evidência.
-- **Entrega Consolidada de Código**: Conversões LSP → Java são entregues de forma integral (em Canvas, Documento completo ou bloco único consolidado).
+- **Proibido Senior SQL 2** em regras com SQL/cursor.  
+- **Sem achismo:** funções, tabelas e equivalências só com evidência verificável.  
+- **Conversão consolidada:** canvas, arquivo real ou bloco único (sem fracionar).  
+- **Gate Skill 9** obrigatório antes de apresentar regra gerada, convertida ou corrigida.  
+
+---
+
+## Versionamento
+
+| Versão | Destaque |
+| :--- | :--- |
+| **v1.5** | README sincronizado no GitHub (remove badge legado v13.0) |
+| v1.4 | Estilo skills.sh + progressive disclosure |
+| v1.3 | Skill 9 como gate obrigatório |
+| v1.2 | Criação da Skill 9 |
+| v1.1 | Treinamento operacional + versionamento minor |
+| v1.0 | Baseline |

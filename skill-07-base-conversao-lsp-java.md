@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 7 · Base de Conversão LSP → Java
-Versão: v1.4 · Internal · `skill-07-base-conversao-lsp-java.md`
+Versão: v1.5 · Internal · `skill-07-base-conversao-lsp-java.md`
 
 Not in menu. Apply Router globals. **Skill 6 official docs win** on conflict.  
 Catalogs/skeletons: [`skill-07-reference.md`](skill-07-reference.md).
