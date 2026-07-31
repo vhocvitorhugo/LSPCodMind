@@ -21,11 +21,10 @@ Procedimento
 1. Identifique o conceito ou dúvida principal.
 2. Explique de forma objetiva.
 3. Relacione com o uso prático no ecossistema Senior.
-4. Consulte a Skill 6 — Base de Documentação, Links Autorizados e Apostilas LSP/APO/Rubi quando precisar de documentação oficial, links ou apostilas complementares.
-5. Consulte a Skill 7 — Base de Banco de Dados quando o conceito envolver tabelas, campos, aliases, domínios ou termos funcionais de ERP/HCM.
-6. Traga exemplo aplicável quando útil.
-7. Destaque pontos de atenção.
-8. Sinalize incertezas quando não houver documentação suficiente.
+4. Consulte a Skill 6 — Base de Documentação, Links Autorizados, Apostilas e Banco de Dados quando precisar de documentação oficial, links, apostilas ou interpretação de banco/aliases.
+5. Traga exemplo aplicável quando útil.
+6. Destaque pontos de atenção.
+7. Sinalize incertezas quando não houver documentação suficiente.
 
 
 Formato preferencial de resposta
@@ -46,18 +45,16 @@ Regras específicas
 - Não invente comportamento de LSP, função, tabela ou API.
 - Se houver diferença entre versões, módulos ou contextos de execução, sinalize claramente antes do exemplo.
 - Quando o usuário pedir conceito, sintaxe ou documentação, entregue uma explicação aplicável e evite transformar a resposta em desenvolvimento completo, salvo se solicitado exemplo executável.
-- Antes de citar links, consulte a Skill 6 e confirme que conseguiu acessar o conteúdo específico da página.
-- Antes de afirmar tabelas, campos ou valores de domínio, consulte a Skill 7 quando o tema envolver banco de dados.
+- Antes de citar links, tabelas ou aliases, consulte a Skill 6 e confirme a evidência.
 
 
 Uso das bases de apoio
 Esta skill não deve manter lista própria de links nem mapeamentos de banco:
-- Para links oficiais Senior e apostilas complementares: usar Skill 6 — Base de Documentação, Links Autorizados e Apostilas LSP/APO/Rubi.
-- Para aliases, tabelas, campos e domínios: usar Skill 7 — Base de Banco de Dados.
+- Para links oficiais Senior, apostilas e banco de dados: usar Skill 6 — Base de Documentação, Links Autorizados, Apostilas e Banco de Dados.
 
 
 Observação sobre conversão LSP → Java
-Se durante este fluxo o usuário passar a pedir conversão, migração ou equivalência LSP → Java, retorne o controle ao Router para selecionar a Skill 5 — Conversão LSP para Java.
+Se durante este fluxo o usuário passar a pedir conversão, migração ou equivalência LSP → Java, retorne o controle ao Router para selecionar a Skill 5 — Conversão LSP para Java (que consultará a Skill 7 para regras e exemplos).
 
 
 Checklist de saída obrigatória
@@ -67,7 +64,7 @@ Antes de responder, confirme:
 3. A interação com o usuário foi preservada ao final com a pergunta de continuidade?
 4. As incertezas foram sinalizadas e nenhuma fonte não consultada foi citada?
 5. Nomes sensíveis de materiais anexados foram protegidos?
-6. A Skill 6 foi consultada para documentação/links e a Skill 7 para banco/aliases?
+6. A Skill 6 foi consultada para documentação, links, apostilas ou banco/aliases?
 
 
 Exemplo de resposta correta

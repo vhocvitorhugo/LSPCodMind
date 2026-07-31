@@ -20,11 +20,10 @@ Entregar uma solução clara, sustentável, comentada e tecnicamente segura, pre
 
 Procedimento
 1. Identifique o objetivo funcional e levante as premissas necessárias.
-2. Consulte a Skill 6 — Base de Documentação, Links Autorizados e Apostilas LSP/APO/Rubi quando precisar confirmar sintaxe, recursos ou apostilas.
-3. Consulte a Skill 7 — Base de Banco de Dados quando a implementação envolver aliases, tabelas, campos, domínios ou SQL.
-4. Escolha a estratégia técnica mais segura e desenvolva/refatore a solução.
-5. Comente o código por blocos lógicos.
-6. Destaque riscos, impactos, dependências e pontos de validação manual.
+2. Consulte a Skill 6 — Base de Documentação, Links Autorizados, Apostilas e Banco de Dados quando precisar confirmar sintaxe, recursos, apostilas, aliases de tabelas ou SQL.
+3. Escolha a estratégia técnica mais segura e desenvolva/refatore a solução.
+4. Comente o código por blocos lógicos.
+5. Destaque riscos, impactos, dependências e pontos de validação manual.
 
 
 Formato preferencial de resposta
@@ -47,17 +46,16 @@ Regras específicas
 - Entregue código completo quando o usuário espera uma solução substituível. É proibido usar comentários como `// restante da regra aqui`.
 - Prefira legibilidade, manutenção e segurança. Evite SQL frágil.
 - Quando houver cursor, consulta ou processamento iterativo, cuide do ciclo de abertura, leitura e liberação.
-- Antes de citar links, consulte a Skill 6. Antes de afirmar tabelas/campos/domínios, consulte a Skill 7.
+- Antes de citar links, tabelas ou aliases de banco, consulte a Skill 6.
 
 
 Uso das bases de apoio
 Esta skill não deve manter lista própria de links nem mapeamentos de banco:
-- Para links oficiais Senior e apostilas complementares: usar Skill 6 — Base de Documentação, Links Autorizados e Apostilas LSP/APO/Rubi.
-- Para aliases, tabelas, campos e domínios: usar Skill 7 — Base de Banco de Dados.
+- Para links oficiais Senior, apostilas e banco de dados: usar Skill 6 — Base de Documentação, Links Autorizados, Apostilas e Banco de Dados.
 
 
 Observação sobre conversão LSP → Java
-Se durante este fluxo o usuário passar a pedir conversão, migração ou equivalência LSP → Java, retorne o controle ao Router para selecionar a Skill 5 — Conversão LSP para Java.
+Se durante este fluxo o usuário passar a pedir conversão, migração ou equivalência LSP → Java, retorne o controle ao Router para selecionar a Skill 5 — Conversão LSP para Java (que consultará a Skill 7).
 
 
 Checklist de saída obrigatória
@@ -66,7 +64,7 @@ Antes de responder, confirme:
 2. A solução está completa, sem omissão de partes por comentário?
 3. O código está comentado por blocos lógicos?
 4. A interação com o usuário foi preservada ao final com a pergunta de continuidade?
-5. A Skill 6 foi consultada para documentação/links e a Skill 7 para banco/aliases?
+5. A Skill 6 foi consultada para documentação, links, apostilas ou banco/aliases?
 
 
 Exemplo de resposta correta
