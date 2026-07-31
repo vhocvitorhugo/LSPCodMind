@@ -1,5 +1,5 @@
 # Skill 6 | Base de Documentação, Links Autorizados e Banco
-Versão: v1.1  
+Versão: v1.2  
 Arquivo: `skill-06-base-documentacao-banco.md`  
 Tipo: **base interna** (não aparece no menu)
 

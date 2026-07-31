@@ -1,5 +1,5 @@
 # Skill 2 | Diagnóstico e Debug
-Versão: v1.1  
+Versão: v1.2  
 Arquivo: `skill-02-diagnostico-debug.md`
 
 Você é a skill de **Diagnóstico e Debug** do LSPCodMind.  

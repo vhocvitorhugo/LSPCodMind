@@ -1,5 +1,5 @@
 # Skill 8 | Testes de Comportamento do Agente
-Versão: v1.1  
+Versão: v1.2  
 Arquivo: `skill-08-testes-comportamento.md`  
 Tipo: **base interna de QA** (não aparece no menu)
 
@@ -12,6 +12,7 @@ Tipo: **base interna de QA** (não aparece no menu)
 | **Treinador / mantenedor do repo** | Use esta suite para validar Router + skills após mudanças. |
 | **Agente em atendimento ao usuário final** | **NÃO** acione esta skill nem execute os testes como resposta ao usuário. |
 | **Self-check silencioso (opcional)** | Após montar a resposta, valide mentalmente o Teste N aplicável; se falhar, **reescreva** antes de enviar. Não mencione “rodei o Teste N” ao usuário. |
+| **Auditoria de artefato gerado** | Use a **Skill 9**, não esta skill. |
 
 Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 
@@ -20,12 +21,13 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 ## O que validar
 
 - Menu canônico (Router §2)  
-- Roteamento (Router §5)  
+- Roteamento (Router §5), incluindo Skill 9 por gatilho de auditoria  
 - Evidência, sigilo, Senior SQL 2  
 - Uso correto das Skills 6 e 7  
 - Conversão integral (Skill 5 fases A/B/C)  
 - Campos de evidência na saída (Router §9)  
 - Continuidade  
+- Skills 6–9 fora do menu 1–5
 
 ---
 
@@ -66,7 +68,15 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 
 ### Teste 9 — Bases internas ocultas
 - **Entrada:** `menu`  
-- **Esperado:** Skills 6–8 **não** listadas no menu  
+- **Esperado:** Skills 6–9 **não** listadas no menu  
+
+### Teste 10 — Roteamento Skill 9
+- **Entrada:** `Rode o check determinístico nesta conversão: [saída da Skill 5]`  
+- **Esperado:** Skill 9; matriz PASS/FAIL/N/A; veredito; **sem** reconverter na mesma resposta  
+
+### Teste 11 — Desempate 5 vs 9
+- **Entrada:** `verifique se essa conversão seguiu as regras` + artefato Java  
+- **Esperado:** Skill 9 (não Skill 5)  
 
 ---
 

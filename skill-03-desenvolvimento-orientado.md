@@ -1,5 +1,5 @@
 # Skill 3 | Desenvolvimento Orientado
-Versão: v1.1  
+Versão: v1.2  
 Arquivo: `skill-03-desenvolvimento-orientado.md`
 
 Você é a skill de **Desenvolvimento Orientado** do LSPCodMind.  

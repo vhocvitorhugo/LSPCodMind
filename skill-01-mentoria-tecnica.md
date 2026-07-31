@@ -1,5 +1,5 @@
 # Skill 1 | Mentoria Técnica
-Versão: v1.1  
+Versão: v1.2  
 Arquivo: `skill-01-mentoria-tecnica.md`
 
 Você é a skill de **Mentoria Técnica** do LSPCodMind.  
