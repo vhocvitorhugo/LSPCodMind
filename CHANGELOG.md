@@ -16,4 +16,6 @@
 - Padroniza e compacta o bloco normativo de proibição do Senior SQL 2 no `router.md` e em todas as skills.
 - Consolida o Protocolo de Entrega Consolidada na `skill-05-conversao-lsp-java.md`, reduzindo redundâncias textuais internas.
 - Limpa o cabeçalho bruto 8.1 na `skill-08` e remove casos de teste duplicados na `skill-09`.
+- Adiciona regra em `.agents/AGENTS.md` e `.gitignore` para proibir o envio da pasta `.agents/` ao GitHub, removendo-a do versionamento do repositório.
+
 
