@@ -1,94 +1,86 @@
-# Skill 9 | Check Determinístico de Conformidade
-Versão: v1.3  
-Arquivo: `skill-09-check-deterministico.md`  
-Tipo: **gate obrigatório + auditoria sob demanda** (não aparece no menu 1–5)
-
-Você é a skill de **Check Determinístico** do LSPCodMind.  
-Audita **toda regra gerada ou convertida** pelo agente com critérios binários observáveis (`PASS` | `FAIL` | `N/A`).
-
-Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
-
-**Determinístico** = cada item tem evidência citada no artefato. Proibido “parece ok”.
-
+---
+name: check-deterministico
+description: >-
+  Deterministic PASS/FAIL/N/A compliance gate for every rule created, refactored,
+  converted, or corrected with replaceable code. Use automatically after Skill
+  2/3/5 drafts before user-visible publish, and when the user asks for audit/
+  conformidade/check on a generated artifact.
 ---
 
-## PAPEL OBRIGATÓRIO (GATE)
+# Skill 9 · Check Determinístico
+Versão: v1.4 · Gate obrigatório · `skill-09-check-deterministico.md`
 
-A Skill 9 **sempre** roda **antes** de apresentar ao usuário a resposta final quando houver:
+Binary checks only — cite observable evidence. No “parece ok”.
 
-| Origem | Quando o gate dispara |
+## When to use / not
+
+| Use | Don't |
 |---|---|
-| **Skill 5** | Após montar a entrega da **Fase C** (Java convertido completo) |
-| **Skill 3** | Após montar regra/rotina **criada ou refatorada** (código substituível) |
-| **Skill 2** | Após montar **versão corrigida** de regra (código substituível) |
+| **Gate** after Skill 3 / Skill 5 Fase C / Skill 2 corrected code; avulsa audit | Create/convert from scratch (3/5); menu QA (8) |
 
-Fluxo interno (Router garante):
+## Gate pipeline (mandatory)
 
 ```text
-1. Skill origem (2/3/5) monta o RASCUNHO da resposta (ainda NÃO envia ao usuário)
-2. Aciona Skill 9 em modo: gate_obrigatorio
-3. Se Veredito PASS     → apresentar ao usuário: resposta solicitada + resumo do check
-4. Se Veredito FAIL     → corrigir na skill origem (sem mostrar o rascunho falho) → repetir Skill 9
-5. Máximo 2 ciclos de correção automática
-6. Se ainda FAIL após 2 ciclos → apresentar resposta + laudo FAIL transparente + pontos de correção
-7. Só então: pergunta de continuidade do Router
+1. Origin skill builds DRAFT (do not send yet)
+2. Skill 9 mode gate_obrigatorio
+3. PASS → publish draft + check summary
+4. FAIL → fix in origin → re-run 9 (max 2 cycles)
+5. Still FAIL → publish + transparent FAIL + failing IDs
+6. Continuity question only on final user reply
 ```
 
-**Proibido** enviar ao usuário a regra/conversão solicitada sem ter executado este gate.
+**Forbidden:** show generated/converted rule to the user without this gate.
 
-Exceções (gate **não** aplica):
-- Menu, saudação, Mentoria (1), Analisador sem gerar código (4)
-- Skill 5 **Fase A** ou **Fase B** (ainda sem Java final)
-- Pedidos só conceituais / só diagnóstico sem código corrigido
+No gate for: menu, Skill 1, Skill 4, Skill 5 Fase A/B, diagnosis without corrected code.
 
----
+## Modes
 
-## WHEN / NOT WHEN / HANDOFF
-
-| | |
+| Mode | Battery |
 |---|---|
-| **Usar quando** | Gate automático pós 2/3/5 com código; **ou** usuário pedir check/auditoria avulsa |
-| **Não usar quando** | Converter/criar do zero (isso é 5/3); só explicar (4); QA de menu (8) |
-| **Handoff** | Gate FAIL → volta à skill origem para corrigir. Auditoria avulsa FAIL + pedido de correção → Skill 5 ou 3 |
+| `gate_obrigatorio` + conversion | `conversao_lsp_java` |
+| `gate_obrigatorio` + rule create/fix | `desenvolvimento_lsp` |
+| `auditoria_avulsa` | full laudo |
 
-### Gatilhos avulsos (além do gate)
-`check` | `auditoria` | `conformidade` | `verificar conversão` | `validar regra gerada`
+## Battery — conversion (Skill 5 C)
 
----
+| ID | PASS | FAIL | Critical? |
+|---|---|---|---|
+| CHK-INV | Inventory table present | Missing on full conversion | Yes |
+| CHK-CTX | Context named | Missing | |
+| CHK-MAP | Mapping section | Code only | |
+| CHK-CLASS | Evidence labels used | Vague “ok” | |
+| CHK-COMP | Full class/`execute`, no omission | Stub/`// restante`/parts | Yes |
+| CHK-CONS | Single consolidated delivery | Fragmented | Yes |
+| CHK-STAT | `Status da conversão: COMPLETA` | Missing | Yes |
+| CHK-EVID | `Evidência:` + `Bases consultadas:` | Missing | Yes |
+| CHK-B67 | Skills 6+7 sim on HCM | Marked não | |
+| CHK-SQL2 | No Senior SQL 2 | Recommends SQL 2 | Yes |
+| CHK-SQLAPI | API or manual note | Blind SQL/EntitySession | |
+| CHK-MIN | Minutes ints / explicit convert | `HH:mm` into minute API | |
+| CHK-END | End→return or manual | Ignored | |
+| CHK-SOLTO | Context mapped | Loose var | |
+| CHK-VAL | Manual list if needed | Manual w/o list | |
+| CHK-LINK | No fake downloads | Fake/unauthorized as official | |
+| CHK-SIG | Sanitized | Leaks | |
+| CHK-COM | Block comments | Long uncommented | |
+| CHK-CONT | Continuity on **final** reply | Missing on final | N/A on internal draft |
 
-## HARD CONSTRAINTS
+## Battery — development / fix (Skill 3 / 2)
 
-1. Avalie só o rascunho/artefato; não invente evidência.  
-2. Cada check: resultado + evidência observável.  
-3. Veredito: `PASS` | `FAIL` | `INCOMPLETO` (regras no Router / abaixo).  
-4. Em `gate_obrigatorio`: **não** mostre o laudo completo ao usuário se for corrigir em silêncio no 1º ciclo; após PASS (ou FAIL final), inclua o **resumo obrigatório** na resposta.  
-5. Em auditoria avulsa: laudo completo; não reescreva código sem pedido.  
-6. Senior SQL 2 no artefato → `CHK-SQL2 = FAIL`.  
-7. Sigilo: sanitize nomes sensíveis.
+| ID | PASS | FAIL | Critical? |
+|---|---|---|---|
+| CHK-OBJ | Goal/premises | Missing | |
+| CHK-FULL | Complete code | `// restante` | Yes |
+| CHK-CUR | Open/read/close | Open w/o close | |
+| CHK-SQL2 | No SQL 2 | Uses SQL 2 | Yes |
+| CHK-COM | Block comments | Missing on long rule | |
+| CHK-EVID | Evidence fields | Missing | Yes |
+| CHK-SIG | Sanitized | Leaks | |
+| CHK-CONT | On final reply | Missing | N/A on draft |
 
----
+Verdict: all applicable PASS → `PASS`; any FAIL → `FAIL`; too little material → `INCOMPLETO`.
 
-## MODOS
-
-| Modo | Uso |
-|---|---|
-| `gate_obrigatorio` | Pipeline interno pós Skill 2/3/5 — **padrão do treinamento** |
-| `auditoria_avulsa` | Usuário pediu check de artefato já entregue |
-| `conversao_lsp_java` | Bateria da Skill 5 |
-| `desenvolvimento_lsp` | Bateria da Skill 3 (e Skill 2 com correção de regra) |
-
-No gate pós-Skill 5 use `gate_obrigatorio` + bateria `conversao_lsp_java`.  
-No gate pós-Skill 3/2 use `gate_obrigatorio` + bateria `desenvolvimento_lsp`.
-
----
-
-## WORKFLOW — gate_obrigatorio
-
-1. Receber rascunho da skill origem (`fluxo_origem: 2|3|5`).  
-2. Rodar bateria aplicável, item a item.  
-3. Calcular veredito.  
-4. Se `FAIL` e `ciclo < 2`: devolver à origem lista de IDs FAIL + ação corretiva; **não** publicar ao usuário.  
-5. Se `PASS` ou `ciclo >= 2`: liberar publicação com bloco:
+## User-facing summary (always after gate)
 
 ```text
 ## Check determinístico (Skill 9)
@@ -98,122 +90,14 @@ Ciclos de correção: 0|1|2
 Falhas remanescentes: nenhuma | [IDs]
 ```
 
-6. A pergunta de continuidade fica **só** na resposta final ao usuário (após o gate), não no rascunho interno.
+## Avulsa laudo
 
-### WORKFLOW — auditoria_avulsa
-Igual à matriz completa + laudo detalhado + continuidade.
+Full matrix + counts + verdict + corrective actions + evidence fields + continuity.
 
----
+## Examples
 
-## BATERIA — `conversao_lsp_java` (Skill 5 Fase C)
+Gate PASS after clean Fase C · Gate FAIL on open cursor → Skill 3 fixes → PASS · **Don't** publish without gate.
 
-| ID | Critério | PASS | FAIL | N/A |
-|---|---|---|---|---|
-| **CHK-INV** | Inventário em tabela | Colunas Item LSP + Equivalente + Evidência/Status | Sem inventário | Trecho isolado declarado |
-| **CHK-CTX** | Contexto de execução | Apuração/BH/consistência/geral/indefinido | Ausente | — |
-| **CHK-MAP** | Mapeamento LSP→Java | Seção/lista além do código | Só código | — |
-| **CHK-CLASS** | Rótulos de evidência | confirmada / adaptação / inferência / validação_manual | Só “ok” genérico | — |
-| **CHK-COMP** | Java completo | Classe + `execute` (ou equiv.) sem omissão | Stub / `// restante` / parte N/M | — |
-| **CHK-CONS** | Entrega consolidada | Um bloco/arquivo/canvas | Fracionado | — |
-| **CHK-STAT** | Status | `Status da conversão: COMPLETA` | Ausente | — |
-| **CHK-EVID** | Router §9 | `Evidência:` + `Bases consultadas:` | Falta | — |
-| **CHK-B67** | Bases 6 e 7 | Ambos sim em HCM/Ponto | Não/omitido | Não-HCM justificado |
-| **CHK-SQL2** | Sem Senior SQL 2 | Ok | Usa/recomenda | Sem SQL |
-| **CHK-SQLAPI** | API antes de SQL | API ou validação_manual | SQL/EntitySession sem justificativa | Sem SQL/cursor na LSP |
-| **CHK-MIN** | Horas em minutos | Inteiros ou conversão explícita | `HH:mm` direto na API | Sem horas |
-| **CHK-END** | End → retorno | Documentado ou validação_manual | Ignorado | Sem End |
-| **CHK-SOLTO** | Contexto mapeado | Equivalente ou validação_manual | Solto | — |
-| **CHK-VAL** | Lista manual | Presente se houver manuais | Manual sem lista | Sem manuais |
-| **CHK-LINK** | Links reais | Ok | Link falso/não autorizado como oficial | Sem links |
-| **CHK-SIG** | Sigilo | Ok | Expõe sensível | — |
-| **CHK-COM** | Comentários por bloco | Presentes | Ausentes em código longo | Código curto |
-| **CHK-CONT** | Continuidade | Presente na **resposta final** | Ausente na final | Rascunho interno do gate |
+## Related
 
-### Críticos (FAIL ⇒ veredito FAIL)
-`CHK-COMP`, `CHK-CONS`, `CHK-STAT`, `CHK-SQL2`, `CHK-EVID`, `CHK-INV`
-
----
-
-## BATERIA — `desenvolvimento_lsp` (Skill 3 / correção Skill 2)
-
-| ID | Critério | PASS | FAIL | N/A |
-|---|---|---|---|---|
-| **CHK-OBJ** | Objetivo/premissas | Presentes | Ausentes | — |
-| **CHK-FULL** | Código completo | Sem `// restante` | Omissão | — |
-| **CHK-CUR** | Cursor | Abrir/ler/fechar | Abre sem fechar | Sem cursor |
-| **CHK-SQL2** | Sem Senior SQL 2 | Ok | Usa/recomenda | Sem SQL |
-| **CHK-COM** | Comentários por bloco | Presentes | Ausentes em regra longa | Regra curta |
-| **CHK-EVID** | Evidência + Bases | Presentes | Ausentes | — |
-| **CHK-SIG** | Sigilo | Ok | Expõe sensível | — |
-| **CHK-CONT** | Continuidade | Na resposta final | Ausente na final | Rascunho do gate |
-
-### Críticos
-`CHK-FULL`, `CHK-SQL2`, `CHK-EVID`
-
----
-
-## OUTPUT — resumo na resposta ao usuário (gate)
-
-Sempre anexar **depois** da solução, **antes** da pergunta de continuidade:
-
-```text
-## Check determinístico (Skill 9)
-Veredito: PASS
-Origem: Skill 5
-Ciclos de correção: 0
-Falhas remanescentes: nenhuma
-```
-
-Se FAIL final, incluir também a matriz resumida dos IDs FAIL.
-
-## OUTPUT — laudo completo (só auditoria_avulsa)
-
-```text
-# Laudo — Check Determinístico LSPCodMind
-Versão do treinamento auditado: v1.3
-Modo: auditoria_avulsa | conversao_lsp_java | desenvolvimento_lsp
-
-## Material auditado
-- ...
-
-## Matriz de checks
-| ID | Resultado | Evidência observável |
-|---|---|---|
-
-## Contagem
-- PASS: N | FAIL: N | N/A: N
-
-## Veredito
-PASS | FAIL | INCOMPLETO
-
-## Falhas e ação corretiva
-| ID | Violação | Corrigir via |
-|---|---|---|
-
-Evidência: confirmada
-Bases consultadas: Skill 6 [sim/não]; Skill 7 [sim/não]
-
-Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
-```
-
----
-
-## FEW-SHOTS
-
-### Gate PASS
-Skill 5 monta Fase C completa → Skill 9 PASS → usuário recebe Java + resumo `Veredito: PASS`.
-
-### Gate FAIL → correção → PASS
-Skill 3 entrega regra sem fechar cursor → Skill 9 `CHK-CUR=FAIL` → Skill 3 corrige → Skill 9 PASS → só então responde ao usuário.
-
-### Proibido
-Mostrar conversão/regra ao usuário **sem** passar pela Skill 9.
-
----
-
-## Relação com Skill 8
-
-| Skill 8 | Skill 9 |
-|---|---|
-| Testa comportamento do agente (menu/roteamento) | Gate/auditoria do **artefato** |
-| Nunca no atendimento | Sempre no atendimento quando há regra gerada/convertida/corrigida |
+Router §1.11 · Skills 2/3/5 · vs Skill 8 (behavior QA ≠ artifact gate)
