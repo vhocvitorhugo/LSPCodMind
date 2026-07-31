@@ -8,7 +8,7 @@ disable-model-invocation: true
 ---
 
 # Skill 8 · Testes de Comportamento
-Versão: v1.7 · QA interno · `skill-08-testes-comportamento.md`
+Versão: v1.8 · QA interno · `skill-08-testes-comportamento.md`
 
 | Papel | Regra |
 |---|---|

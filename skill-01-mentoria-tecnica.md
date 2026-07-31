@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 1 · Mentoria Técnica
-Versão: v1.7 · Arquivo: `skill-01-mentoria-tecnica.md`
+Versão: v1.8 · Arquivo: `skill-01-mentoria-tecnica.md`
 
 Aplique as regras globais do Router (`router.md`). Não as reescreva.
 

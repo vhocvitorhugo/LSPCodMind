@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.7 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.8 · Arquivo: `skill-05-conversao-lsp-java.md`
 
 Aplique as regras globais do Router. Preserve a **intenção funcional**, não a sintaxe literal.
 
@@ -49,12 +49,15 @@ Regras: End → candidato a retorno; arrays → coleções/métodos; horas → m
 ## Instruções
 
 1. Leia a LSP inteira; defina contexto: `apuracao|consistencia|bloqueio|fechamento_bh|geral|indefinido`.  
-2. Consulte Skill 6 e Skill 7.  
-3. Monte inventário; mapeie com rótulos `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`.  
+2. Consulte Skill 6 (links) e Skill 7 (**catálogo oficial de equivalência** + exemplos).  
+3. Monte inventário; mapeie com rótulos `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`. Item achado no catálogo oficial da Skill 7 → preferir `confirmada`.  
 4. Mecânica antes da sintaxe.  
 5. Execute A/B/C; gate na C.
 
-Âncoras rápidas de métodos: ver Skill 7 (`getHorSit`, históricos, marcações…).
+Âncoras: Skill 7 — catálogo oficial Senior + `getHorSit`/`setHorSit`/`zeraHorasSituacao`/`getDefinicaoSituacoes`.  
+**Não** usar `getSituacao(...).getMinutos()/setMinutos(...)`.  
+Cursor `R014SIN`/`R030EMP` para `CodDsi` → `getDefinicaoSituacoes().getCodigo()` (Skill 7).  
+Fontes: [equivalência](https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm) · [índice de funções](https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm).
 
 ## Saída — Fase A
 

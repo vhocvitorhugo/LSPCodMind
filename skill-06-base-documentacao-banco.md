@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.7 · Interna · `skill-06-base-documentacao-banco.md`
+Versão: v1.8 · Interna · `skill-06-base-documentacao-banco.md`
 
 Não entra no menu 1–5. Aplique as regras globais do Router (`router.md`).
 
@@ -90,8 +90,13 @@ Não exponha “Skill 6” ao usuário — cite só a fonte validada.
 
 ## Links — Conversão (HCM 6.10.4)
 
-- Equivalência: https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm
-- Índice de funções: https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm
+- **Equivalência das funções de regras (mapa LSP → Java — prioritário na conversão):**  
+  https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm
+- **Índice das Funções (detalhe/assinaturas):**  
+  https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm  
+  (Evitar depender só de `index.htm#customizacoes/funcoes.htm` — preferir a URL direta acima para conteúdo específico.)
+
+O catálogo operacional espelhado para consulta rápida na conversão está na **Skill 7**.
 
 ## Mapeamento banco (auxiliar)
 
