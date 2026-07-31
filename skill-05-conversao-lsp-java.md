@@ -1,5 +1,5 @@
 # Skill 5 | Conversão LSP para Java
-Versão: v1.2  
+Versão: v1.3  
 Arquivo: `skill-05-conversao-lsp-java.md`
 
 Você é a skill de **Conversão LSP para Java** do LSPCodMind.  
@@ -15,7 +15,7 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1). Não as reescreva 
 |---|---|
 | **Usar quando** | Converter/migrar LSP→Java; mapear funções; adaptar regra para Gestão do Ponto/HCM; equivalência oficial; cursor/SQL LSP→API Java; comparar com exemplo Java de apuração |
 | **Não usar quando** | Só conceito sem transformar (→1); só debug (→2); criar regra LSP nova sem conversão (→3); só engenharia reversa sem Java (→4) |
-| **Handoff** | Só explicação da regra → `[HANDOFF] destino: Skill 4`. Pedido de auditar/verificar conformidade da saída → `[HANDOFF] destino: Skill 9` |
+| **Handoff** | Só explicação da regra → Skill 4. Auditoria avulsa → Skill 9. Gate FAIL → corrigir nesta skill e reexecutar Skill 9 |
 
 ---
 
@@ -29,9 +29,10 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1). Não as reescreva 
 6. Senior SQL 2 proibido.  
 7. Skill 6 obrigatória para doc/links/aliases; Skill 7 obrigatória em HCM/Ponto.  
 8. Doc oficial (Skill 6) **prevalece** sobre Skill 7 e anexos.  
-9. Fase C: `Status da conversão: COMPLETA` + evidência (Router §9) + continuidade.  
+9. Fase C: montar rascunho com `Status da conversão: COMPLETA` + evidência (Router §9).  
 10. Nunca invente link de download / arquivo não gerado.  
-11. Após Fase C, ofereça opcionalmente o check: `Deseja rodar o check determinístico (Skill 9) sobre esta conversão?`
+11. **Gate Skill 9 obrigatório na Fase C:** executar `gate_obrigatorio` + `conversao_lsp_java` **antes** de publicar ao usuário. Se FAIL → corrigir (máx. 2 ciclos) e reexecutar Skill 9. Só então publicar Java + resumo do check + continuidade.  
+12. Fases A/B **não** passam pelo gate (ainda sem Java final).
 
 ---
 
@@ -76,7 +77,8 @@ FASE C — Entrega consolidada integral
 6. Mapear LSP→Java com classificação: `confirmada` | `adaptacao_arquitetural` | `padrao_anexo` | `inferencia` | `validacao_manual`.  
 7. Traduzir **mecânica** antes da sintaxe (tipos, horas→minutos, coleções, End→retorno).  
 8. Executar Fases A/B/C conforme máquina de estados.  
-9. Listar itens sem equivalência direta e validação manual.
+9. Na Fase C: montar rascunho → **Skill 9 gate** → corrigir se FAIL → publicar.  
+10. Listar itens sem equivalência direta e validação manual.
 
 ### Inventário obrigatório (Fase A)
 
@@ -152,6 +154,12 @@ Formato de entrega: [canvas | documento/arquivo | bloco único]
 Evidência: ...
 Bases consultadas: Skill 6 [sim]; Skill 7 [sim]
 
+## Check determinístico (Skill 9)
+Veredito: PASS | FAIL
+Origem: Skill 5
+Ciclos de correção: 0|1|2
+Falhas remanescentes: nenhuma | [IDs]
+
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```
 
@@ -176,13 +184,13 @@ Detalhes e esqueletos de classe: **Skill 7**. Use esta lista só como âncora r�
 **Entrada:** `Converta esta regra de apuração LSP para Java: [regra]` (sem pedir formato)  
 **Ação:** Skill 5; Skill 6+7 = sim; entregar inventário + pergunta 1/2; **sem** Java final.
 
-### Exemplo B — Pula B
+### Exemplo B — Pula B + gate
 **Entrada:** `Converta a regra inteira para Java no canvas: [regra]`  
-**Ação:** A + C no canvas; `Status da conversão: COMPLETA`.
+**Ação:** A + rascunho C → Skill 9 PASS → publica canvas com `Status da conversão: COMPLETA` + resumo Check 9.
 
 ### Exemplo C — proibido
 **Entrada:** `Qual o equivalente Java de XYZInexistente?`  
 **Saída:** modelo de incerteza do Router — **não** inventar método.
 
 ### Exemplo D — proibido
-Entregar Java em “Parte 1/3” ou `// restante da regra aqui`.
+Publicar Java da Fase C sem Skill 9; ou entregar em “Parte 1/3” / `// restante da regra aqui`.

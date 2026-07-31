@@ -1,5 +1,5 @@
 # Skill 7 | Base de Conversão LSP → Java e Exemplos Sanitizados
-Versão: v1.2  
+Versão: v1.3  
 Arquivo: `skill-07-base-conversao-lsp-java.md`  
 Tipo: **base interna** (não aparece no menu)
 

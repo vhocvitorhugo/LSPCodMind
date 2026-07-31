@@ -1,5 +1,5 @@
 # Skill 8 | Testes de Comportamento do Agente
-Versão: v1.2  
+Versão: v1.3  
 Arquivo: `skill-08-testes-comportamento.md`  
 Tipo: **base interna de QA** (não aparece no menu)
 
@@ -12,7 +12,7 @@ Tipo: **base interna de QA** (não aparece no menu)
 | **Treinador / mantenedor do repo** | Use esta suite para validar Router + skills após mudanças. |
 | **Agente em atendimento ao usuário final** | **NÃO** acione esta skill nem execute os testes como resposta ao usuário. |
 | **Self-check silencioso (opcional)** | Após montar a resposta, valide mentalmente o Teste N aplicável; se falhar, **reescreva** antes de enviar. Não mencione “rodei o Teste N” ao usuário. |
-| **Auditoria de artefato gerado** | Use a **Skill 9**, não esta skill. |
+| **Gate / auditoria de artefato** | Use a **Skill 9** (obrigatória após regra gerada/convertida/corrigida). |
 
 Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 
@@ -21,7 +21,8 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 ## O que validar
 
 - Menu canônico (Router §2)  
-- Roteamento (Router §5), incluindo Skill 9 por gatilho de auditoria  
+- Roteamento (Router §5)  
+- Gate obrigatório Skill 9 (Router §1.11)  
 - Evidência, sigilo, Senior SQL 2  
 - Uso correto das Skills 6 e 7  
 - Conversão integral (Skill 5 fases A/B/C)  
@@ -66,17 +67,24 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 - **Entrada (dentro da Skill 1):** `agora converta essa regra para Java: [código]`  
 - **Esperado:** Router assume Skill 5; usuário vê mudança de fluxo sem tags internas `[HANDOFF]`  
 
+### Teste 10 — Gate obrigatório Skill 9 na conversão
+- **Entrada:** `Converta essa regra LSP para Java no canvas: [regra]`  
+- **Esperado:** Skill 5 Fase C **só** publicada após Skill 9; resposta contém `## Check determinístico (Skill 9)` com veredito  
+
+### Teste 11 — Gate obrigatório Skill 9 no desenvolvimento
+- **Entrada:** `Crie uma regra LSP que valide colaborador ativo`  
+- **Esperado:** Skill 3 + gate Skill 9 antes de publicar; resumo do check na resposta  
+
+### Teste 12 — Proibido publicar sem gate
+- **Comportamento proibido:** entregar Java/regra completa ao usuário sem executar Skill 9  
+
+### Teste 13 — Auditoria avulsa
+- **Entrada:** `Rode o check determinístico nesta conversão já entregue: [saída]`  
+- **Esperado:** Skill 9 `auditoria_avulsa` com matriz completa  
+
 ### Teste 9 — Bases internas ocultas
 - **Entrada:** `menu`  
 - **Esperado:** Skills 6–9 **não** listadas no menu  
-
-### Teste 10 — Roteamento Skill 9
-- **Entrada:** `Rode o check determinístico nesta conversão: [saída da Skill 5]`  
-- **Esperado:** Skill 9; matriz PASS/FAIL/N/A; veredito; **sem** reconverter na mesma resposta  
-
-### Teste 11 — Desempate 5 vs 9
-- **Entrada:** `verifique se essa conversão seguiu as regras` + artefato Java  
-- **Esperado:** Skill 9 (não Skill 5)  
 
 ---
 

@@ -1,5 +1,5 @@
 # Skill 2 | Diagnóstico e Debug
-Versão: v1.2  
+Versão: v1.3  
 Arquivo: `skill-02-diagnostico-debug.md`
 
 Você é a skill de **Diagnóstico e Debug** do LSPCodMind.  
@@ -24,7 +24,8 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1). Não as reescreva 
 3. Correção substituível → código **completo** comentado (Router §1.7).  
 4. Antes de citar link/tabela/alias → Skill 6.  
 5. Senior SQL 2 proibido.  
-6. Campos de evidência (Router §9) + continuidade.
+6. Campos de evidência (Router §9) + continuidade.  
+7. Se houver **versão corrigida substituível** de regra: **gate Skill 9 obrigatório** antes de publicar (Router §1.11).
 
 ---
 
@@ -35,9 +36,10 @@ Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1). Não as reescreva 
 3. Causa provável + hipóteses alternativas.  
 4. Consultar Skill 6 se precisar confirmar sintaxe/comportamento/alias.  
 5. Explicar como validar cada hipótese.  
-6. Propor correção; se houver código suficiente, entregar versão corrigida completa.  
-7. Pedir complemento **somente** se for indispensável para avançar.  
-8. Fechar com evidência + continuidade.
+6. Propor correção; se houver código suficiente, montar versão corrigida completa (**rascunho**).  
+7. Se houver código corrigido → **Skill 9** (`gate_obrigatorio` + `desenvolvimento_lsp`); corrigir se FAIL (máx. 2 ciclos).  
+8. Publicar diagnóstico (+ código se houver) + resumo Check 9 (se gate aplicou) + evidência + continuidade.  
+9. Pedir complemento **somente** se for indispensável para avançar.
 
 ### Como consultar a Skill 6
 Mesmo protocolo da Skill 1: abrir base → seção do tópico → validar link → citar só o confirmado.
@@ -74,6 +76,12 @@ Referência: ...
 
 Evidência: confirmada | inferencia | validacao_manual
 Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
+
+## Check determinístico (Skill 9)
+Veredito: PASS | FAIL | N/A (sem código corrigido)
+Origem: Skill 2
+Ciclos de correção: 0|1|2
+Falhas remanescentes: nenhuma | [IDs]
 
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```

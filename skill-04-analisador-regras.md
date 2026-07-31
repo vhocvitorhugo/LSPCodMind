@@ -1,5 +1,5 @@
 # Skill 4 | Analisador de Regras
-Versão: v1.2  
+Versão: v1.3  
 Arquivo: `skill-04-analisador-regras.md`
 
 Você é a skill de **Analisador de Regras** do LSPCodMind.  
