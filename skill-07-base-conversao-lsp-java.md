@@ -1,45 +1,45 @@
 ---
 name: base-conversao-lsp-java
 description: >-
-  Internal operational patterns for LSP→Java conversion in HCM time/attendance:
-  contexts, class skeletons, method anchors, traps, anti-hallucination. Use from
-  Skill 5 after consulting Skill 6 official docs. Never invent methods not found
-  here, in Skill 6, or in user annexes.
+  Padrões operacionais internos de conversão LSP→Java em HCM/ponto: contextos,
+  esqueletos de classe, âncoras de métodos, armadilhas e anti-alucinação. Use a
+  partir da Skill 5 após consultar a documentação oficial da Skill 6. Nunca
+  invente métodos que não estejam aqui, na Skill 6 ou em anexos do usuário.
 ---
 
 # Skill 7 · Base de Conversão LSP → Java
-Versão: v1.6 · Internal · `skill-07-base-conversao-lsp-java.md`
+Versão: v1.7 · Interna · `skill-07-base-conversao-lsp-java.md`
 
-Not in menu. Apply Router globals. **Skill 6 official docs win** on conflict.
+Não entra no menu. Aplique as regras globais do Router. Em conflito, **docs oficiais da Skill 6 prevalecem**.
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't |
+| Usar | Não usar |
 |---|---|
-| HCM/Ponto conversion patterns, traps, sanitized examples | Mentoria-only; as “official proof” instead of Skill 6 |
+| Padrões de conversão HCM/Ponto, armadilhas, exemplos sanitizados | Só mentoria; como “prova oficial” no lugar da Skill 6 |
 
-## Hard constraints
+## Restrições absolutas
 
-1. Findings here = `padrao_anexo` / `inferencia` until Skill 6 confirms.  
-2. Sanitize client/company/paths — say “exemplos sanitizados”.  
-3. Full hundreds-of-methods catalog is **not** embedded — only minimal anchors below.  
-4. Missing here + Skill 6 + annex → `validacao_manual` — **do not invent**.  
-5. Hours = integer minutes; SQL/cursor → semantic API first; no loose context vars in Java.
+1. Achados aqui = `padrao_anexo` / `inferencia` até a Skill 6 confirmar.  
+2. Sanitize cliente/empresa/caminhos — diga “exemplos sanitizados”.  
+3. Catálogo completo de centenas de métodos **não** está embutido — só âncoras mínimas abaixo.  
+4. Ausente aqui + Skill 6 + anexo → `validacao_manual` — **não invente**.  
+5. Horas = minutos inteiros; SQL/cursor → API semântica primeiro; sem variáveis de contexto soltas no Java.
 
-## Instructions
+## Instruções
 
 ```text
-1. Identify class context (Apuracao, FechamentoBH, …)
-2. Look up anchors/skeletons in this file
-3. Confirm signature via Skill 6
-4. Else padrao_anexo/inferencia; else validacao_manual
+1. Identificar contexto de classe (Apuracao, FechamentoBH, …)
+2. Buscar âncoras/esqueletos neste arquivo
+3. Confirmar assinatura via Skill 6
+4. Senão padrao_anexo/inferencia; senão validacao_manual
 ```
 
-Recommended for Skill 5: context → inventory → map → mechanics (minutes, End→return) → syntax.
+Recomendado para Skill 5: contexto → inventário → mapear → mecânica (minutos, End→retorno) → sintaxe.
 
-## Class skeletons
+## Esqueletos de classe
 
-Confirm signatures in Skill 6 before labeling `confirmada`.
+Confirme assinaturas na Skill 6 antes de marcar `confirmada`.
 
 ### Apuração
 
@@ -68,50 +68,50 @@ public class RegraFechamentoBH extends FechamentoBH {
 }
 ```
 
-## Method anchors
+## Âncoras de métodos
 
 ### Situações
 
-| Intent | Anchor |
+| Intenção | Âncora |
 |---|---|
-| Read | `contextoApuracao.getHorSit(codigoSituacao)` |
-| Set | `contextoApuracao.setHorSit(codigoSituacao, minutos)` |
-| Zero | `contextoApuracao.zeraHorasSituacao(codigoSituacao)` |
-| Previous | `contextoApuracao.getHorSitAnterior(codigoSituacao)` |
-| Sum | `contextoApuracao.somaHorasSituacao(...)` |
+| Ler | `contextoApuracao.getHorSit(codigoSituacao)` |
+| Definir | `contextoApuracao.setHorSit(codigoSituacao, minutos)` |
+| Zerar | `contextoApuracao.zeraHorasSituacao(codigoSituacao)` |
+| Anterior | `contextoApuracao.getHorSitAnterior(codigoSituacao)` |
+| Somar | `contextoApuracao.somaHorasSituacao(...)` |
 
 ### Colaborador / contexto
 
-| Intent | Anchor |
+| Intenção | Âncora |
 |---|---|
 | Emp/Tip/Cad | `getNumEmp()` / `getTipCol()` / `getNumCad()` |
-| Date | `contextoApuracao.getData()` |
-| Histories | `getHistoricoSindicato()`, `getHistoricoVinculo()`, `getHistoricoCargo()`, `getHistoricoEscala()`, `getHistoricoCentrodeCusto()`, `getHistoricoFilial()` |
+| Data | `contextoApuracao.getData()` |
+| Históricos | `getHistoricoSindicato()`, `getHistoricoVinculo()`, `getHistoricoCargo()`, `getHistoricoEscala()`, `getHistoricoCentrodeCusto()`, `getHistoricoFilial()` |
 
 ### Marcações / totais / escala
 
-| Intent | Anchor |
+| Intenção | Âncora |
 |---|---|
 | Marcações | `getMarcacoesRealizadas(...)` |
 | Totais | `getTotalSituacoes(...)` |
 | Escala | `getEscala()` / `getEscalaPrevistaColaborador(...)` |
 | Horário | `getHorario()` / `getHorarioPrevistoColaborador(...)` |
 
-## Traps
+## Armadilhas
 
-| Trap | Fix |
+| Armadilha | Correção |
 |---|---|
-| Copy LSP param order | Confirm Java signature |
-| Pass `HH:mm` into minute APIs | Convert (`14:30` → `870`) |
-| Blind SQL/cursor port | Prefer semantic API |
-| Invent similar method | `validacao_manual` |
-| Leak client names from examples | Sanitize |
+| Copiar ordem de parâmetros da LSP | Confirmar assinatura Java |
+| Passar `HH:mm` em APIs de minutos | Converter (`14:30` → `870`) |
+| Portar SQL/cursor no automático | Preferir API semântica |
+| Inventar método parecido | `validacao_manual` |
+| Vazar nomes de cliente dos exemplos | Sanitizar |
 
-## Sanitized examples
+## Exemplos sanitizados
 
-Full real rules are not versioned here. User annexes = observed pattern only, never official docs.
+Regras reais completas não estão versionadas aqui. Anexos do usuário = padrão observado, nunca doc oficial.
 
-## Output to Skill 5
+## Saída para a Skill 5
 
 ```text
 contexto: Apuracao | FechamentoBH | outro | indefinido
@@ -122,6 +122,6 @@ requer_skill_6: sim
 limite: ...
 ```
 
-## Related
+## Relacionados
 
 Skill 6 · Skill 5

@@ -1,36 +1,37 @@
 ---
 name: analisador-regras
 description: >-
-  Reverse-engineers existing Senior/LSP (or related) rules: business intent,
-  variables, flow, dependencies, and risks — without converting to Java. Use
-  when the user pastes a rule and asks what it does, how it works, or for a
-  technical/functional map. If conversion is intended, hand off to Skill 5.
+  Faz engenharia reversa de regras Senior/LSP (ou correlatas): intenção de
+  negócio, variáveis, fluxo, dependências e riscos — sem converter para Java.
+  Use quando o usuário colar uma regra e perguntar o que faz, como funciona ou
+  pedir mapa técnico/funcional. Se houver intenção de conversão, encaminhe à
+  Skill 5.
 ---
 
 # Skill 4 · Analisador de Regras
-Versão: v1.6 · Arquivo: `skill-04-analisador-regras.md`
+Versão: v1.7 · Arquivo: `skill-04-analisador-regras.md`
 
-Apply Router globals. Do not restate them.
+Aplique as regras globais do Router. Não as reescreva.
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't use |
+| Usar | Não usar |
 |---|---|
-| Explain/map existing rule artifact | Concept w/o artifact → 1; bug/log → 2; create/refactor → 3; convert → 5 |
+| Explicar/mapear artefato de regra existente | Conceito sem artefato → 1; bug/log → 2; criar/refatorar → 3; converter → 5 |
 
-**Handoff:** “analise e converta” / Java intent → Skill 5
+**Handoff:** “analise e converta” / intenção Java → Skill 5
 
-## Instructions
+## Instruções
 
-1. Read full available rule.  
-2. Separate business intent vs technical mechanics.  
-3. Map variables, functions, cursors, SQL, dependencies.  
-4. Skill 6 when citing docs/aliases.  
-5. Flow, fragility, performance/maintenance risks.  
-6. Suggest improvements **without** Java migration.  
-7. Evidence + continuity (no Skill 9 — no generated code).
+1. Leia a regra inteira disponível.  
+2. Separe intenção de negócio vs mecânica técnica.  
+3. Mapeie variáveis, funções, cursores, SQL, dependências.  
+4. Skill 6 ao citar docs/aliases.  
+5. Fluxo, fragilidades, riscos de performance/manutenção.  
+6. Sugira melhorias **sem** migrar para Java.  
+7. Evidência + continuidade (sem Skill 9 — não há código gerado).
 
-## Output
+## Saída
 
 ```text
 ## Overview de negócio
@@ -51,12 +52,12 @@ Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```
 
-## Examples
+## Exemplos
 
-**In:** paste LSP with cursor → map + risks; no Java.  
-**In:** “analise e converta” → handoff Skill 5.  
-**Don't:** invent variables; convert here; end with `Pronto.`
+**Entrada:** colar LSP com cursor → mapear + riscos; sem Java.  
+**Entrada:** “analise e converta” → handoff Skill 5.  
+**Não faça:** inventar variáveis; converter aqui; encerrar com `Pronto.`
 
-## Related
+## Relacionados
 
 Router · Skill 6 · handoff Skill 5

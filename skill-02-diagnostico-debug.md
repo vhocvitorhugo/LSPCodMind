@@ -1,40 +1,40 @@
 ---
 name: diagnostico-debug
 description: >-
-  Diagnoses Senior/LSP errors, logs, exceptions, integration failures, and
-  performance issues; delivers partial useful diagnosis and complete corrected
-  rules when possible. Use when the user sends errors, logs, unexpected
-  behavior, or broken rules. Always run Skill 9 gate before publishing a
-  replaceable corrected rule.
+  Diagnostica erros, logs, exceções, falhas de integração e performance em
+  Senior/LSP; entrega diagnóstico parcial útil e regra corrigida completa quando
+  possível. Use quando o usuário enviar erro, log, comportamento inesperado ou
+  regra quebrada. Sempre execute o gate da Skill 9 antes de publicar regra
+  corrigida substituível.
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.6 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.7 · Arquivo: `skill-02-diagnostico-debug.md`
 
-Apply Router globals. Do not restate them.
+Aplique as regras globais do Router. Não as reescreva.
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't use |
+| Usar | Não usar |
 |---|---|
-| Error, log, exception, unexpected behavior, bad performance | Concept-only → 1; greenfield build → 3; healthy-rule analysis → 4; convert → 5 |
+| Erro, log, exceção, comportamento inesperado, performance ruim | Só conceito → 1; criar do zero → 3; analisar regra saudável → 4; converter → 5 |
 
-**Handoff:** conversion → Skill 5; broad rewrite without bug focus → Router may pick Skill 3
+**Handoff:** conversão → Skill 5; reescrita ampla sem foco em bug → Router pode escolher Skill 3
 
-## Instructions
+## Instruções
 
-1. Read material already provided.  
-2. Name primary symptom; probable cause + alternatives.  
-3. Skill 6 if confirming syntax/behavior/aliases.  
-4. How to validate each hypothesis.  
-5. If enough code: build **complete** corrected draft (cursor open→read→close risks called out).  
-6. If publishing corrected rule → **Skill 9 gate** (`desenvolvimento_lsp`); fix ≤2 cycles.  
-7. Publish diagnosis (+ code) + Check 9 summary (or N/A) + evidence + continuity.  
-8. Ask for more input only if blocked.
+1. Analise o material já enviado.  
+2. Nomeie o sintoma principal; causa provável + alternativas.  
+3. Skill 6 se precisar confirmar sintaxe/comportamento/aliases.  
+4. Explique como validar cada hipótese.  
+5. Se houver código suficiente: monte **rascunho completo** corrigido (riscos de cursor abrir→ler→fechar).  
+6. Se for publicar regra corrigida → **gate Skill 9** (`desenvolvimento_lsp`); corrija até 2 ciclos.  
+7. Publique diagnóstico (+ código) + resumo Check 9 (ou N/A) + evidência + continuidade.  
+8. Peça complemento só se estiver bloqueado.
 
-Never answer only “Preciso do código completo” — give partial useful diagnosis first.
+Nunca responda só “Preciso do código completo” — entregue diagnóstico parcial útil primeiro.
 
-## Output
+## Saída
 
 ```text
 ## Problema identificado
@@ -58,11 +58,11 @@ Falhas remanescentes: ...
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```
 
-## Examples
+## Exemplos
 
-**In:** log shows cursor never closed → diagnose + full fix + gate 9.  
-**Don't:** publish corrected rule without Skill 9; invent APIs; Senior SQL 2.
+**Entrada:** log mostra cursor sem fechar → diagnosticar + correção completa + gate 9.  
+**Não faça:** publicar regra corrigida sem Skill 9; inventar APIs; Senior SQL 2.
 
-## Related
+## Relacionados
 
-Router · Skill 6 · Skill 9 gate · handoff Skill 5
+Router · Skill 6 · gate Skill 9 · handoff Skill 5

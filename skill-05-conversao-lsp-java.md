@@ -1,62 +1,62 @@
 ---
 name: conversao-lsp-java
 description: >-
-  Converts Senior LSP rules to Java (HCM/Gestão do Ponto) with inventory,
-  mapping, phases A/B/C, and consolidated delivery. Use when converting,
-  migrating, or mapping LSP→Java. Always run Skill 9 gate before publishing
-  Fase C. Prefer official docs (Skill 6) over Skill 7 patterns.
+  Converte regras LSP Senior para Java (HCM/Gestão do Ponto) com inventário,
+  mapeamento, fases A/B/C e entrega consolidada. Use ao converter, migrar ou
+  mapear LSP→Java. Sempre execute o gate da Skill 9 antes de publicar a Fase C.
+  Prefira documentação oficial (Skill 6) aos padrões da Skill 7.
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.6 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.7 · Arquivo: `skill-05-conversao-lsp-java.md`
 
-Apply Router globals. Preserve **functional intent**, not literal syntax.
+Aplique as regras globais do Router. Preserve a **intenção funcional**, não a sintaxe literal.
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't use |
+| Usar | Não usar |
 |---|---|
-| Convert/migrate/map LSP→Java / HCM Ponto | Concept → 1; debug → 2; new LSP only → 3; reverse-only → 4 |
+| Converter/migrar/mapear LSP→Java / HCM Ponto | Conceito → 1; debug → 2; só criar LSP → 3; só engenharia reversa → 4 |
 
-**Handoff:** explain-only → 4; gate FAIL → fix here + re-run 9; avulsa audit → 9
+**Handoff:** só explicar → 4; gate FAIL → corrigir aqui e reexecutar 9; auditoria avulsa → 9
 
-## Hard constraints (local)
+## Restrições locais
 
-1. Phases A→B→C; no final Java before inventory (unless format already chosen and A+C fit one transparent reply).  
-2. Consolidated Java only; no chunks / `// restante`.  
-3. Never invent signatures; unknown → `validacao_manual`.  
-4. Parameter order not assumed equal to LSP.  
-5. SQL/cursor → semantic API before EntitySession.  
-6. Skill 6 required for docs; Skill 7 required for HCM/Ponto; **6 wins** on conflict.  
-7. **Fase C:** draft → **Skill 9 gate** → publish with check summary.  
-8. No fake download links.
+1. Fases A→B→C; sem Java final antes do inventário (salvo formato já pedido e A+C na mesma resposta transparente).  
+2. Java só consolidado; sem pedaços / `// restante`.  
+3. Nunca invente assinaturas; desconhecido → `validacao_manual`.  
+4. Ordem de parâmetros não se presume igual à LSP.  
+5. SQL/cursor → API semântica antes de EntitySession.  
+6. Skill 6 obrigatória para docs; Skill 7 obrigatória em HCM/Ponto; **6 prevalece** em conflito.  
+7. **Fase C:** rascunho → **gate Skill 9** → publicar com resumo do check.  
+8. Sem links de download inventados.
 
-## Phases
+## Fases
 
 ```text
-A  Inventory + mapping + plan   (no final Java)
-   → if user already asked canvas|doc|full code → skip B to C after A
-B  Ask 1=canvas / 2=document     (no final Java)
-C  Draft complete Java → Skill 9 gate → publish
+A  Inventário + mapeamento + plano   (sem Java final)
+   → se o usuário já pediu canvas|doc|código inteiro → pular B e ir à C após A
+B  Perguntar 1=canvas / 2=documento  (sem Java final)
+C  Rascunho Java completo → gate Skill 9 → publicar
 ```
 
-### Inventory table (A)
+### Tabela de inventário (A)
 
 | Item LSP | Tipo | Uso na regra | Equivalente Java / padrão | Evidência | Status |
 
-Rules: End → return candidate; arrays → collections/methods; hours → minutes (`14:30`→`870`).
+Regras: End → candidato a retorno; arrays → coleções/métodos; horas → minutos (`14:30`→`870`).
 
-## Instructions
+## Instruções
 
-1. Read full LSP; set context: `apuracao|consistencia|bloqueio|fechamento_bh|geral|indefinido`.  
-2. Consult Skill 6 and Skill 7 (single file each).  
-3. Build inventory; map with labels `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`.  
-4. Mechanics before syntax.  
-5. Run A/B/C; gate on C.
+1. Leia a LSP inteira; defina contexto: `apuracao|consistencia|bloqueio|fechamento_bh|geral|indefinido`.  
+2. Consulte Skill 6 e Skill 7.  
+3. Monte inventário; mapeie com rótulos `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`.  
+4. Mecânica antes da sintaxe.  
+5. Execute A/B/C; gate na C.
 
-Quick method anchors: see Skill 7 reference (`getHorSit`, históricos, marcações…).
+Âncoras rápidas de métodos: ver Skill 7 (`getHorSit`, históricos, marcações…).
 
-## Output — Fase A
+## Saída — Fase A
 
 ```text
 ## Objetivo da regra original
@@ -69,15 +69,15 @@ Quick method anchors: see Skill 7 reference (`getHorSit`, históricos, marcaçõ
 
 Evidência: ...
 Bases consultadas: Skill 6 [sim]; Skill 7 [sim]
-[Fase B question if needed]
-+ continuity
+[pergunta Fase B, se necessário]
++ continuidade
 ```
 
-## Output — Fase C (after gate)
+## Saída — Fase C (após o gate)
 
 ```text
 ## Objetivo / Inventário / Mapeamento
-## Código Java convertido   [complete]
+## Código Java convertido   [completo]
 ## Comentários técnicos
 ## Itens sem equivalência / validação manual
 ## Referência documental
@@ -93,15 +93,15 @@ Origem: Skill 5
 Ciclos de correção: 0|1|2
 Falhas remanescentes: ...
 
-+ continuity
++ continuidade
 ```
 
-## Examples
+## Exemplos
 
-**A→B:** convert without format → inventory + ask 1/2.  
-**Skip B + gate:** “no canvas, regra toda” → A+C draft → Skill 9 → publish.  
-**Don't:** publish C without Skill 9; invent `XYZInexistente`; partial parts.
+**A→B:** converter sem formato → inventário + perguntar 1/2.  
+**Pular B + gate:** “no canvas, regra toda” → rascunho A+C → Skill 9 → publicar.  
+**Não faça:** publicar C sem Skill 9; inventar `XYZInexistente`; entregar em partes.
 
-## Related
+## Relacionados
 
-Router · Skill 6/7 (+ references) · Skill 9 gate
+Router · Skills 6 e 7 · gate Skill 9

@@ -1,36 +1,36 @@
 ---
 name: desenvolvimento-orientado
 description: >-
-  Creates or refactors Senior/LSP rules, routines, integrations, and validations
-  as complete commented code. Use when the user asks to build, structure, or
-  refactor a rule without LSP→Java conversion. Always run Skill 9 gate before
-  publishing the rule to the user.
+  Cria ou refatora regras, rotinas, integrações e validações Senior/LSP como
+  código completo comentado. Use quando o usuário pedir construir, estruturar ou
+  refatorar uma regra sem conversão LSP→Java. Sempre execute o gate da Skill 9
+  antes de publicar a regra ao usuário.
 ---
 
 # Skill 3 · Desenvolvimento Orientado
-Versão: v1.6 · Arquivo: `skill-03-desenvolvimento-orientado.md`
+Versão: v1.7 · Arquivo: `skill-03-desenvolvimento-orientado.md`
 
-Apply Router globals. Do not restate them.
+Aplique as regras globais do Router. Não as reescreva.
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't use |
+| Usar | Não usar |
 |---|---|
-| Create/refactor LSP rule, routine, WS, automation | Concept → 1; debug-only → 2; reverse-only → 4; convert → 5 |
+| Criar/refatorar regra LSP, rotina, WS, automação | Conceito → 1; só debug → 2; só engenharia reversa → 4; converter → 5 |
 
-**Handoff:** conversion → Skill 5
+**Handoff:** conversão → Skill 5
 
-## Instructions
+## Instruções
 
-1. State functional goal + premises.  
-2. Skill 6 for syntax/aliases/SQL.  
-3. Choose safest strategy; implement with block comments.  
-4. List risks + manual validation.  
-5. Build **complete** draft (no `// restante`).  
-6. **Skill 9 gate** (`desenvolvimento_lsp`); fix ≤2 cycles on FAIL.  
-7. Publish code + Check 9 summary + evidence + continuity.
+1. Declare objetivo funcional + premissas.  
+2. Skill 6 para sintaxe/aliases/SQL.  
+3. Escolha a estratégia mais segura; implemente com comentários por bloco.  
+4. Liste riscos + validação manual.  
+5. Monte **rascunho completo** (sem `// restante`).  
+6. **Gate Skill 9** (`desenvolvimento_lsp`); se FAIL, corrija até 2 ciclos.  
+7. Publique código + resumo Check 9 + evidência + continuidade.
 
-## Output
+## Saída
 
 ```text
 ## Objetivo da implementação
@@ -53,11 +53,11 @@ Falhas remanescentes: ...
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```
 
-## Examples
+## Exemplos
 
-**In:** `Crie regra LSP que valide colaborador ativo` → draft → gate 9 → publish.  
-**Don't:** publish without Skill 9; omit code via comments; deliver HCM Java (Skill 5).
+**Entrada:** `Crie regra LSP que valide colaborador ativo` → rascunho → gate 9 → publicar.  
+**Não faça:** publicar sem Skill 9; omitir código com comentários; entregar Java HCM (Skill 5).
 
-## Related
+## Relacionados
 
-Router · Skill 6 · Skill 9 gate · handoff Skill 5
+Router · Skill 6 · gate Skill 9 · handoff Skill 5

@@ -1,56 +1,56 @@
 ---
 name: base-documentacao-banco
 description: >-
-  Internal knowledge base of authorized Senior documentation links and ERP/HCM
-  alias hints. Use when any skill must cite official docs, validate SQL-in-rule
-  links, web services, LSP syntax pages, HCM function equivalence URLs, or
-  interpret table/field aliases. Never treat as Senior SQL 2.
+  Base interna de links autorizados da documentação Senior e aliases ERP/HCM.
+  Use quando qualquer skill precisar citar docs oficiais, validar links de SQL
+  em regra, web services, sintaxe LSP, URLs de equivalência HCM ou interpretar
+  aliases de tabela/campo. Nunca trate como Senior SQL 2.
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.6 · Internal · `skill-06-base-documentacao-banco.md`
+Versão: v1.7 · Interna · `skill-06-base-documentacao-banco.md`
 
-Not in menu 1–5. Apply Router globals (`router.md`).
+Não entra no menu 1–5. Aplique as regras globais do Router (`router.md`).
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't |
+| Usar | Não usar |
 |---|---|
-| Official link, SQL-em-regra, WS, LSP syntax, HCM equivalence URL, alias | Casual chat; replace Skill 7 conversion patterns |
+| Link oficial, SQL em regra, WS, sintaxe LSP, URL de equivalência HCM, alias | Conversa casual; substituir padrões de conversão da Skill 7 |
 
-Do not expose “Skill 6” to the user — cite the validated source only.
+Não exponha “Skill 6” ao usuário — cite só a fonte validada.
 
-## Hard constraints
+## Restrições absolutas
 
-1. Only links listed **in this file** are official in this training version.  
-2. Missing topic → `Não encontrei link autorizado na base atual para validar esse ponto com segurança.`  
-3. Before citing: page must be specific content, not portal/index.  
-4. Do not rewrite `index.htm#...` to invented direct URLs.  
-5. Senior SQL 2 banned — use SQL-em-regra / SP / proprietária links only.  
-6. Aliases are `auxiliar` until real schema confirms.  
-7. Apostilas LSP/APO/Rubi: **not in repo** (`ausente_no_repo`); user attachments are complementary only.
+1. Somente os links listados **neste arquivo** são oficiais nesta versão do treinamento.  
+2. Tópico ausente → `Não encontrei link autorizado na base atual para validar esse ponto com segurança.`  
+3. Antes de citar: a página deve ter conteúdo específico, não portal/índice.  
+4. Não reescreva `index.htm#...` para URLs diretas inventadas.  
+5. Senior SQL 2 proibido — use só links de SQL em regra / SP / proprietária.  
+6. Aliases são `auxiliar` até o schema real confirmar.  
+7. Apostilas LSP/APO/Rubi: **não estão no repo** (`ausente_no_repo`); anexos do usuário são só complementares.
 
-## Instructions
+## Instruções
 
 ```text
-1. Identify topic (syntax|WS|SQL|event|HCM equivalence|alias)
-2. Locate section below
-3. Classify coverage: confirmado | auxiliar | ausente
-4. Return to caller: achado + class + limite
-5. Never invent a “close enough” link/alias
+1. Identificar tópico (sintaxe|WS|SQL|evento|equivalência HCM|alias)
+2. Localizar seção abaixo
+3. Classificar cobertura: confirmado | auxiliar | ausente
+4. Devolver à skill chamadora: achado + classificação + limite
+5. Nunca inventar link/alias “quase igual”
 ```
 
-## Index
+## Índice
 
-| Topic | Section |
+| Tópico | Seção |
 |---|---|
-| LSP syntax / variables / limits | Links — Sintaxe |
+| Sintaxe / variáveis / limites LSP | Links — Sintaxe |
 | Web services / HTTP / JSON / FTP | Links — Integração |
-| SQL em regra / SP / proprietária / files | Links — Banco |
-| Users / AD / directories | Links — Acesso |
-| Events / workflow / reports | Links — Eventos |
-| LSP→Java equivalence / HCM function index | Links — Conversão |
-| Table/field aliases | Mapeamento banco |
+| SQL em regra / SP / proprietária / arquivos | Links — Banco |
+| Usuários / AD / diretórios | Links — Acesso |
+| Eventos / workflow / relatórios | Links — Eventos |
+| Equivalência LSP→Java / índice de funções HCM | Links — Conversão |
+| Aliases de tabela/campo | Mapeamento banco |
 
 ## Links — Sintaxe (Tecnologia 5.10.4)
 
@@ -67,7 +67,7 @@ Do not expose “Skill 6” to the user — cite the validated source only.
 - https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/regra-para-web-services.html
 - https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/ftp.htm
 
-## Links — Banco (SQL em regra — never Senior SQL 2)
+## Links — Banco (SQL em regra — nunca Senior SQL 2)
 
 - https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/sql-em-regra.html
 - https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/execucao-de-stored-procedures-nas-regras.htm
@@ -95,31 +95,31 @@ Do not expose “Skill 6” to the user — cite the validated source only.
 
 ## Mapeamento banco (auxiliar)
 
-Phrase: `O mapeamento sugere essa equivalência, mas a confirmação depende de validação no schema/dicionário de dados.`
+Frase: `O mapeamento sugere essa equivalência, mas a confirmação depende de validação no schema/dicionário de dados.`
 
-### ERP tables
+### Tabelas ERP
 
-| Term | Candidate | Coverage |
+| Termo | Candidato | Cobertura |
 |---|---|---|
 | NF Saída / Venda | `E120NFV` | auxiliar |
 | Item NF Saída | `E140NFV` | auxiliar |
 
-ERP fields: **ausente** — ask schema / `validacao_manual`.
+Campos ERP: **ausente** — pedir schema / `validacao_manual`.
 
 ### HCM
 
-| Origin | Candidate | Coverage |
+| Origem | Candidato | Cobertura |
 |---|---|---|
-| R035DEP (term) | `R036DEP` | auxiliar |
+| R035DEP (termo) | `R036DEP` | auxiliar |
 | R034FUN.SitCol | `SitAfa` | auxiliar |
 | R034FUN.DatDem | `DatAfa` | auxiliar |
 | R036DEP.ParDep | `GraPar` | auxiliar |
 | R024CAR.DesCar / Cargo | `TitRed` | auxiliar |
 | SitAfa Demitido | `7` | auxiliar |
 
-SQL precedence: alias → candidate → confirm module → filters/keys → never absolute existence from this table alone.
+Precedência SQL: alias → candidato → confirmar módulo → filtros/chaves → nunca existência absoluta só com esta tabela.
 
-## Output to caller
+## Saída para a skill chamadora
 
 ```text
 topico: ...
@@ -129,6 +129,6 @@ link_ou_alias: ...
 limite: ...
 ```
 
-## Related
+## Relacionados
 
-Router evidence policy · Skill 7 (after official docs)
+Política de evidência do Router · Skill 7 (após docs oficiais)

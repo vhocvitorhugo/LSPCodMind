@@ -1,39 +1,39 @@
 ---
 name: testes-comportamento
 description: >-
-  Internal QA suite for LSPCodMind router/menu/routing/gate behavior. Use only
-  when maintaining or validating the training itself — never during end-user
-  support. For artifact compliance use Skill 9.
+  Suite interna de QA do comportamento do LSPCodMind (menu, roteamento, gate).
+  Use somente ao manter ou validar o treinamento — nunca no atendimento ao
+  usuário final. Para conformidade de artefato use a Skill 9.
 disable-model-invocation: true
 ---
 
 # Skill 8 · Testes de Comportamento
-Versão: v1.6 · Internal QA · `skill-08-testes-comportamento.md`
+Versão: v1.7 · QA interno · `skill-08-testes-comportamento.md`
 
-| Role | Rule |
+| Papel | Regra |
 |---|---|
-| Maintainer | Run after training changes |
-| End-user chat | **Do not** invoke |
-| Artifact audit | Skill 9, not this file |
+| Mantenedor | Executar após mudanças no treinamento |
+| Atendimento ao usuário | **Não** acionar |
+| Auditoria de artefato | Skill 9, não este arquivo |
 
-Apply Router globals.
+Aplique as regras globais do Router.
 
 ## Suite
 
-| # | Input | Expect |
+| # | Entrada | Esperado |
 |---|---|---|
-| 1 | `menu`/`inicio`/`ajuda`… | Canonical menu only |
-| 2 | `5` | Skill 5; ask for artifact if missing |
-| 3 | “analise e converta: [code]” | Skill 5 (not only 4); Fase A; B if no format |
-| 4 | Convert full rule on canvas | Inventory + complete Java + `Status COMPLETA` + **Skill 9 summary** |
-| 5 | `XYZInexistente` Java equiv | Uncertainty phrase; no invented method |
-| 6 | Ask Senior SQL 2 docs for ExecSQL | Refuse SQL 2; Skill 6 SQL-em-regra only |
-| 7 | Any technical 1–5 reply | `Evidência:` + `Bases consultadas:` |
-| 8 | Mid-Skill-1 “agora converta” | Router → Skill 5 (no raw `[HANDOFF]` to user) |
-| 9 | `menu` | Skills 6–9 absent from menu |
-| 10 | Convert on canvas | Gate 9 before publish |
-| 11 | Create LSP rule | Gate 9 before publish |
-| 12 | — | Publishing rule/Java without Skill 9 = **FAIL** |
+| 1 | `menu`/`inicio`/`ajuda`… | Somente o menu canônico |
+| 2 | `5` | Skill 5; pedir artefato se faltar |
+| 3 | “analise e converta: [código]” | Skill 5 (não só 4); Fase A; B se sem formato |
+| 4 | Converter regra completa no canvas | Inventário + Java completo + `Status COMPLETA` + **resumo Skill 9** |
+| 5 | Equivalente Java de `XYZInexistente` | Frase de incerteza; sem método inventado |
+| 6 | Pedir docs Senior SQL 2 para ExecSQL | Recusar SQL 2; só SQL em regra da Skill 6 |
+| 7 | Qualquer resposta técnica 1–5 | `Evidência:` + `Bases consultadas:` |
+| 8 | No meio da Skill 1: “agora converta” | Router → Skill 5 (sem `[HANDOFF]` cru ao usuário) |
+| 9 | `menu` | Skills 6–9 ausentes do menu |
+| 10 | Converter no canvas | Gate 9 antes de publicar |
+| 11 | Criar regra LSP | Gate 9 antes de publicar |
+| 12 | — | Publicar regra/Java sem Skill 9 = **FAIL** |
 | 13 | “rode o check nesta conversão: […]” | Skill 9 `auditoria_avulsa` |
 
-**PASS** = applicable tests green · **FAIL** = menu drift, missing gate, invention, or SQL 2.
+**PASS** = testes aplicáveis ok · **FAIL** = menu errado, gate ausente, invenção ou SQL 2.

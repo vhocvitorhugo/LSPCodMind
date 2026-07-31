@@ -1,36 +1,36 @@
 ---
 name: mentoria-tecnica
 description: >-
-  Explains Senior/LSP concepts, syntax, architecture, docs, and best practices
-  with verifiable references. Use when the user asks how something works, what a
-  construct means, syntax help, documentation, or differences between approaches
-  — not when they want full replaceable code, debug, reverse-engineering only,
-  or LSP→Java conversion.
+  Explica conceitos Senior/LSP, sintaxe, arquitetura, documentação e boas
+  práticas com referências verificáveis. Use quando o usuário perguntar como
+  algo funciona, o que um constructo significa, ajuda de sintaxe, documentação
+  ou diferenças entre abordagens — não quando quiser código substituível completo,
+  debug, só engenharia reversa ou conversão LSP→Java.
 ---
 
 # Skill 1 · Mentoria Técnica
-Versão: v1.6 · Arquivo: `skill-01-mentoria-tecnica.md`
+Versão: v1.7 · Arquivo: `skill-01-mentoria-tecnica.md`
 
-Apply Router globals (`router.md`). Do not restate them.
+Aplique as regras globais do Router (`router.md`). Não as reescreva.
 
-## When to use / not
+## Quando usar / não usar
 
-| Use | Don't use |
+| Usar | Não usar |
 |---|---|
-| Concept, syntax, architecture, docs, “como funciona” | Full replaceable code → 3; error/log → 2; reverse rule → 4; convert → 5 |
+| Conceito, sintaxe, arquitetura, docs, “como funciona” | Código substituível completo → 3; erro/log → 2; engenharia reversa → 4; converter → 5 |
 
-**Handoff:** conversion request → `[HANDOFF] destino: Skill 5`
+**Handoff:** pedido de conversão → `[HANDOFF] destino: Skill 5`
 
-## Instructions
+## Instruções
 
-1. Name the concept/question.  
-2. Set `skill_6=sim` if docs/links/SQL/aliases needed → open Skill 6.  
-3. Explain briefly; tie to Senior practice.  
-4. Short example only if it helps (not a full rewrite).  
-5. Call out version/module caveats; mark uncertainty with Router phrase.  
-6. Close with evidence fields + continuity question.
+1. Nomeie o conceito/dúvida.  
+2. Se precisar docs/links/SQL/aliases → `skill_6=sim` e abra a Skill 6.  
+3. Explique de forma objetiva; relacione ao uso no Senior.  
+4. Exemplo curto só se ajudar (não reescreva a regra inteira).  
+5. Sinalize diferenças de versão/módulo; incerteza com a frase do Router.  
+6. Feche com campos de evidência + pergunta de continuidade.
 
-## Output
+## Saída
 
 ```text
 ## Conceito
@@ -47,11 +47,11 @@ Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```
 
-## Examples
+## Exemplos
 
-**In:** `O que é CriarCursor em LSP?` → Skill 6 SQL-em-regra; explain + cursor lifecycle risks.  
-**Don't:** invent APIs; end with `Pronto.`; dump a full Java rule; cite Senior SQL 2.
+**Entrada:** `O que é CriarCursor em LSP?` → Skill 6 SQL em regra; explicar + riscos do ciclo do cursor.  
+**Não faça:** inventar APIs; encerrar com `Pronto.`; despejar regra Java completa; citar Senior SQL 2.
 
-## Related
+## Relacionados
 
 Router · Skill 6 · handoff Skill 5
