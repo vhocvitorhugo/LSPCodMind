@@ -31,7 +31,7 @@ Sempre utilize os arquivos abaixo como base para decisões técnicas e de planej
   - [skill-05-conversao-lsp-java.md](../skill-05-conversao-lsp-java.md) — Conversão LSP para Java
 
 - **Bases internas (não aparecem no menu):**
-  - [skill-06-base-documentacao-links.md](../skill-06-base-documentacao-links.md) — Documentação e links autorizados
+  - [skill-06-base-documentacao-links.md](../skill-06-base-documentacao-links.md) — Documentação, links autorizados e apostilas LSP/APO/Rubi
   - [skill-07-base-banco-dados.md](../skill-07-base-banco-dados.md) — Banco de dados / aliases / domínios
   - [skill-08-base-conversao-lsp-java.md](../skill-08-base-conversao-lsp-java.md) — Base de conversão HCM/Ponto
   - [skill-09-testes-comportamento.md](../skill-09-testes-comportamento.md) — Testes de comportamento do agente
