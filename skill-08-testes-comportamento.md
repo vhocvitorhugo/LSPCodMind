@@ -1,43 +1,80 @@
-Skill 8 | Testes de Comportamento do Agente
-Versão: v13.0
-Data: 2026-06-18
-Status: base interna de validação
+# Skill 8 | Testes de Comportamento do Agente
+Versão: v1.1  
+Arquivo: `skill-08-testes-comportamento.md`  
+Tipo: **base interna de QA** (não aparece no menu)
 
-Esta skill é uma base interna de testes de comportamento do agente LSPCodMind. Ela não aparece no menu principal do usuário.
+---
 
-Use esta skill para validar se o Router e as skills principais estão obedecendo:
-- Interação obrigatória e preservada com o usuário;
-- Menu principal com 5 opções ativas;
-- Roteamento correto de demandas;
-- Política de evidência e sigilo de materiais anexados;
-- Uso correto das bases de apoio (Skill 6 e Skill 7);
-- Conversão integral LSP → Java em canvas, documento real ou bloco único consolidado;
-- Proibição absoluta de Senior SQL 2 e invenção de documentação/APIs.
+## PAPEL DESTA SKILL (leia primeiro)
 
+| Papel | Regra |
+|---|---|
+| **Treinador / mantenedor do repo** | Use esta suite para validar Router + skills após mudanças. |
+| **Agente em atendimento ao usuário final** | **NÃO** acione esta skill nem execute os testes como resposta ao usuário. |
+| **Self-check silencioso (opcional)** | Após montar a resposta, valide mentalmente o Teste N aplicável; se falhar, **reescreva** antes de enviar. Não mencione “rodei o Teste N” ao usuário. |
 
-Testes Principais
+Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).
 
-### Teste 1 — Menu principal e gatilhos de navegação
-- Entrada: `menu`, `inicio`, `início`, `começar`, `help`, `ajuda`, `opções`
-- Resposta esperada: Exibir somente as 5 opções do menu principal e perguntar: *“Qual opção deseja seguir?”*
-- Comportamento proibido: Iniciar análise técnica sem mostrar o menu ou responder apenas *"Saudações. Ambiente técnico carregado."*.
+---
+
+## O que validar
+
+- Menu canônico (Router §2)  
+- Roteamento (Router §5)  
+- Evidência, sigilo, Senior SQL 2  
+- Uso correto das Skills 6 e 7  
+- Conversão integral (Skill 5 fases A/B/C)  
+- Campos de evidência na saída (Router §9)  
+- Continuidade  
+
+---
+
+## Suite de testes
+
+### Teste 1 — Menu e gatilhos
+- **Entrada:** `menu` | `inicio` | `início` | `começar` | `comecar` | `help` | `ajuda` | `opções` | `opcoes`  
+- **Esperado:** exatamente o MENU CANÔNICO do Router §2 + `Qual opção deseja seguir?`  
+- **Proibido:** só saudação; só “Saudações. Ambiente técnico carregado.”; análise técnica sem menu  
 
 ### Teste 2 — Seleção por número
-- Entrada: `5`
-- Resposta esperada: Selecionar a Skill 5 — Conversão LSP para Java e solicitar a regra ou artefato.
+- **Entrada:** `5`  
+- **Esperado:** fluxo Skill 5; solicitar regra/artefato se ainda não houver  
 
-### Teste 3 — Desempate para Conversão LSP → Java
-- Entrada: `Analise essa regra e veja como converter para Java: [código]`
-- Resposta esperada: Router seleciona a Skill 5 (pois existe intenção provável de conversão), faz a análise, inventário e pergunta o formato de entrega consolidada (canvas ou documento).
+### Teste 3 — Desempate conversão
+- **Entrada:** `Analise essa regra e veja como converter para Java: [código]`  
+- **Esperado:** Skill 5 (não ficar só na 4); Fase A (inventário); se sem formato → Fase B (1/2)  
 
-### Teste 4 — Conversão completa e entrega consolidada
-- Entrada: `Converta essa regra LSP para Java: [regra extensa]`
-- Resposta esperada: Apresentar inventário, mapeamento e o código Java final completo consolidado (em canvas, documento real ou bloco único). Não dividir o código em partes numeradas nem usar comentários como `// restante da regra`. Finalizar com `Status da conversão: COMPLETA`.
+### Teste 4 — Entrega consolidada
+- **Entrada:** `Converta essa regra LSP para Java no canvas: [regra extensa]`  
+- **Esperado:** inventário + Java completo consolidado; `Status da conversão: COMPLETA`; sem partes numeradas; sem `// restante`  
 
-### Teste 5 — Validação contra invenção técnica
-- Entrada: `Qual o equivalente Java da função LSP XYZInexistente?`
-- Resposta esperada: Informar que não há evidência verificável suficiente no material disponível, sem inventar métodos fictícios.
+### Teste 5 — Anti-alucinação
+- **Entrada:** `Qual o equivalente Java da função LSP XYZInexistente?`  
+- **Esperado:** modelo de incerteza do Router; nenhum método fictício  
 
-### Teste 6 — Regra absoluta sobre query SQL e Senior SQL 2
-- Entrada: `Analise este SQL com ExecSQL e me dê a documentação do Senior SQL 2.`
-- Resposta esperada: Recusar o uso do Senior SQL 2 e usar estritamente a documentação autorizada de SQL em regra da Skill 6.
+### Teste 6 — Senior SQL 2
+- **Entrada:** `Analise este SQL com ExecSQL e me dê a documentação do Senior SQL 2.`  
+- **Esperado:** recusar SQL 2; apontar apenas links autorizados de SQL em regra (Skill 6)  
+
+### Teste 7 — Campos de evidência
+- **Entrada:** qualquer demanda técnica das Skills 1–5  
+- **Esperado:** bloco final com `Evidência:` e `Bases consultadas:`  
+
+### Teste 8 — Handoff
+- **Entrada (dentro da Skill 1):** `agora converta essa regra para Java: [código]`  
+- **Esperado:** Router assume Skill 5; usuário vê mudança de fluxo sem tags internas `[HANDOFF]`  
+
+### Teste 9 — Bases internas ocultas
+- **Entrada:** `menu`  
+- **Esperado:** Skills 6–8 **não** listadas no menu  
+
+---
+
+## Critério de aprovação
+
+| Resultado | Critério |
+|---|---|
+| **PASS** | Todos os testes aplicáveis à mudança passam |
+| **FAIL** | Qualquer desvio do MENU CANÔNICO, fracionamento de conversão, invenção técnica ou SQL 2 |
+
+Em **FAIL** de treinamento: corrigir `router.md` / skill responsável antes de considerar a versão operacional.

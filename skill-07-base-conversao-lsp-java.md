@@ -1,35 +1,66 @@
-Skill 7 | Base de Conversão LSP para Java e Exemplos Sanitizados
-Você é a skill interna de Base de Conversão LSP para Java e Exemplos Sanitizados do agente LSPCodMind.
+# Skill 7 | Base de Conversão LSP → Java e Exemplos Sanitizados
+Versão: v1.1  
+Arquivo: `skill-07-base-conversao-lsp-java.md`  
+Tipo: **base interna** (não aparece no menu)
 
-Esta skill não faz parte do menu principal do usuário. Ela é consultada principalmente pela Skill 5 — Conversão LSP para Java quando houver conversão, migração, análise de equivalência, validação de regras LSP para Java ou necessidade de comparar com padrões reais observados em materiais complementares no contexto de HCM (Controle de Ponto e Refeitório).
+Consultada principalmente pela **Skill 5** em conversões HCM (Controle de Ponto / Refeitório / Apuração / Banco de Horas).
 
+Aplique as **HARD CONSTRAINTS globais** do `router.md` (§1).  
+**Doc oficial (Skill 6) prevalece** sobre esta base em qualquer conflito.
 
-Objetivo
-Centralizar os padrões operacionais de conversão LSP → Java para apuração de ponto e os exemplos sanitizados de referência para apoiar:
-1. Identificação do contexto de execução da regra (apuração, consistência de acerto, fechamento de banco de horas, geral);
-2. Inventário técnico de variáveis, funções, cursores, arrays e parâmetros End;
-3. Mapeamento de variáveis/funções LSP para métodos Java e verificação de assinaturas;
-4. Tradução de mecânica (arrays → coleções/métodos, horas em minutos, parâmetro End → retorno);
-5. Comparação com padrões reais observados em regras sanitizadas de apuração e banco de horas;
-6. Prevenção de armadilhas práticas de conversão.
+---
 
+## WHEN / NOT WHEN
 
-1) Regra fundamental e sigilo
-- Esta base é complementar e não substitui a documentação oficial Senior consultada via Skill 6. Em caso de conflito, a documentação oficial prevalece.
-- **Sigilo e Sanitização:** Nunca exponha nomes de clientes, empresas, pacotes privados, consultores ou caminhos de arquivos anexados. Refira-se aos exemplos apenas como *materiais complementares anexados* ou *exemplos sanitizados de conversão*. Classifique a evidência como: *Padrão observado em materiais complementares anexados*.
+| | |
+|---|---|
+| **Usar quando** | Conversão/migração/equivalência prática LSP→Java em Ponto/HCM; padrões de classe; armadilhas; comparação com exemplos sanitizados |
+| **Não usar quando** | Mentoria genérica sem conversão; substituir a Skill 6 como “prova oficial” |
+| **Expor ao usuário?** | Não como “Skill 7”; fale em padrões de conversão / exemplos sanitizados |
 
+---
 
-2) Workflow de conversão recomendado
-- **Passo 1 — Identificar o contexto:** Em qual classe a regra roda (`Apuracao`, `FechamentoBH`, etc.).
-- **Passo 2 — Inventariar construções LSP:** Liste variáveis/funções (DatPro, HorSis, ApuDiu[], HorSit, FPxMar, RetBHRDat). Nenhuma variável de contexto deve ficar solta no Java final.
-- **Passo 3 — Mapear para Java:** Busque o equivalente Java e confirme a assinatura e ordem dos parâmetros.
-- **Passo 4 — Traduzir a mecânica:** Variáveis → getters; atribuições → setters; horas → inteiros em minutos (ex: 14:30 = 870); parâmetro End → retorno.
-- **Passo 5 — Traduzir a sintaxe e revisar:** Tipagem forte, laços, exceções e log via contexto.
+## HARD CONSTRAINTS + DELIMITAÇÃO DO CATÁLOGO
 
+1. Esta base é **complementar**. Classifique achados aqui como:  
+   `Padrão observado em materiais complementares anexados` ou `inferencia` — **não** como equivalência oficial, salvo confirmação na Skill 6.  
+2. **Sigilo:** nunca exponha clientes, empresas, pacotes, consultores ou caminhos. Use “exemplos sanitizados” / “materiais complementares anexados”.  
+3. **Catálogo completo de centenas de variáveis/métodos NÃO está embutido neste arquivo.**  
+   O que existe abaixo é o **mapeamento operacional mínimo** + esqueletos.  
+4. **Regra anti-alucinação (obrigatória):**  
+   Se a variável/função LSP **não** estiver nesta base **e** **não** for confirmada na documentação oficial (Skill 6) **e** **não** estiver em anexo validado do usuário →  
+   `Status = validacao_manual` — **NÃO inventar** nome/assinatura de método Java.  
+5. Horas em APIs de ponto = inteiros em **minutos**.  
+6. SQL/cursor → priorize API semântica do módulo antes de EntitySession/SQL.  
+7. Toda variável/função de contexto LSP vira chamada de método — nada “solto” no Java.
 
-3) Padrões Estruturais Observados em Java
+---
 
-### Regra de Apuração de Ponto
+## WORKFLOW DE CONSULTA
+
+```text
+1. Skill 5 identifica contexto (Apuracao, FechamentoBH, etc.)
+2. Buscar âncora nesta base (seção 3–4)
+3. Confirmar assinatura/equivalência na Skill 6 (doc oficial)
+4. Se só houver padrão aqui → evidência = padrao_anexo / inferencia
+5. Se não houver em lugar nenhum → validacao_manual (não inventar)
+```
+
+---
+
+## 1) Workflow de conversão recomendado (apoio à Skill 5)
+
+1. **Contexto:** em qual classe a regra roda (`Apuracao`, `FechamentoBH`, …).  
+2. **Inventariar:** DatPro, HorSis, ApuDiu[], HorSit, FPxMar, RetBHRDat, cursores, End, etc.  
+3. **Mapear:** equivalente Java + assinatura + ordem dos parâmetros.  
+4. **Mecânica:** getters/setters; horas→minutos; End→retorno; arrays→coleções/métodos.  
+5. **Sintaxe:** tipagem, laços, exceções, log via contexto.
+
+---
+
+## 2) Padrões estruturais (esqueletos)
+
+### Apuração de Ponto
 ```java
 @Rule(description = "Regra de Apuracao")
 public class RegraApuracao extends Apuracao {
@@ -37,15 +68,14 @@ public class RegraApuracao extends Apuracao {
     public void execute() {
         ContextoGeralRH contextoGeral = getContainer().getContextoGeral();
         ContextoApuracao contextoApuracao = getContainer().getContextoApuracao();
-
-        // Recuperar colaborador, data e dados de contexto.
+        // Recuperar colaborador, data e contexto.
         // Aplicar regras de negócio.
-        // Atualizar situações por métodos semânticos do contexto.
+        // Atualizar situações via métodos semânticos.
     }
 }
 ```
 
-### Regra de Fechamento de Banco de Horas
+### Fechamento de Banco de Horas
 ```java
 @Rule(description = "Regra de Fechamento de Banco de Horas")
 public class RegraFechamentoBH extends FechamentoBH {
@@ -53,33 +83,73 @@ public class RegraFechamentoBH extends FechamentoBH {
     public void execute() {
         ContextoGeralRH contextoGeral = getContainer().getContextoGeral();
         ContextoFechamentoBH contextoFechamentoBH = getContainer().getContextoFechamentoBH();
-
-        // Usar dados do fechamento, colaborador, banco de horas e saldo.
+        // Dados de fechamento, colaborador, banco e saldo.
     }
 }
 ```
 
+---
 
-4) Mapeamento Operacional Mínimo e Situações Apuradas
-- **Situações apuradas:**
-  - Ler horas de situação → `contextoApuracao.getHorSit(codigoSituacao)`
-  - Definir/ajustar horas → `contextoApuracao.setHorSit(codigoSituacao, minutos)`
-  - Zerar situação → `contextoApuracao.zeraHorasSituacao(codigoSituacao)`
-  - Ler situação anterior → `contextoApuracao.getHorSitAnterior(codigoSituacao)`
-  - Somar horas apuradas → `contextoApuracao.somaHorasSituacao(...)`
+## 3) Mapeamento operacional mínimo
 
-- **Dados de colaborador e contexto:**
-  - Empresa / Colaborador / Cadastro → `colaborador.getNumEmp()`, `colaborador.getTipCol()`, `colaborador.getNumCad()`
-  - Data processada → `contextoApuracao.getData()`
-  - Históricos → `getHistoricoSindicato()`, `getHistoricoVinculo()`, `getHistoricoCargo()`, `getHistoricoEscala()`
+> Âncoras práticas. Confirme na Skill 6 antes de marcar `confirmada`.
 
-- **Marcações e Totais:**
-  - Marcações realizadas → `contextoApuracao.getMarcacoesRealizadas(...)`
-  - Totais de situações → `contextoApuracao.getTotalSituacoes(...)`
+### Situações apuradas
+| Intenção | Âncora Java |
+|---|---|
+| Ler horas da situação | `contextoApuracao.getHorSit(codigoSituacao)` |
+| Definir/ajustar horas | `contextoApuracao.setHorSit(codigoSituacao, minutos)` |
+| Zerar situação | `contextoApuracao.zeraHorasSituacao(codigoSituacao)` |
+| Situação anterior | `contextoApuracao.getHorSitAnterior(codigoSituacao)` |
+| Somar horas | `contextoApuracao.somaHorasSituacao(...)` |
 
+### Colaborador e contexto
+| Intenção | Âncora Java |
+|---|---|
+| Empresa / tipo / cadastro | `colaborador.getNumEmp()` / `getTipCol()` / `getNumCad()` |
+| Data processada | `contextoApuracao.getData()` |
+| Históricos | `getHistoricoSindicato()`, `getHistoricoVinculo()`, `getHistoricoCargo()`, `getHistoricoEscala()`, `getHistoricoCentrodeCusto()`, `getHistoricoFilial()` |
 
-5) Invariantes de Conversão — Nunca violar
-- Toda variável/função LSP de contexto vira uma chamada de método.
-- Nunca invente assinaturas ou nomes de métodos Java. Se não houver equivalente confirmado, marque como ponto de validação manual.
-- Horas em métodos de ponto são sempre inteiros em minutos.
-- Na conversão de SQL/cursor para Java, priorize APIs semânticas do módulo antes de optar por acesso direto a banco ou EntitySession.
+### Marcações e totais
+| Intenção | Âncora Java |
+|---|---|
+| Marcações realizadas | `contextoApuracao.getMarcacoesRealizadas(...)` |
+| Totais de situações | `contextoApuracao.getTotalSituacoes(...)` |
+
+### Escala / horário
+| Intenção | Âncora Java |
+|---|---|
+| Escala atual / prevista | `getEscala()` / `getEscalaPrevistaColaborador(...)` |
+| Horário atual / previsto | `getHorario()` / `getHorarioPrevistoColaborador(...)` |
+
+---
+
+## 4) Armadilhas frequentes
+
+| Armadilha | Ação correta |
+|---|---|
+| Copiar ordem dos parâmetros LSP→Java | Confirmar assinatura na doc |
+| Manter hora como string/`HH:mm` em API de minutos | Converter para minutos (`14:30` → `870`) |
+| Replicar cursor SQL por reflexo | Buscar API semântica primeiro |
+| Inventar método “parecido” | `validacao_manual` |
+| Expor nome de cliente do exemplo | Sanitizar sempre |
+
+---
+
+## 5) Exemplos sanitizados
+
+Nesta versão do repositório, exemplos completos de regras reais **não** estão versionados neste arquivo (sigilo).  
+Se o usuário anexar exemplos: use-os como padrão observado, sanitize identificadores e **não** os trate como doc oficial.
+
+---
+
+## Saída para a Skill 5 (formato interno)
+
+```text
+contexto: Apuracao | FechamentoBH | outro | indefinido
+ancora_encontrada: sim | nao
+metodo_ou_padrao: ...
+evidencia_sugerida: padrao_anexo | inferencia | validacao_manual
+requer_skill_6: sim
+limite: ...
+```
