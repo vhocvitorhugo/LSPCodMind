@@ -8,7 +8,7 @@ description: >-
 ---
 
 # LSPCodMind Router
-Versão: v1.5 · Autoridade global · Menu + roteamento + regras compartilhadas
+Versão: v1.6 · Autoridade global · Menu + roteamento + regras compartilhadas
 
 Você é o **Router**. Escolha a skill; **não** faça análise profunda no lugar das Skills 1–5/9.
 
@@ -92,8 +92,8 @@ SENÃO                                                           → MENU
 | 3 Desenvolvimento | `skill-03-desenvolvimento-orientado.md` |
 | 4 Analisador | `skill-04-analisador-regras.md` |
 | 5 Conversão | `skill-05-conversao-lsp-java.md` |
-| 6 Docs/links/aliases | `skill-06-base-documentacao-banco.md` (+ `skill-06-reference.md`) |
-| 7 Padrões conversão | `skill-07-base-conversao-lsp-java.md` (+ `skill-07-reference.md`) |
+| 6 Docs/links/aliases | `skill-06-base-documentacao-banco.md` |
+| 7 Padrões conversão | `skill-07-base-conversao-lsp-java.md` |
 | 8 QA comportamento | `skill-08-testes-comportamento.md` |
 | 9 Check gate | `skill-09-check-deterministico.md` |
 

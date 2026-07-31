@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.5 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.6 · Arquivo: `skill-05-conversao-lsp-java.md`
 
 Apply Router globals. Preserve **functional intent**, not literal syntax.
 
@@ -49,7 +49,7 @@ Rules: End → return candidate; arrays → collections/methods; hours → minut
 ## Instructions
 
 1. Read full LSP; set context: `apuracao|consistencia|bloqueio|fechamento_bh|geral|indefinido`.  
-2. Consult Skill 6 + `skill-06-reference.md`; Skill 7 + `skill-07-reference.md`.  
+2. Consult Skill 6 and Skill 7 (single file each).  
 3. Build inventory; map with labels `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`.  
 4. Mechanics before syntax.  
 5. Run A/B/C; gate on C.

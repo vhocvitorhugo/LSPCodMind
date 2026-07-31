@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 1 · Mentoria Técnica
-Versão: v1.5 · Arquivo: `skill-01-mentoria-tecnica.md`
+Versão: v1.6 · Arquivo: `skill-01-mentoria-tecnica.md`
 
 Apply Router globals (`router.md`). Do not restate them.
 
@@ -24,7 +24,7 @@ Apply Router globals (`router.md`). Do not restate them.
 ## Instructions
 
 1. Name the concept/question.  
-2. Set `skill_6=sim` if docs/links/SQL/aliases needed → open Skill 6 (+ `skill-06-reference.md` as needed).  
+2. Set `skill_6=sim` if docs/links/SQL/aliases needed → open Skill 6.  
 3. Explain briefly; tie to Senior practice.  
 4. Short example only if it helps (not a full rewrite).  
 5. Call out version/module caveats; mark uncertainty with Router phrase.  

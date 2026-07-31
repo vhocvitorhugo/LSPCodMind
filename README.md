@@ -8,14 +8,14 @@
   <img src="https://img.shields.io/badge/SENIOR_SISTEMAS-HCM_%7C_ERP-blue?style=for-the-badge" alt="Senior Sistemas" />
   <img src="https://img.shields.io/badge/LSP-5.10.4-orange?style=for-the-badge" alt="LSP 5.10.4" />
   <img src="https://img.shields.io/badge/JAVA-17%2B-red?style=for-the-badge" alt="Java 17+" />
-  <img src="https://img.shields.io/badge/LSPCodMind-v1.5-success?style=for-the-badge" alt="LSPCodMind v1.5" />
+  <img src="https://img.shields.io/badge/LSPCodMind-v1.6-success?style=for-the-badge" alt="LSPCodMind v1.6" />
 </p>
 
 ---
 
 O **LSPCodMind** é um framework de agente em formato modular **Router + Skills**, focado na plataforma **Senior Sistemas**: diagnóstico de regras, engenharia reversa de legado, desenvolvimento orientado e conversão assistida LSP → Java no **Senior HCM** (Controle de Ponto e Refeitório).
 
-**Versão atual: v1.5** — skills no estilo [skills.sh](https://www.skills.sh/) (frontmatter YAML, descriptions WHAT+WHEN, progressive disclosure), gate obrigatório de conformidade (**Skill 9**) antes de publicar regras geradas ou convertidas.
+**Versão atual: v1.6** — um arquivo por skill (catálogos das Skills 6 e 7 no próprio `.md`), estilo [skills.sh](https://www.skills.sh/), gate obrigatório (**Skill 9**) antes de publicar regras geradas ou convertidas.
 
 ---
 
@@ -38,8 +38,8 @@ O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo,
 | :--- | :--- | :--- |
 | Router (autoridade global) | [`router.md`](router.md) | — |
 | Skills 1–5 (fluxos do usuário) | [`skill-01`](skill-01-mentoria-tecnica.md) … [`skill-05`](skill-05-conversao-lsp-java.md) | Sim |
-| Base docs + links + aliases | [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) + [`skill-06-reference.md`](skill-06-reference.md) | Não |
-| Base conversão HCM/Ponto | [`skill-07-base-conversao-lsp-java.md`](skill-07-base-conversao-lsp-java.md) + [`skill-07-reference.md`](skill-07-reference.md) | Não |
+| Base docs + links + aliases | [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Não |
+| Base conversão HCM/Ponto | [`skill-07-base-conversao-lsp-java.md`](skill-07-base-conversao-lsp-java.md) | Não |
 | QA de comportamento do agente | [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Não |
 | Check determinístico (gate) | [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Automático |
 
@@ -64,10 +64,8 @@ O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo,
 | [`skill-03-desenvolvimento-orientado.md`](skill-03-desenvolvimento-orientado.md) | Desenvolvimento |
 | [`skill-04-analisador-regras.md`](skill-04-analisador-regras.md) | Analisador de regras |
 | [`skill-05-conversao-lsp-java.md`](skill-05-conversao-lsp-java.md) | Conversão LSP → Java |
-| [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Base docs (operacional) |
-| [`skill-06-reference.md`](skill-06-reference.md) | Catálogo de links e aliases |
-| [`skill-07-base-conversao-lsp-java.md`](skill-07-base-conversao-lsp-java.md) | Base conversão (operacional) |
-| [`skill-07-reference.md`](skill-07-reference.md) | Esqueletos e âncoras Java |
+| [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Links autorizados + aliases |
+| [`skill-07-base-conversao-lsp-java.md`](skill-07-base-conversao-lsp-java.md) | Padrões, esqueletos e âncoras de conversão |
 | [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Testes de comportamento |
 | [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Check determinístico |
 
@@ -86,8 +84,9 @@ O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo,
 
 | Versão | Destaque |
 | :--- | :--- |
-| **v1.5** | README sincronizado no GitHub (remove badge legado v13.0) |
-| v1.4 | Estilo skills.sh + progressive disclosure |
+| **v1.6** | Skills 6 e 7 em arquivo único (remove `*-reference.md`) |
+| v1.5 | README sincronizado no GitHub (remove badge legado v13.0) |
+| v1.4 | Estilo skills.sh |
 | v1.3 | Skill 9 como gate obrigatório |
 | v1.2 | Criação da Skill 9 |
 | v1.1 | Treinamento operacional + versionamento minor |
