@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.9 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.10 · Arquivo: `skill-05-conversao-lsp-java.md`
 
 Aplique as regras globais do Router. Preserve a **intenção funcional**, não a sintaxe literal.
 
@@ -84,10 +84,10 @@ Regras: End → retorno; arrays → métodos/coleções; horas → minutos (`14:
 ## Instruções
 
 1. Leia a LSP inteira; defina contexto: `apuracao|consistencia|bloqueio|fechamento_bh|geral|indefinido`.  
-2. Consulte Skill 6 (links) e Skill 7 (**catálogo oficial** + mecânica + exemplos).  
+2. Consulte Skill 6 (**URLs/aliases**) e Skill 7 (**mecânica + catálogo** — ordem A→G do arquivo).  
 3. Monte inventário; mapeie com `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`.  
-4. Mecânica antes da sintaxe (Skill 7: workflow + invariantes).  
-5. Execute A/B/C; gate na C.
+4. Mecânica antes da sintaxe (Skill 7: restrições → workflow → família do catálogo → armadilhas).  
+5. Execute A/B/C; gate na C (Skill 9: **críticos primeiro**).
 
 Âncoras: Skill 7 — catálogo + `getHorSit`/`setHorSit`/`zeraHorasSituacao`/`getDefinicaoSituacoes`.  
 **Não** usar `getSituacao(...).getMinutos()/setMinutos(...)`.  

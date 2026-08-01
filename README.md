@@ -8,14 +8,14 @@
   <img src="https://img.shields.io/badge/SENIOR_SISTEMAS-HCM_%7C_ERP-blue?style=for-the-badge" alt="Senior Sistemas" />
   <img src="https://img.shields.io/badge/LSP-5.10.4-orange?style=for-the-badge" alt="LSP 5.10.4" />
   <img src="https://img.shields.io/badge/JAVA-17%2B-red?style=for-the-badge" alt="Java 17+" />
-  <img src="https://img.shields.io/badge/LSPCodMind-v1.9-success?style=for-the-badge" alt="LSPCodMind v1.9" />
+  <img src="https://img.shields.io/badge/LSPCodMind-v1.10-success?style=for-the-badge" alt="LSPCodMind v1.10" />
 </p>
 
 ---
 
 O **LSPCodMind** é um framework de agente em formato modular **Router + Skills**, focado na plataforma **Senior Sistemas**: diagnóstico de regras, engenharia reversa de legado, desenvolvimento orientado e conversão assistida LSP → Java no **Senior HCM** (Controle de Ponto e Refeitório).
 
-**Versão atual: v1.9** — funde a mecânica operacional do treinamento PDF legado (protocolo consolidado, workflow, exemplos FPxMar/`End`/troca de situação) com a estrutura atual (fases A/B/C, catálogo oficial, gate Skill 9).
+**Versão atual: v1.10** — Skills 6–9 reforçadas: fronteira docs vs conversão, navegação da Skill 7, QA com critério PASS, gate com críticos primeiro.
 
 ---
 
@@ -84,7 +84,8 @@ O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo,
 
 | Versão | Destaque |
 | :--- | :--- |
-| **v1.9** | Fusão do treinamento PDF legado (mecânica/exemplos/protocolo) no framework atual |
+| **v1.10** | Skills 6–9: fronteira clara, navegação Skill 7, PASS na 8, críticos-primeiro na 9 |
+| v1.9 | Fusão do treinamento PDF legado (mecânica/exemplos/protocolo) no framework atual |
 | v1.8 | Catálogo oficial de equivalência LSP→Java (doc Senior 6.10.4) na Skill 7 + exemplos práticos |
 | v1.7 | Skills e Router em português (Brasil) |
 | v1.6 | Skills 6 e 7 em arquivo único (remove `*-reference.md`) |

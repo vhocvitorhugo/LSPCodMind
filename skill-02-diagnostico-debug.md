@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.9 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.10 · Arquivo: `skill-02-diagnostico-debug.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 

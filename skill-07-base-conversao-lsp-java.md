@@ -8,34 +8,64 @@ description: >-
 ---
 
 # Skill 7 · Base de Conversão LSP → Java
-Versão: v1.9 · Interna · `skill-07-base-conversao-lsp-java.md`
+Versão: v1.10 · Interna · `skill-07-base-conversao-lsp-java.md`
 
 Não entra no menu. Aplique as regras globais do Router. Em conflito de assinatura, **revalide na Skill 6 / página oficial**.
 
-## Fontes oficiais (consultar / citar)
+**Fronteira:** Skill 6 = links/aliases; **esta skill** = mecânica + catálogo + exemplos de conversão.
+
+## Como consultar (ordem obrigatória)
+
+```text
+A. Restrições + Regra de ouro + Invariantes   ← nunca pular
+B. Workflow (6 passos)
+C. Tipos / sintaxe (se necessário)
+D. Catálogo — só a família do item LSP
+E. Armadilhas (checklist rápido)
+F. Exemplos — só o padrão análogo
+G. Saída tipada para a Skill 5
+```
+
+Não leia o catálogo inteiro de ponta a ponta em toda conversão. Localize a **família** no índice abaixo.
+
+## Índice rápido do arquivo
+
+| Precisa de… | Vá para |
+|---|---|
+| Proibições / minutos / Sem Situacao.getMinutos | Restrições absolutas |
+| Modelo mental LSP→contexto | Regra de ouro |
+| Passo a passo | Workflow |
+| Tipagem / Se→if / Vapara | Tipos e sintaxe |
+| Esqueleto Apuracao / FechamentoBH | Esqueletos |
+| `DatPro`, `HorSit`, `FPxMar`, históricos… | Catálogo → família |
+| Erros comuns | Armadilhas |
+| Par LSP/Java pronto | Exemplos sanitizados |
+
+## Fontes oficiais
 
 | Fonte | URL | Uso |
 |---|---|---|
-| **Equivalência das funções de regras** (mapa LSP→Java) | https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm | Mapeamento oficial Controle de Ponto → Gestão do Ponto |
-| **Índice das Funções** HCM 6.10.4 | https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm | Detalhe/assinatura das funções Java/HCM |
+| Equivalência das funções de regras | https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm | Mapa oficial |
+| Índice das Funções HCM 6.10.4 | https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm | Assinatura + **contexto** do método |
 
-Evidência dos itens do **Catálogo de equivalência** abaixo: `confirmada` (doc oficial Senior 6.10.4), salvo nota em contrário.  
-Exemplos de mecânica / auxiliares: `padrao_anexo` (materiais sanitizados do treinamento antigo + anexos do usuário).
+Catálogo abaixo: evidência `confirmada` (salvo nota). Exemplos: `padrao_anexo`.  
+**Assinatura/contexto incompletos no catálogo** → abrir Índice das Funções (Skill 6) antes de gerar código.
 
 ## Quando usar / não usar
 
 | Usar | Não usar |
 |---|---|
-| Converter/mapear variáveis e funções de apuração LSP→Java | Só mentoria genérica; inventar método fora do catálogo |
+| Converter/mapear variáveis e funções de apuração LSP→Java | Só mentoria; inventar método; só citar link (Skill 6) |
 
 ## Restrições absolutas
 
-1. Preferir o catálogo oficial deste arquivo; se faltar item → Skill 6 → `validacao_manual` (não inventar).  
+1. Preferir o catálogo; se faltar → Skill 6 → `validacao_manual` (não inventar).  
 2. Horas em APIs de ponto = **minutos inteiros**.  
 3. SQL/cursor → API semântica do catálogo antes de EntitySession.  
 4. **Proibido** `getSituacao(...).getMinutos()` / `setMinutos(...)` — use `getHorSit` / `setHorSit` / `zeraHorasSituacao`.  
 5. Sanitize nomes de cliente em exemplos anexados.  
-6. Sem `Mensagem()`/popup em apuração — preferir `mensagemLog` / equivalente do contexto.
+6. Sem `Mensagem()`/popup em apuração — preferir `mensagemLog`.  
+7. Confirmar se o método existe no **contexto** da regra (apuração ≠ geral ≠ BH).
 
 ## Regra de ouro
 
@@ -70,11 +100,11 @@ Quem só troca `Inicio/Fim` por `{ }` produz código que não compila.
 | `Numero` decimal | `double` |
 | `Alfa` | `String` |
 | lógico `0`/`1` | `boolean` |
-| `Data` | `LocalDate` (ou padrão do SDK do projeto — não misturar Joda + `java.time` sem necessidade) |
+| `Data` | `LocalDate` (ou padrão do SDK — não misturar Joda + `java.time` sem necessidade) |
 | `Hora` (minutos) | `int` minutos |
 | marcação | `Marcacao` |
 | `Se` / `Senao` / `Enquanto` / `Inicio`/`Fim` | `if` / `else` / `while` / `{ }` |
-| `Vapara` / labels | `while`/`for` + `break`/`continue` (sem goto) |
+| `Vapara` / labels | `while`/`for` + `break`/`continue` |
 | `@ ... @` | `//` |
 | `=` comparação | `==` / `.isEqual()` / `.equals()` |
 | `<>` | `!=` |
@@ -82,11 +112,11 @@ Quem só troca `Inicio/Fim` por `{ }` produz código que não compila.
 ## Instruções
 
 ```text
-1. Identificar contexto (Apuracao, FechamentoBH, …)
-2. Buscar item LSP no Catálogo de equivalência abaixo
-3. Se precisar de detalhe de assinatura → Índice das Funções (Skill 6 / URL acima)
-4. Aplicar mecânica (minutos, End→retorno, arrays→métodos)
-5. Ausente no catálogo → validacao_manual
+1. Seguir “Como consultar” (A→G)
+2. Identificar contexto
+3. Buscar item só na família do Catálogo
+4. Assinatura/contexto duvidosos → Índice das Funções (Skill 6)
+5. Ausente → validacao_manual
 ```
 
 ## Esqueletos de classe
@@ -122,7 +152,19 @@ public class RegraFechamentoBH extends FechamentoBH {
 ## Catálogo de equivalência (oficial Senior 6.10.4)
 
 Fonte: [Equivalência das funções de regras](https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm).  
-Coluna Java = equivalência no Gestão do Ponto. Métodos ficam tipicamente no `contextoApuracao` / container (confirmar assinatura no Índice das Funções).
+Métodos tipicamente em `contextoApuracao` / container — **confirmar contexto e assinatura** no Índice das Funções.
+
+### Famílias (âncora de busca)
+
+| Família | Itens típicos LSP |
+|---|---|
+| Data / sistema | `DatPro`, `HorSis`, `DiaSem`, `DatIni`… |
+| Situações | `HorSit[]`, `SitAnt[]`, `TotSit[]`, `MotSit` |
+| Horas apuradas/previstas | `ApuDiu[]`, `ApuNot[]`, `TraDiu`, `PrvTra[]`… |
+| Marcações | `FPxMar`, `FLeMar`, `DatMar`, `QtdMar`… |
+| Escala / horário / feriado | `EscAtu`, `CodHor`, `FerFil`… |
+| Históricos / usuário | `CarEmp`, `CodSinEmp`, `CodUsu`… |
+| Compensação / BH / log | `TemCmp[]`, `RetBHRDat`, `MensagemLog`… |
 
 ### Data / sistema
 
@@ -224,9 +266,9 @@ Coluna Java = equivalência no Gestão do Ponto. Métodos ficam tipicamente no `
 | `VerificaAbrangenciaNumero` | `getAbrangencia(string abrangencia, int numero)` |
 | `RetornaCodLoc` / `RetornaNumLoc` / `RetNivLoc` | `getCodigoLocal` / `getNumeroLocal` / `getQtdNiveisLocal` |
 
-### Definição de situações (padrão complementar observado)
+### Definição de situações (padrão complementar)
 
-Quando a LSP busca `CodDsi` via cursor em `R014SIN`/`R030EMP`, preferir API (evidência `padrao_anexo` até confirmar na doc):
+Cursor `R014SIN`/`R030EMP` para `CodDsi` → preferir API (`padrao_anexo` até confirmar na doc):
 
 ```java
 int codDsi = contextoApuracao.getDefinicaoSituacoes().getCodigo();
@@ -241,16 +283,16 @@ int codDsi = contextoApuracao.getDefinicaoSituacoes().getCodigo();
 | Só trocar sintaxe sem mapear variáveis | Inventário + getters/setters primeiro |
 | Copiar ordem de parâmetros LSP | Confirmar no Índice das Funções |
 | `getSituacao().get/setMinutos` | `getHorSit` / `setHorSit` / `zeraHorasSituacao` |
-| Cursor SQL por reflexo | Buscar linha no catálogo oficial |
+| Cursor SQL por reflexo | Buscar família no catálogo |
 | `getHorSit(variavelDeMinutos)` | 1º arg = **código da situação** |
 | Inventar `getApuDiu(1)` | `getHoras` / `getHorasSeparadas` |
-| Método de apuração em contexto geral | Confirmar contexto da regra |
+| Método de apuração em contexto geral | Confirmar contexto |
 | Inventar método | `validacao_manual` |
-| Misturar `java.time` e Joda sem padrão do projeto | Seguir SDK do projeto / `validacao_manual` |
+| Misturar `java.time` e Joda | Seguir SDK / `validacao_manual` |
 
-## Exemplos sanitizados (padrões observados)
+## Exemplos sanitizados (use só o análogo)
 
-### Exemplo mínimo (HorSis + setHorSit)
+### HorSis + setHorSit
 
 ```lsp
 Se (HorSis > 870) Inicio
@@ -259,66 +301,49 @@ Fim;
 ```
 
 ```java
-LocalTime agora = new LocalTime(); // ou padrão de data/hora do projeto
+LocalTime agora = new LocalTime(); // ou padrão do projeto
 int minutos = agora.getHourOfDay() * 60 + agora.getMinuteOfHour();
 if (minutos > 870) {
     contextoApuracao.setHorSit(100, 120);
 }
 ```
 
-### Zerar / ler / ajustar HorSit
+### HorSit — errado vs certo
 
 ```java
 // ERRADO
 contexto.getSituacao(xNorAnt).setMinutos(0);
-double v = contexto.getSituacao(xExDDsr).getMinutos();
-contexto.getSituacao(xExDDsr).setMinutos(v + vNorDes);
-
 // CERTO
 contexto.zeraHorasSituacao(xNorAnt);
 double v = contexto.getHorSit(xExDDsr);
 contexto.setHorSit(xExDDsr, v + vNorDes);
 ```
 
-### Cursor CodDsi → API
+### Marcações FLeMar/FPxMar → List
 
 ```java
-int codDsi = contextoApuracao.getDefinicaoSituacoes().getCodigo();
-```
-
-### Marcações: FLeMar/FPxMar → List
-
-```java
-// conger=true inclui marcações geradas (ConGer no LSP)
 for (Marcacao m : contextoApuracao.getMarcacoesRealizadas(false)) {
-    if (m.getData().isAfter(contextoApuracao.getData())) {
-        // ...
-    }
+    if (m.getData().isAfter(contextoApuracao.getData())) { /* ... */ }
 }
-// Cobre QtdMar, FLeMar, FPxMar, DatMar, HorMar, FncMar, RlgMar, OriMar, ConGer
 ```
 
-### End → retorno (RetBHRDat)
+### End → retorno (`RetBHRDat`)
 
 ```java
-// LSP: RetBHRDat(..., End bhrdat) — ordem Java ≠ LSP; confirmar no índice
+// ordem Java ≠ LSP — confirmar no índice
 int saldo = contextoApuracao.getSaldoBanco(codbhr, numemp, tipcol, numcad,
         new LocalDate(2014, 9, 24));
 ```
 
-### Múltiplos End → objeto de retorno
+### Múltiplos End → objeto
 
 ```java
-private ResultadoDiurnoNoturno calculaDiurnoNoturno(int marcacaoInicial, int marcacaoFinal,
-                                                    int inicioNoturno, int fimNoturno) {
-    // preservar lógica LSP; não aproximar sem validar negócio
+private ResultadoDiurnoNoturno calculaDiurnoNoturno(...) {
     return new ResultadoDiurnoNoturno(minutosDiurnos, minutosNoturnos);
 }
 ```
 
-Evidência: `padrao_anexo` + `inferencia` no formato do retorno.
-
-### Troca de situação (HorSit origem/destino)
+### Troca de situação
 
 ```java
 private int trocarSituacao(ContextoApuracao ctx, int origem, int destino, int minutosPendentes) {
@@ -337,24 +362,21 @@ private int trocarSituacao(ContextoApuracao ctx, int origem, int destino, int mi
 }
 ```
 
-### Fallback EntitySession (último recurso)
+### EntitySession (último recurso)
 
 ```java
-IEntitySession entitySession = EntitySessionProvider.getSession();
-ICursor<IEntidadeCustom> cursor = entitySession.newCursor(IEntidadeCustom.class);
+ICursor<IEntidadeCustom> cursor = EntitySessionProvider.getSession()
+        .newCursor(IEntidadeCustom.class);
 try {
     cursor.addFilter("campoA = :campoA", new MappedParamProvider("campoA", valorA));
-    cursor.orderBy("campoOrdenacao", OrderDirection.ASC);
     cursor.open();
-    if (cursor.next()) {
-        IEntidadeCustom registro = cursor.read();
-    }
+    if (cursor.next()) { /* read */ }
 } finally {
     cursor.close();
 }
 ```
 
-Obrigatório: justificar por que não houve API; marcar adaptação/`validacao_manual`; não generalizar interface custom.
+Justificar ausência de API; marcar `validacao_manual` se entidade custom.
 
 ## Saída para a Skill 5
 
@@ -369,4 +391,4 @@ limite: ...
 
 ## Relacionados
 
-Skill 6 (links oficiais) · Skill 5 · Skill 9 (`CHK-SITAPI`, `CHK-ORDEM`, `CHK-FIN`)
+Skill 6 (URLs/aliases) · Skill 5 · Skill 9 (`CHK-SITAPI`, `CHK-ORDEM`, `CHK-FIN`, `CHK-CTXOK`)
