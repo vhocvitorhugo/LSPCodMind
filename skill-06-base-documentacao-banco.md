@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.8 · Interna · `skill-06-base-documentacao-banco.md`
+Versão: v1.9 · Interna · `skill-06-base-documentacao-banco.md`
 
 Não entra no menu 1–5. Aplique as regras globais do Router (`router.md`).
 
@@ -27,13 +27,13 @@ Não exponha “Skill 6” ao usuário — cite só a fonte validada.
 3. Antes de citar: a página deve ter conteúdo específico, não portal/índice.  
 4. Não reescreva `index.htm#...` para URLs diretas inventadas.  
 5. Senior SQL 2 proibido — use só links de SQL em regra / SP / proprietária.  
-6. Aliases são `auxiliar` até o schema real confirmar.  
-7. Apostilas LSP/APO/Rubi: **não estão no repo** (`ausente_no_repo`); anexos do usuário são só complementares.
+6. Aliases são `auxiliar` até o schema real confirmar. **Nunca** diga “está confirmado” só com esta base.  
+7. Apostilas LSP/APO/Rubi: **não estão no repo** (`ausente_no_repo`); anexos do usuário são só complementares (`Material complementar de treinamento`).
 
 ## Instruções
 
 ```text
-1. Identificar tópico (sintaxe|WS|SQL|evento|equivalência HCM|alias)
+1. Identificar tópico (sintaxe|WS|SQL|evento|equivalência HCM|alias|apostila)
 2. Localizar seção abaixo
 3. Classificar cobertura: confirmado | auxiliar | ausente
 4. Devolver à skill chamadora: achado + classificação + limite
@@ -51,6 +51,7 @@ Não exponha “Skill 6” ao usuário — cite só a fonte validada.
 | Eventos / workflow / relatórios | Links — Eventos |
 | Equivalência LSP→Java / índice de funções HCM | Links — Conversão |
 | Aliases de tabela/campo | Mapeamento banco |
+| Mecânica LSP/APO/Rubi (quando houver anexo) | Apostilas (complementar) |
 
 ## Links — Sintaxe (Tecnologia 5.10.4)
 
@@ -98,6 +99,11 @@ Não exponha “Skill 6” ao usuário — cite só a fonte validada.
 
 O catálogo operacional espelhado para consulta rápida na conversão está na **Skill 7**.
 
+### Decisão rápida HorSit / históricos (antes de SQL)
+
+- zerar → `zeraHorasSituacao` · ler → `getHorSit` · gravar → `setHorSit` · somar → `somaHorasSituacao` · anterior → `getHorSitAnterior`  
+- sindicato/vínculo/escala/cargo/local/CC → API de histórico do contexto (Skill 7), não cursor por reflexo
+
 ## Mapeamento banco (auxiliar)
 
 Frase: `O mapeamento sugere essa equivalência, mas a confirmação depende de validação no schema/dicionário de dados.`
@@ -122,7 +128,21 @@ Campos ERP: **ausente** — pedir schema / `validacao_manual`.
 | R024CAR.DesCar / Cargo | `TitRed` | auxiliar |
 | SitAfa Demitido | `7` | auxiliar |
 
-Precedência SQL: alias → candidato → confirmar módulo → filtros/chaves → nunca existência absoluta só com esta tabela.
+Precedência: mapa mais completo/específico → candidato → schema/dicionário.  
+SQL: alias → candidato → módulo → filtros/chaves → nunca existência absoluta só com esta tabela.
+
+**Proibido:** “Use `R024CAR.TitRed`; está confirmado.” (só com alias auxiliar)
+
+## Apostilas (complementar — ausente_no_repo)
+
+Se o usuário anexar apostilas LSP/APO/Rubi, use como `Material complementar de treinamento` (nunca como doc oficial). Âncoras típicas:
+
+- Cursor LSP: criar → abrir → ler → fechar; risco de cursor aberto  
+- `ExecSQL` / funções `SQL_*`: SQL em regra (Skill 6 links), **nunca** Senior SQL 2  
+- Listas dinâmicas / Editor de Regras: apoio conceitual antes de converter  
+- Em conversão: entender mecânica LSP aqui → mapear na Skill 7
+
+Prioridade em conflito: doc oficial Skill 6 → equivalência HCM → schema → apostila → inferência.
 
 ## Saída para a skill chamadora
 

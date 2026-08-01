@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.8 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.9 · Arquivo: `skill-05-conversao-lsp-java.md`
 
 Aplique as regras globais do Router. Preserve a **intenção funcional**, não a sintaxe literal.
 
@@ -29,7 +29,8 @@ Aplique as regras globais do Router. Preserve a **intenção funcional**, não a
 5. SQL/cursor → API semântica antes de EntitySession.  
 6. Skill 6 obrigatória para docs; Skill 7 obrigatória em HCM/Ponto; **6 prevalece** em conflito.  
 7. **Fase C:** rascunho → **gate Skill 9** → publicar com resumo do check.  
-8. Sem links de download inventados.
+8. Sem links de download inventados.  
+9. Regra completa enviada → conversão integral (mesmo com pontos manuais marcados).
 
 ## Fases
 
@@ -37,27 +38,69 @@ Aplique as regras globais do Router. Preserve a **intenção funcional**, não a
 A  Inventário + mapeamento + plano   (sem Java final)
    → se o usuário já pediu canvas|doc|código inteiro → pular B e ir à C após A
 B  Perguntar 1=canvas / 2=documento  (sem Java final)
-C  Rascunho Java completo → gate Skill 9 → publicar
+C  Rascunho Java completo → gate Skill 9 → publicar + Consolidação final
 ```
 
-### Tabela de inventário (A)
+### Quando perguntar formato (Fase B)
+
+Pergunte se o usuário pediu conversão sem indicar formato (`converta`, `faça a conversão completa`, etc.).
+
+### Quando não perguntar
+
+Não pergunte se já pediu: canvas, documento/link/arquivo, “regra toda”, “código inteiro”.
+
+### Prioridade de entrega
+
+1. Canvas/área de edição  
+2. Documento/arquivo **real** (nunca inventar link)  
+3. Bloco único na conversa, se couber com segurança  
+
+## Protocolo de entrega consolidada
+
+1. **Leitura integral** — início/fim, variáveis, cursores, SQLs, `End`, efeitos colaterais.  
+2. **Plano lógico** — blocos (init, validações, consultas, negócio, situações, retorno); o plano **não** autoriza entregar Java em partes.  
+3. **Java completo** — proibido substituir implementação por `// restante`, `// continuar conforme original`, `// mesma lógica`.  
+4. **Entrega** no formato escolhido.  
+5. **Consolidação final** — status COMPLETA + o que é confirmado / adaptação / inferência / validação manual.
+
+## Prioridade arquitetural (Gestão do Ponto)
+
+1. Equivalência oficial (Skill 6 / catálogo Skill 7)  
+2. Métodos documentados do módulo  
+3. Métodos de contexto (`contextoApuracao` etc.)  
+4. Padrões operacionais Skill 7  
+5. Exemplos sanitizados / anexos do usuário (`padrao_anexo`)  
+6. Aliases/banco Skill 6 (só interpretação)  
+7. EntitySession/cursor manual — último recurso, com justificativa  
+
+## Tabela de inventário (A)
 
 | Item LSP | Tipo | Uso na regra | Equivalente Java / padrão | Evidência | Status |
 
-Regras: End → candidato a retorno; arrays → coleções/métodos; horas → minutos (`14:30`→`870`).
+Tipos: variável de contexto | local | função | `End` | array | cursor | SQL | marcação | situação | histórico | totalizador | dependência.
+
+Regras: End → retorno; arrays → métodos/coleções; horas → minutos (`14:30`→`870`); ordem de parâmetros Java confirmada.
 
 ## Instruções
 
 1. Leia a LSP inteira; defina contexto: `apuracao|consistencia|bloqueio|fechamento_bh|geral|indefinido`.  
-2. Consulte Skill 6 (links) e Skill 7 (**catálogo oficial de equivalência** + exemplos).  
-3. Monte inventário; mapeie com rótulos `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`. Item achado no catálogo oficial da Skill 7 → preferir `confirmada`.  
-4. Mecânica antes da sintaxe.  
+2. Consulte Skill 6 (links) e Skill 7 (**catálogo oficial** + mecânica + exemplos).  
+3. Monte inventário; mapeie com `confirmada|adaptacao_arquitetural|padrao_anexo|inferencia|validacao_manual`.  
+4. Mecânica antes da sintaxe (Skill 7: workflow + invariantes).  
 5. Execute A/B/C; gate na C.
 
-Âncoras: Skill 7 — catálogo oficial Senior + `getHorSit`/`setHorSit`/`zeraHorasSituacao`/`getDefinicaoSituacoes`.  
+Âncoras: Skill 7 — catálogo + `getHorSit`/`setHorSit`/`zeraHorasSituacao`/`getDefinicaoSituacoes`.  
 **Não** usar `getSituacao(...).getMinutos()/setMinutos(...)`.  
-Cursor `R014SIN`/`R030EMP` para `CodDsi` → `getDefinicaoSituacoes().getCodigo()` (Skill 7).  
-Fontes: [equivalência](https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm) · [índice de funções](https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm).
+Cursor `R014SIN`/`R030EMP` → `CodDsi` → `getDefinicaoSituacoes().getCodigo()`.
+
+## Checklist antes do Java (C)
+
+- [ ] Li a regra inteira e nomeei o contexto?  
+- [ ] Inventário cobre variáveis/funções/arrays/`End`/cursores/SQLs?  
+- [ ] Consultei Skills 6 e 7?  
+- [ ] Classifiquei evidências?  
+- [ ] Há API semântica antes de EntitySession?  
+- [ ] Ordem de parâmetros / minutos / sem variável solta?
 
 ## Saída — Fase A
 
@@ -84,6 +127,7 @@ Bases consultadas: Skill 6 [sim]; Skill 7 [sim]
 ## Comentários técnicos
 ## Itens sem equivalência / validação manual
 ## Referência documental
+## Consolidação final
 Status da conversão: COMPLETA
 Formato de entrega: ...
 
@@ -103,7 +147,7 @@ Falhas remanescentes: ...
 
 **A→B:** converter sem formato → inventário + perguntar 1/2.  
 **Pular B + gate:** “no canvas, regra toda” → rascunho A+C → Skill 9 → publicar.  
-**Não faça:** publicar C sem Skill 9; inventar `XYZInexistente`; entregar em partes.
+**Não faça:** publicar C sem Skill 9; inventar método; entregar em partes; `// restante da lógica`.
 
 ## Relacionados
 

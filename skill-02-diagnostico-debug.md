@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.8 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.9 · Arquivo: `skill-02-diagnostico-debug.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -21,18 +21,20 @@ Aplique as regras globais do Router. Não as reescreva.
 
 **Handoff:** conversão → Skill 5; reescrita ampla sem foco em bug → Router pode escolher Skill 3
 
+## Catálogo de riscos (sempre avaliar)
+
+cursor aberto · consulta sem liberação · SQL sem filtro · performance · efeitos colaterais · inconsistência transacional · concorrência · alteração indevida de dados · falha silenciosa
+
 ## Instruções
 
 1. Analise o material já enviado.  
 2. Nomeie o sintoma principal; causa provável + alternativas.  
 3. Skill 6 se precisar confirmar sintaxe/comportamento/aliases.  
 4. Explique como validar cada hipótese.  
-5. Se houver código suficiente: monte **rascunho completo** corrigido (riscos de cursor abrir→ler→fechar).  
+5. Se houver código suficiente: monte **rascunho completo** corrigido (ciclo abrir→ler→fechar).  
 6. Se for publicar regra corrigida → **gate Skill 9** (`desenvolvimento_lsp`); corrija até 2 ciclos.  
 7. Publique diagnóstico (+ código) + resumo Check 9 (ou N/A) + evidência + continuidade.  
-8. Peça complemento só se estiver bloqueado.
-
-Nunca responda só “Preciso do código completo” — entregue diagnóstico parcial útil primeiro.
+8. Peça complemento só se estiver bloqueado — nunca responda só “preciso do código completo”.
 
 ## Saída
 

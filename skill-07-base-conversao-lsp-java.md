@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 7 · Base de Conversão LSP → Java
-Versão: v1.8 · Interna · `skill-07-base-conversao-lsp-java.md`
+Versão: v1.9 · Interna · `skill-07-base-conversao-lsp-java.md`
 
 Não entra no menu. Aplique as regras globais do Router. Em conflito de assinatura, **revalide na Skill 6 / página oficial**.
 
@@ -19,7 +19,8 @@ Não entra no menu. Aplique as regras globais do Router. Em conflito de assinatu
 | **Equivalência das funções de regras** (mapa LSP→Java) | https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm | Mapeamento oficial Controle de Ponto → Gestão do Ponto |
 | **Índice das Funções** HCM 6.10.4 | https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm | Detalhe/assinatura das funções Java/HCM |
 
-Evidência dos itens do **Catálogo de equivalência** abaixo: `confirmada` (doc oficial Senior 6.10.4), salvo nota em contrário.
+Evidência dos itens do **Catálogo de equivalência** abaixo: `confirmada` (doc oficial Senior 6.10.4), salvo nota em contrário.  
+Exemplos de mecânica / auxiliares: `padrao_anexo` (materiais sanitizados do treinamento antigo + anexos do usuário).
 
 ## Quando usar / não usar
 
@@ -33,7 +34,50 @@ Evidência dos itens do **Catálogo de equivalência** abaixo: `confirmada` (doc
 2. Horas em APIs de ponto = **minutos inteiros**.  
 3. SQL/cursor → API semântica do catálogo antes de EntitySession.  
 4. **Proibido** `getSituacao(...).getMinutos()` / `setMinutos(...)` — use `getHorSit` / `setHorSit` / `zeraHorasSituacao`.  
-5. Sanitize nomes de cliente em exemplos anexados.
+5. Sanitize nomes de cliente em exemplos anexados.  
+6. Sem `Mensagem()`/popup em apuração — preferir `mensagemLog` / equivalente do contexto.
+
+## Regra de ouro
+
+LSP e Java diferem no **modelo de execução**: variáveis/funções globais LSP → **métodos no objeto de contexto**.  
+Quem só troca `Inicio/Fim` por `{ }` produz código que não compila.
+
+## Workflow (6 passos)
+
+1. Identificar contexto (apuração / consistência / bloqueio / fechamento BH / geral).  
+2. Inventariar construções LSP.  
+3. Mapear no catálogo (nome **e** ordem de parâmetros).  
+4. Traduzir mecânica (getters/setters, arrays→métodos, cursor→`List`, `End`→retorno).  
+5. Traduzir sintaxe (`Se`→`if`, `=` comparação→`==`/`.isEqual()`, etc.).  
+6. Revisar armadilhas.
+
+## Invariantes
+
+1. Toda variável/função de contexto LSP → chamada de método.  
+2. Não inventar assinatura.  
+3. Conferir ordem de parâmetros.  
+4. Horas = minutos inteiros.  
+5. Tipagem forte Java.  
+6. Sem popup em apuração.  
+7. Arrays indexados → métodos/coleções (não `getApuDiu(1)` inventado).  
+8. Método deve existir no **contexto** da regra.
+
+## Tipos e sintaxe
+
+| LSP | Java |
+|---|---|
+| `Numero` inteiro | `int` / `long` |
+| `Numero` decimal | `double` |
+| `Alfa` | `String` |
+| lógico `0`/`1` | `boolean` |
+| `Data` | `LocalDate` (ou padrão do SDK do projeto — não misturar Joda + `java.time` sem necessidade) |
+| `Hora` (minutos) | `int` minutos |
+| marcação | `Marcacao` |
+| `Se` / `Senao` / `Enquanto` / `Inicio`/`Fim` | `if` / `else` / `while` / `{ }` |
+| `Vapara` / labels | `while`/`for` + `break`/`continue` (sem goto) |
+| `@ ... @` | `//` |
+| `=` comparação | `==` / `.isEqual()` / `.equals()` |
+| `<>` | `!=` |
 
 ## Instruções
 
@@ -99,7 +143,7 @@ Coluna Java = equivalência no Gestão do Ponto. Métodos ficam tipicamente no `
 
 | LSP | Java |
 |---|---|
-| `HorSit[]` | `getHorSit(...)`, `setHorSit(int codSit, int horas)`, `somaHorasSituacao(...)`, `zeraHorasSituacao(...)`, `zeraHorasSituacaoFaixa(...)`, `getHorSitFaixa(...)`, `getHorSitAnterior(int codSit)` |
+| `HorSit[]` | `getHorSit(int codSit)` / `getHorSit(LocalDate data, int codSit)`, `setHorSit(int codSit, int horas)`, `somaHorasSituacao(...)`, `zeraHorasSituacao(...)`, `zeraHorasSituacaoFaixa(...)`, `getHorSitFaixa(...)`, `getHorSitAnterior(int... codSit)` |
 | `SitAnt[]` | `getHorSitAnterior(int codSit)` |
 | `TotSit[]` / `BuscaTotalizadoresSituacoes` | `getTotalSituacoes(int codigoTotalizador, date data)` (e overload com intervalo) |
 | `MotSit` | `getMotivoAcerto(int situacao)` |
@@ -194,13 +238,33 @@ int codDsi = contextoApuracao.getDefinicaoSituacoes().getCodigo();
 
 | Armadilha | Correção |
 |---|---|
+| Só trocar sintaxe sem mapear variáveis | Inventário + getters/setters primeiro |
 | Copiar ordem de parâmetros LSP | Confirmar no Índice das Funções |
 | `getSituacao().get/setMinutos` | `getHorSit` / `setHorSit` / `zeraHorasSituacao` |
 | Cursor SQL por reflexo | Buscar linha no catálogo oficial |
 | `getHorSit(variavelDeMinutos)` | 1º arg = **código da situação** |
+| Inventar `getApuDiu(1)` | `getHoras` / `getHorasSeparadas` |
+| Método de apuração em contexto geral | Confirmar contexto da regra |
 | Inventar método | `validacao_manual` |
+| Misturar `java.time` e Joda sem padrão do projeto | Seguir SDK do projeto / `validacao_manual` |
 
 ## Exemplos sanitizados (padrões observados)
+
+### Exemplo mínimo (HorSis + setHorSit)
+
+```lsp
+Se (HorSis > 870) Inicio
+  HorSit = 120;   @ situação 100 @
+Fim;
+```
+
+```java
+LocalTime agora = new LocalTime(); // ou padrão de data/hora do projeto
+int minutos = agora.getHourOfDay() * 60 + agora.getMinuteOfHour();
+if (minutos > 870) {
+    contextoApuracao.setHorSit(100, 120);
+}
+```
 
 ### Zerar / ler / ajustar HorSit
 
@@ -222,6 +286,76 @@ contexto.setHorSit(xExDDsr, v + vNorDes);
 int codDsi = contextoApuracao.getDefinicaoSituacoes().getCodigo();
 ```
 
+### Marcações: FLeMar/FPxMar → List
+
+```java
+// conger=true inclui marcações geradas (ConGer no LSP)
+for (Marcacao m : contextoApuracao.getMarcacoesRealizadas(false)) {
+    if (m.getData().isAfter(contextoApuracao.getData())) {
+        // ...
+    }
+}
+// Cobre QtdMar, FLeMar, FPxMar, DatMar, HorMar, FncMar, RlgMar, OriMar, ConGer
+```
+
+### End → retorno (RetBHRDat)
+
+```java
+// LSP: RetBHRDat(..., End bhrdat) — ordem Java ≠ LSP; confirmar no índice
+int saldo = contextoApuracao.getSaldoBanco(codbhr, numemp, tipcol, numcad,
+        new LocalDate(2014, 9, 24));
+```
+
+### Múltiplos End → objeto de retorno
+
+```java
+private ResultadoDiurnoNoturno calculaDiurnoNoturno(int marcacaoInicial, int marcacaoFinal,
+                                                    int inicioNoturno, int fimNoturno) {
+    // preservar lógica LSP; não aproximar sem validar negócio
+    return new ResultadoDiurnoNoturno(minutosDiurnos, minutosNoturnos);
+}
+```
+
+Evidência: `padrao_anexo` + `inferencia` no formato do retorno.
+
+### Troca de situação (HorSit origem/destino)
+
+```java
+private int trocarSituacao(ContextoApuracao ctx, int origem, int destino, int minutosPendentes) {
+    int minutosOrigem = ctx.getHorSit(origem);
+    if (minutosOrigem >= minutosPendentes && minutosOrigem > 0 && minutosPendentes > 0) {
+        ctx.setHorSit(destino, minutosPendentes);
+        ctx.setHorSit(origem, minutosOrigem - minutosPendentes);
+        return 0;
+    }
+    if (minutosOrigem < minutosPendentes && minutosOrigem > 0 && minutosPendentes > 0) {
+        ctx.setHorSit(destino, minutosOrigem);
+        ctx.setHorSit(origem, 0);
+        return minutosPendentes - minutosOrigem;
+    }
+    return minutosPendentes;
+}
+```
+
+### Fallback EntitySession (último recurso)
+
+```java
+IEntitySession entitySession = EntitySessionProvider.getSession();
+ICursor<IEntidadeCustom> cursor = entitySession.newCursor(IEntidadeCustom.class);
+try {
+    cursor.addFilter("campoA = :campoA", new MappedParamProvider("campoA", valorA));
+    cursor.orderBy("campoOrdenacao", OrderDirection.ASC);
+    cursor.open();
+    if (cursor.next()) {
+        IEntidadeCustom registro = cursor.read();
+    }
+} finally {
+    cursor.close();
+}
+```
+
+Obrigatório: justificar por que não houve API; marcar adaptação/`validacao_manual`; não generalizar interface custom.
+
 ## Saída para a Skill 5
 
 ```text
@@ -235,4 +369,4 @@ limite: ...
 
 ## Relacionados
 
-Skill 6 (links oficiais) · Skill 5 · Skill 9 (`CHK-SITAPI`)
+Skill 6 (links oficiais) · Skill 5 · Skill 9 (`CHK-SITAPI`, `CHK-ORDEM`, `CHK-FIN`)

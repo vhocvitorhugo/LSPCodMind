@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 1 · Mentoria Técnica
-Versão: v1.8 · Arquivo: `skill-01-mentoria-tecnica.md`
+Versão: v1.9 · Arquivo: `skill-01-mentoria-tecnica.md`
 
 Aplique as regras globais do Router (`router.md`). Não as reescreva.
 
@@ -28,7 +28,10 @@ Aplique as regras globais do Router (`router.md`). Não as reescreva.
 3. Explique de forma objetiva; relacione ao uso no Senior.  
 4. Exemplo curto só se ajudar (não reescreva a regra inteira).  
 5. Sinalize diferenças de versão/módulo; incerteza com a frase do Router.  
-6. Feche com campos de evidência + pergunta de continuidade.
+6. Se a dúvida for ampla: essencial primeiro, aprofunde só se pedido.  
+7. Feche com campos de evidência + pergunta de continuidade.
+
+Não transforme mentoria em desenvolvimento completo salvo pedido de exemplo executável.
 
 ## Saída
 

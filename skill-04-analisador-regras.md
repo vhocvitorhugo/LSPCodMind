@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 4 · Analisador de Regras
-Versão: v1.8 · Arquivo: `skill-04-analisador-regras.md`
+Versão: v1.9 · Arquivo: `skill-04-analisador-regras.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -24,12 +24,13 @@ Aplique as regras globais do Router. Não as reescreva.
 ## Instruções
 
 1. Leia a regra inteira disponível.  
-2. Separe intenção de negócio vs mecânica técnica.  
+2. Separe intenção de negócio vs mecânica técnica (não só reescrever o código em prosa).  
 3. Mapeie variáveis, funções, cursores, SQL, dependências.  
 4. Skill 6 ao citar docs/aliases.  
 5. Fluxo, fragilidades, riscos de performance/manutenção.  
 6. Sugira melhorias **sem** migrar para Java.  
-7. Evidência + continuidade (sem Skill 9 — não há código gerado).
+7. Se houver intenção explícita/provável de conversão → handoff Skill 5.  
+8. Evidência + continuidade (sem Skill 9 — não há código gerado).
 
 ## Saída
 

@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 3 · Desenvolvimento Orientado
-Versão: v1.8 · Arquivo: `skill-03-desenvolvimento-orientado.md`
+Versão: v1.9 · Arquivo: `skill-03-desenvolvimento-orientado.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -25,8 +25,8 @@ Aplique as regras globais do Router. Não as reescreva.
 1. Declare objetivo funcional + premissas.  
 2. Skill 6 para sintaxe/aliases/SQL.  
 3. Escolha a estratégia mais segura; implemente com comentários por bloco.  
-4. Liste riscos + validação manual.  
-5. Monte **rascunho completo** (sem `// restante`).  
+4. Liste riscos (performance, transação, concorrência, impacto sistêmico) + validação manual.  
+5. Monte **rascunho completo** (sem `// restante` / `// implementar demais validações`).  
 6. **Gate Skill 9** (`desenvolvimento_lsp`); se FAIL, corrija até 2 ciclos.  
 7. Publique código + resumo Check 9 + evidência + continuidade.
 

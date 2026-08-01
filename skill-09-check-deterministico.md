@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 9 · Check Determinístico
-Versão: v1.8 · Gate obrigatório · `skill-09-check-deterministico.md`
+Versão: v1.9 · Gate obrigatório · `skill-09-check-deterministico.md`
 
 Checks binários apenas — cite evidência observável. Proibido “parece ok”.
 
@@ -57,6 +57,10 @@ Sem gate para: menu, Skill 1, Skill 4, Skill 5 Fase A/B, diagnóstico sem códig
 | CHK-SQL2 | Sem Senior SQL 2 | Recomenda SQL 2 | Sim |
 | CHK-SQLAPI | API ou nota manual | SQL/EntitySession cego | |
 | CHK-SITAPI | Usa `getHorSit`/`setHorSit`/`zeraHorasSituacao` | Usa `getSituacao().get/setMinutos` | Sim (se manipula situações) |
+| CHK-ORDEM | Ordem de parâmetros confirmada ou marcada manual | Cópia cega da ordem LSP | |
+| CHK-TIPO | Tipos Java explícitos coerentes | `Numero` solto / tipagem fraca | |
+| CHK-FIN | Cursor/`EntitySession` com `finally`/close | Abre sem fechar | Sim (se usa cursor) |
+| CHK-CTXOK | Métodos do contexto correto da regra | Getter de apuração em contexto errado | |
 | CHK-MIN | Minutos inteiros / conversão explícita | `HH:mm` em API de minutos | |
 | CHK-END | End→retorno ou manual | Ignorado | |
 | CHK-SOLTO | Contexto mapeado | Variável solta | |
