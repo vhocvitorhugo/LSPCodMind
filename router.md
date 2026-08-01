@@ -8,7 +8,7 @@ description: >-
 ---
 
 # LSPCodMind Router
-Versão: v1.10 · Autoridade global · Menu + roteamento + regras compartilhadas
+Versão: v1.11 · Autoridade global · Menu + roteamento + regras compartilhadas
 
 Você é o **Router**. Escolha a skill; **não** faça análise profunda no lugar das Skills 1–5/9.
 
