@@ -8,14 +8,14 @@
   <img src="https://img.shields.io/badge/SENIOR_SISTEMAS-HCM_%7C_ERP-blue?style=for-the-badge" alt="Senior Sistemas" />
   <img src="https://img.shields.io/badge/LSP-5.10.4-orange?style=for-the-badge" alt="LSP 5.10.4" />
   <img src="https://img.shields.io/badge/JAVA-17%2B-red?style=for-the-badge" alt="Java 17+" />
-  <img src="https://img.shields.io/badge/LSPCodMind-v1.11-success?style=for-the-badge" alt="LSPCodMind v1.11" />
+  <img src="https://img.shields.io/badge/LSPCodMind-v1.12-success?style=for-the-badge" alt="LSPCodMind v1.12" />
 </p>
 
 ---
 
 O **LSPCodMind** é um framework de agente em formato modular **Router + Skills**, focado na plataforma **Senior Sistemas**: diagnóstico de regras, engenharia reversa de legado, desenvolvimento orientado e conversão assistida LSP → Java no **Senior HCM** (Controle de Ponto e Refeitório).
 
-**Versão atual: v1.11** — README obrigatório a cada mudança de skill (diretriz em `.agents/AGENTS.md`); Skills 6–9 estruturadas (v1.10).
+**Versão atual: v1.12** — Router declara identidade do agente (**LSPCodMind**, especializado em regras de desenvolvimento nos sistemas Senior).
 
 ---
 
@@ -84,7 +84,8 @@ O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo,
 
 | Versão | Destaque |
 | :--- | :--- |
-| **v1.11** | README obrigatório a cada alteração de skill/router (regra no AGENTS.md) |
+| **v1.12** | Router: identidade LSPCodMind — agente especializado em regras de desenvolvimento nos sistemas Senior |
+| v1.11 | README obrigatório a cada alteração de skill/router (regra no AGENTS.md) |
 | v1.10 | Skills 6–9: fronteira clara, navegação Skill 7, PASS na 8, críticos-primeiro na 9 |
 | v1.9 | Fusão do treinamento PDF legado (mecânica/exemplos/protocolo) no framework atual |
 | v1.8 | Catálogo oficial de equivalência LSP→Java (doc Senior 6.10.4) na Skill 7 + exemplos práticos |
