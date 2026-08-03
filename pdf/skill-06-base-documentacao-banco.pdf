@@ -1,0 +1,230 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 11 0 R /F2 12 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 3663 >>
+stream
+BT
+/F1 8.00 Tf 1 0 0 1 54.00 756.00 Tm (LSPCodMind - skill-06-base-documentacao-banco.md) Tj
+ET
+54.00 750.00 m 558.00 750.00 l S
+BT
+/F2 16.00 Tf 1 0 0 1 54.00 730.00 Tm (Skill 6 * Base de Documenta\347\343o e Banco) Tj
+/F1 8.00 Tf 1 0 0 1 54.00 701.60 Tm (Fonte: skill-06-base-documentacao-banco.md) Tj
+/F2 16.00 Tf 1 0 0 1 54.00 667.70 Tm (Skill 6 * Base de Documenta\347\343o e Banco) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 641.30 Tm (Vers\343o: v1.11 * Interna * skill-06-base-documentacao-banco.md) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 617.30 Tm (N\343o entra no menu 1-5. Aplique as regras globais do Router \(router.md\).) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 593.30 Tm (Fronteira: esta skill = links oficiais + aliases de banco. Mapeamento LSP->Java, getHorSit/setHorSit,) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 579.30 Tm (marca\347\365es, esqueletos -> Skill 7 \(n\343o duplique aqui\).) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 545.30 Tm (Quando usar / n\343o usar) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 518.10 Tm (| Usar | N\343o usar | |---|---| | Link oficial, SQL em regra, WS, sintaxe LSP, URL de equival\352ncia) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 504.10 Tm (HCM, alias | Convers\343o/mec\342nica de ponto \(Skill 7\); conversa casual |) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 480.10 Tm (N\343o exponha "Skill 6" ao usu\341rio - cite s\363 a fonte validada.) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 446.10 Tm (Restri\347\365es absolutas) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 418.90 Tm (1. Somente os links listados neste arquivo s\343o oficiais nesta vers\343o do treinamento.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 404.90 Tm (2. T\363pico ausente -> N\343o encontrei link autorizado na base atual para validar esse ponto com) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 390.90 Tm (seguran\347a.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 376.90 Tm (3. Antes de citar: a p\341gina deve ter conte\372do espec\355fico, n\343o portal/\355ndice.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 362.90 Tm (4. N\343o reescreva index.htm#... para URLs diretas inventadas.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 348.90 Tm (5. Senior SQL 2 proibido - use s\363 links de SQL em regra / SP / propriet\341ria.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 334.90 Tm (6. Aliases s\343o auxiliar at\351 o schema real confirmar. Nunca diga "est\341 confirmado" s\363 com esta) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 320.90 Tm (base.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 306.90 Tm (7. Apostilas LSP/APO/Rubi: n\343o est\343o no repo \(ausente_no_repo\); anexos do usu\341rio s\343o s\363) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 292.90 Tm (complementares \(Material complementar de treinamento\).) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 278.90 Tm (8. Em HCM/Ponto com SQL/cursor: devolva o link \(e alias se houver\); a decis\343o API vs EntitySession) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 264.90 Tm (\351 da Skill 7.) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 230.90 Tm (Instru\347\365es) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 201.70 Tm (1. Identificar t\363pico \(sintaxe|WS|SQL|evento|equival\352ncia HCM|alias|apostila\)) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 189.80 Tm (2. Localizar se\347\343o abaixo) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 177.90 Tm (3. Classificar cobertura: confirmado | auxiliar | ausente) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 166.00 Tm (4. Se o pedido for m\351todo/equival\352ncia de convers\343o -> encaminhar \340 Skill 7) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 154.10 Tm (5. Devolver \340 skill chamadora: achado + classifica\347\343o + limite) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 142.20 Tm (6. Nunca inventar link/alias "quase igual") Tj
+/F2 13.00 Tf 1 0 0 1 54.00 108.30 Tm (\315ndice) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 81.10 Tm (| T\363pico | Se\347\343o | |---|---| | Sintaxe / vari\341veis / limites LSP | Links - Sintaxe | | Web services) Tj
+ET
+BT
+/F1 8 Tf 1 0 0 1 296.00 27.00 Tm (1/4) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 11 0 R /F2 12 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 3812 >>
+stream
+BT
+/F1 8.00 Tf 1 0 0 1 54.00 756.00 Tm (LSPCodMind - skill-06-base-documentacao-banco.md) Tj
+ET
+54.00 750.00 m 558.00 750.00 l S
+BT
+/F1 10.00 Tf 1 0 0 1 54.00 730.00 Tm (/ HTTP / JSON / FTP | Links - Integra\347\343o | | SQL em regra / SP / propriet\341ria / arquivos | Links -) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 716.00 Tm (Banco | | Usu\341rios / AD / diret\363rios | Links - Acesso | | Eventos / workflow / relat\363rios | Links -) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 702.00 Tm (Eventos | | URLs oficiais de equival\352ncia HCM | Links - Convers\343o | | Aliases de tabela/campo |) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 688.00 Tm (Mapeamento banco | | Mec\342nica LSP/APO/Rubi \(anexo do usu\341rio\) | Apostilas \(complementar\) | | M\351todos) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 674.00 Tm (Java / HorSit / marca\347\365es | Skill 7 \(fora desta skill\) |) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 640.00 Tm (Links - Sintaxe \(Tecnologia 5.10.4\)) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 612.80 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 598.80 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/sintaxe-de-comandos-e-operadore) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 584.80 Tm (s.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 570.80 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/declaracao-de-variaveis.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 556.80 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/limite-das-regras.html) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 542.80 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/cbds/mascara.htm) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 508.80 Tm (Links - Integra\347\343o) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 481.60 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 467.60 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/chamar-web-service-via-regra.ht) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 453.60 Tm (m) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 439.60 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/requisicoes-http.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 425.60 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 411.60 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/criacao-json-token-web.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 397.60 Tm (htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 383.60 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 369.60 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/regra-para-web-services) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 355.60 Tm (.html) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 341.60 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/ftp.htm) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 307.60 Tm (Links - Banco \(SQL em regra - nunca Senior SQL 2\)) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 280.40 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/sql-em-regra.html) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 266.40 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 252.40 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/execucao-de-stored-proc) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 238.40 Tm (edures-nas-regras.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 224.40 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 210.40 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/manipulacao-da-propriet) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 196.40 Tm (aria.html) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 182.40 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 168.40 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/manipulacao-de-arquivos) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 154.40 Tm (-texto.htm) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 120.40 Tm (Links - Acesso) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 93.20 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 79.20 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/manipulacao-de-usuarios) Tj
+ET
+BT
+/F1 8 Tf 1 0 0 1 296.00 27.00 Tm (2/4) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 11 0 R /F2 12 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 3479 >>
+stream
+BT
+/F1 8.00 Tf 1 0 0 1 54.00 756.00 Tm (LSPCodMind - skill-06-base-documentacao-banco.md) Tj
+ET
+54.00 750.00 m 558.00 750.00 l S
+BT
+/F1 10.00 Tf 1 0 0 1 64.00 730.00 Tm (-e-grupos.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 716.00 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 702.00 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/integracao-servidor-ad.) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 688.00 Tm (htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 674.00 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/permissao-de-diretorios.htm) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 640.00 Tm (Links - Eventos) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 612.80 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 598.80 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#geradores/importacao-exportacao/reg) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 584.80 Tm (ras-por-evento.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 570.80 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/workflow.html) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 556.80 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 542.80 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/gerador-de-relatorios.h) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 528.80 Tm (tm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 514.80 Tm (*) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 500.80 Tm (https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/agendamento-de-compromi) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 486.80 Tm (ssos.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 472.80 Tm (* https://documentacao.senior.com.br/tecnologia/5.10.4/lsp/funcoes/gerais.html) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 438.80 Tm (Links - Convers\343o \(HCM 6.10.4\)) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 411.60 Tm (* Equival\352ncia das fun\347\365es de regras \(mapa LSP -> Java - priorit\341rio na convers\343o\):) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 393.60 Tm (https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/i) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 379.60 Tm (ntegracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 361.60 Tm (* \315ndice das Fun\347\365es \(detalhe/assinaturas\):) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 343.60 Tm (https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm \(Evitar) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 329.60 Tm (depender s\363 de index.htm#customizacoes/funcoes.htm - preferir a URL direta acima para conte\372do) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 315.60 Tm (espec\355fico.\)) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 291.60 Tm (O cat\341logo operacional e a mec\342nica LSP->Java est\343o somente na Skill 7. Aqui ficam apenas as URLs) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 277.60 Tm (oficiais para validar/citar a fonte.) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 243.60 Tm (Mapeamento banco \(auxiliar\)) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 216.40 Tm (Frase: O mapeamento sugere essa equival\352ncia, mas a confirma\347\343o depende de valida\347\343o no) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 202.40 Tm (schema/dicion\341rio de dados.) Tj
+/F2 11.00 Tf 1 0 0 1 54.00 170.40 Tm (Tabelas ERP) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 147.00 Tm (| Termo | Candidato | Cobertura | |---|---|---| | NF Sa\355da / Venda | E120NFV | auxiliar | | Item NF) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 133.00 Tm (Sa\355da | E140NFV | auxiliar |) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 109.00 Tm (Campos ERP: ausente - pedir schema / validacao_manual.) Tj
+/F2 11.00 Tf 1 0 0 1 54.00 77.00 Tm (HCM) Tj
+ET
+BT
+/F1 8 Tf 1 0 0 1 296.00 27.00 Tm (3/4) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 11 0 R /F2 12 0 R >> >> >>
+endobj
+10 0 obj
+<< /Length 2527 >>
+stream
+BT
+/F1 8.00 Tf 1 0 0 1 54.00 756.00 Tm (LSPCodMind - skill-06-base-documentacao-banco.md) Tj
+ET
+54.00 750.00 m 558.00 750.00 l S
+BT
+/F1 10.00 Tf 1 0 0 1 54.00 724.00 Tm (| Origem | Candidato | Cobertura | |---|---|---| | R035DEP \(termo\) | R036DEP | auxiliar | |) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 710.00 Tm (R034FUN.SitCol | SitAfa | auxiliar | | R034FUN.DatDem | DatAfa | auxiliar | | R036DEP.ParDep |) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 696.00 Tm (GraPar | auxiliar | | R024CAR.DesCar / Cargo | TitRed | auxiliar | | SitAfa Demitido | 7 | auxiliar) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 682.00 Tm (|) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 658.00 Tm (Preced\352ncia: mapa mais completo/espec\355fico -> candidato -> schema/dicion\341rio. SQL: alias -> candidato ->) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 644.00 Tm (m\363dulo -> filtros/chaves -> nunca exist\352ncia absoluta s\363 com esta tabela.) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 620.00 Tm (Proibido: "Use R024CAR.TitRed; est\341 confirmado." \(s\363 com alias auxiliar\)) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 586.00 Tm (Apostilas \(complementar - ausente_no_repo\)) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 558.80 Tm (Se o usu\341rio anexar apostilas LSP/APO/Rubi, use como Material complementar de treinamento \(nunca) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 544.80 Tm (como doc oficial\). \302ncoras t\355picas:) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 520.80 Tm (* Cursor LSP: criar -> abrir -> ler -> fechar; risco de cursor aberto) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 506.80 Tm (* ExecSQL / fun\347\365es SQL_*: SQL em regra \(Skill 6 links\), nunca Senior SQL 2) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 492.80 Tm (* Listas din\342micas / Editor de Regras: apoio conceitual antes de converter) Tj
+/F1 10.00 Tf 1 0 0 1 64.00 478.80 Tm (* Em convers\343o: entender mec\342nica LSP aqui -> mapear na Skill 7) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 454.80 Tm (Prioridade em conflito: doc oficial Skill 6 -> equival\352ncia HCM -> schema -> apostila -> infer\352ncia.) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 420.80 Tm (Sa\355da para a skill chamadora) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 391.60 Tm (topico: ...) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 379.70 Tm (cobertura: confirmado | auxiliar | ausente) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 367.80 Tm (achado: ...) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 355.90 Tm (link_ou_alias: ...) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 344.00 Tm (limite: ...) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 310.10 Tm (Relacionados) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 282.90 Tm (Pol\355tica de evid\352ncia do Router * Skill 7 \(ap\363s docs oficiais\)) Tj
+ET
+BT
+/F1 8 Tf 1 0 0 1 296.00 27.00 Tm (4/4) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+12 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000139 00000 n 
+0000000277 00000 n 
+0000003992 00000 n 
+0000004130 00000 n 
+0000007994 00000 n 
+0000008132 00000 n 
+0000011663 00000 n 
+0000011802 00000 n 
+0000014382 00000 n 
+0000014480 00000 n 
+trailer<< /Size 13 /Root 1 0 R >>
+startxref
+14583
+%%EOF
