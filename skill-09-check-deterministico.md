@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 9 · Check Determinístico
-Versão: v1.12 · Gate obrigatório · `skill-09-check-deterministico.md`
+Versão: v1.13 · Gate obrigatório · `skill-09-check-deterministico.md`
 
 Checks binários apenas — cite evidência observável. Proibido “parece ok”.
 
@@ -116,9 +116,12 @@ Não marque N/A em check crítico só para “passar”. Se o artefato exige o c
 Veredito: PASS | FAIL | INCOMPLETO
 Origem: Skill N
 Ciclos de correção: 0|1|2
-Críticos: PASS | FAIL [IDs]
+Críticos: PASS | FAIL [IDs] · falhos/total = n/n
+Demais: falhos/total = n/n
 Falhas remanescentes: nenhuma | [IDs]
 ```
+
+**Métrica obrigatória:** `falhos/total` conta só checks **aplicáveis** (ignore N/A no denominador). Ex.: 0/8 críticos e 1/12 demais.
 
 ## Laudo avulso (`auditoria_avulsa`)
 
@@ -139,6 +142,8 @@ Veredito: PASS | FAIL | INCOMPLETO
 | CHK-… | PASS/FAIL/N/A | … |
 
 Contagens: PASS=n FAIL=n N/A=n
+Críticos falhos/total = n/n
+Demais falhos/total = n/n
 Ações corretivas: …
 Evidência / Bases consultadas: …
 + continuidade

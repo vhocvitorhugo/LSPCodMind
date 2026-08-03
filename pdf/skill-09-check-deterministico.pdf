@@ -20,7 +20,7 @@ BT
 /F2 16.00 Tf 1 0 0 1 54.00 730.00 Tm (Skill 9 * Check Determin\355stico) Tj
 /F1 8.00 Tf 1 0 0 1 54.00 701.60 Tm (Fonte: skill-09-check-deterministico.md) Tj
 /F2 16.00 Tf 1 0 0 1 54.00 667.70 Tm (Skill 9 * Check Determin\355stico) Tj
-/F1 10.00 Tf 1 0 0 1 54.00 641.30 Tm (Vers\343o: v1.11 * Gate obrigat\363rio * skill-09-check-deterministico.md) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 641.30 Tm (Vers\343o: v1.13 * Gate obrigat\363rio * skill-09-check-deterministico.md) Tj
 /F1 10.00 Tf 1 0 0 1 54.00 617.30 Tm (Checks bin\341rios apenas - cite evid\352ncia observ\341vel. Proibido "parece ok".) Tj
 /F2 13.00 Tf 1 0 0 1 54.00 583.30 Tm (Quando usar / n\343o usar) Tj
 /F1 10.00 Tf 1 0 0 1 54.00 556.10 Tm (| Usar | N\343o usar | |---|---| | Gate ap\363s Skill 3 / Skill 5 Fase C / c\363digo corrigido da Skill 2;) Tj
@@ -57,7 +57,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 9 0 R /F2 10 0 R >> >> >>
 endobj
 6 0 obj
-<< /Length 4303 >>
+<< /Length 4480 >>
 stream
 BT
 /F1 8.00 Tf 1 0 0 1 54.00 756.00 Tm (LSPCodMind - skill-09-check-deterministico.md) Tj
@@ -96,10 +96,11 @@ BT
 /F1 8.50 Tf 1 0 0 1 70.00 185.50 Tm (Veredito: PASS | FAIL | INCOMPLETO) Tj
 /F1 8.50 Tf 1 0 0 1 70.00 173.60 Tm (Origem: Skill N) Tj
 /F1 8.50 Tf 1 0 0 1 70.00 161.70 Tm (Ciclos de corre\347\343o: 0|1|2) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 149.80 Tm (Cr\355ticos: PASS | FAIL [IDs]) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 137.90 Tm (Falhas remanescentes: nenhuma | [IDs]) Tj
-/F2 13.00 Tf 1 0 0 1 54.00 104.00 Tm (Laudo avulso \('auditoria_avulsa'\)) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 74.80 Tm (## Laudo Skill 9) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 149.80 Tm (Cr\355ticos: PASS | FAIL [IDs] * falhos/total = n/n) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 137.90 Tm (Demais: falhos/total = n/n) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 126.00 Tm (Falhas remanescentes: nenhuma | [IDs]) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 102.10 Tm (M\351trica obrigat\363ria: falhos/total conta s\363 checks aplic\341veis \(ignore N/A no denominador\). Ex.: 0/8) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 88.10 Tm (cr\355ticos e 1/12 demais.) Tj
 ET
 BT
 /F1 8 Tf 1 0 0 1 296.00 27.00 Tm (2/3) Tj
@@ -110,33 +111,37 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 9 0 R /F2 10 0 R >> >> >>
 endobj
 8 0 obj
-<< /Length 1658 >>
+<< /Length 1933 >>
 stream
 BT
 /F1 8.00 Tf 1 0 0 1 54.00 756.00 Tm (LSPCodMind - skill-09-check-deterministico.md) Tj
 ET
 54.00 750.00 m 558.00 750.00 l S
 BT
-/F1 8.50 Tf 1 0 0 1 70.00 730.00 Tm (Modo: auditoria_avulsa) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 718.10 Tm (Artefato: conversao | desenvolvimento | outro) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 706.20 Tm (Veredito: PASS | FAIL | INCOMPLETO) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 687.16 Tm (### Cr\355ticos) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 675.26 Tm (| ID | Resultado | Evid\352ncia |) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 663.36 Tm (|---|---|---|) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 651.46 Tm (| CHK-... | PASS/FAIL/N/A | ... |) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 632.42 Tm (### Demais) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 620.52 Tm (| ID | Resultado | Evid\352ncia |) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 608.62 Tm (|---|---|---|) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 596.72 Tm (| CHK-... | PASS/FAIL/N/A | ... |) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 577.68 Tm (Contagens: PASS=n FAIL=n N/A=n) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 565.78 Tm (A\347\365es corretivas: ...) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 553.88 Tm (Evid\352ncia / Bases consultadas: ...) Tj
-/F1 8.50 Tf 1 0 0 1 70.00 541.98 Tm (+ continuidade) Tj
-/F2 13.00 Tf 1 0 0 1 54.00 508.08 Tm (Exemplos) Tj
-/F1 10.00 Tf 1 0 0 1 54.00 480.88 Tm (Gate PASS ap\363s Fase C limpa * FAIL cr\355tico CHK-COMP por stub -> corrige <=2 * N\343o publicar sem gate *) Tj
-/F1 10.00 Tf 1 0 0 1 54.00 466.88 Tm (N\343o pular cr\355ticos.) Tj
-/F2 13.00 Tf 1 0 0 1 54.00 432.88 Tm (Relacionados) Tj
-/F1 10.00 Tf 1 0 0 1 54.00 405.68 Tm (Router \(gate\) * Skills 2/3/5 * vs Skill 8 \(QA de comportamento != gate de artefato\)) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 730.00 Tm (Laudo avulso \('auditoria_avulsa'\)) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 700.80 Tm (## Laudo Skill 9) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 688.90 Tm (Modo: auditoria_avulsa) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 677.00 Tm (Artefato: conversao | desenvolvimento | outro) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 665.10 Tm (Veredito: PASS | FAIL | INCOMPLETO) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 646.06 Tm (### Cr\355ticos) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 634.16 Tm (| ID | Resultado | Evid\352ncia |) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 622.26 Tm (|---|---|---|) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 610.36 Tm (| CHK-... | PASS/FAIL/N/A | ... |) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 591.32 Tm (### Demais) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 579.42 Tm (| ID | Resultado | Evid\352ncia |) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 567.52 Tm (|---|---|---|) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 555.62 Tm (| CHK-... | PASS/FAIL/N/A | ... |) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 536.58 Tm (Contagens: PASS=n FAIL=n N/A=n) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 524.68 Tm (Cr\355ticos falhos/total = n/n) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 512.78 Tm (Demais falhos/total = n/n) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 500.88 Tm (A\347\365es corretivas: ...) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 488.98 Tm (Evid\352ncia / Bases consultadas: ...) Tj
+/F1 8.50 Tf 1 0 0 1 70.00 477.08 Tm (+ continuidade) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 443.18 Tm (Exemplos) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 415.98 Tm (Gate PASS ap\363s Fase C limpa * FAIL cr\355tico CHK-COMP por stub -> corrige <=2 * N\343o publicar sem gate *) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 401.98 Tm (N\343o pular cr\355ticos.) Tj
+/F2 13.00 Tf 1 0 0 1 54.00 367.98 Tm (Relacionados) Tj
+/F1 10.00 Tf 1 0 0 1 54.00 340.78 Tm (Router \(gate\) * Skills 2/3/5 * vs Skill 8 \(QA de comportamento != gate de artefato\)) Tj
 ET
 BT
 /F1 8 Tf 1 0 0 1 296.00 27.00 Tm (3/3) Tj
@@ -158,11 +163,11 @@ xref
 0000000270 00000 n 
 0000003576 00000 n 
 0000003713 00000 n 
-0000008068 00000 n 
-0000008205 00000 n 
-0000009915 00000 n 
-0000010012 00000 n 
+0000008245 00000 n 
+0000008382 00000 n 
+0000010367 00000 n 
+0000010464 00000 n 
 trailer<< /Size 11 /Root 1 0 R >>
 startxref
-10115
+10567
 %%EOF

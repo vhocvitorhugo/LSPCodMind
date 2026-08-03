@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 3 · Desenvolvimento Orientado
-Versão: v1.12 · Arquivo: `skill-03-desenvolvimento-orientado.md`
+Versão: v1.13 · Arquivo: `skill-03-desenvolvimento-orientado.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -18,7 +18,8 @@ Aplique as regras globais do Router. Não as reescreva.
 |---|---|
 | Criar/refatorar regra LSP, rotina, WS, automação | Conceito → 1; só debug → 2; só engenharia reversa → 4; converter → 5 |
 
-**Handoff:** conversão → Skill 5
+**Handoff:** conversão → Skill 5  
+**Desempate 2×3×4:** use a tabela do Router (ex.: “revise/refatore” sem bug → esta skill).
 
 ## Instruções
 
@@ -48,6 +49,8 @@ Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
 Veredito: PASS | FAIL
 Origem: Skill 3
 Ciclos de correção: 0|1|2
+Críticos: PASS | FAIL [IDs] · falhos/total = n/n
+Demais: falhos/total = n/n
 Falhas remanescentes: ...
 
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?

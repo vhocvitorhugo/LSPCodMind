@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.12 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.13 · Arquivo: `skill-02-diagnostico-debug.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -19,7 +19,8 @@ Aplique as regras globais do Router. Não as reescreva.
 |---|---|
 | Erro, log, exceção, comportamento inesperado, performance ruim | Só conceito → 1; criar do zero → 3; analisar regra saudável → 4; converter → 5 |
 
-**Handoff:** conversão → Skill 5; reescrita ampla sem foco em bug → Router pode escolher Skill 3
+**Handoff:** conversão → Skill 5; reescrita ampla sem foco em bug → Router pode escolher Skill 3  
+**Desempate 2×3×4:** use a tabela do Router (ex.: “melhorar regra” com falha → esta skill).
 
 ## Catálogo de riscos (sempre avaliar)
 
@@ -55,6 +56,8 @@ Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
 Veredito: PASS | FAIL | N/A
 Origem: Skill 2
 Ciclos de correção: 0|1|2
+Críticos: PASS | FAIL [IDs] · falhos/total = n/n
+Demais: falhos/total = n/n
 Falhas remanescentes: ...
 
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?

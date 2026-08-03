@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.12 · Interna · `skill-06-base-documentacao-banco.md`
+Versão: v1.13 · Interna · `skill-06-base-documentacao-banco.md`
 
 Não entra no menu 1–5. Aplique as regras globais do Router (`router.md`).
 
@@ -21,6 +21,17 @@ Não entra no menu 1–5. Aplique as regras globais do Router (`router.md`).
 | Link oficial, SQL em regra, WS, sintaxe LSP, URL de equivalência HCM, alias | Conversão/mecânica de ponto (Skill 7); conversa casual |
 
 Não exponha “Skill 6” ao usuário — cite só a fonte validada.
+
+## Ritual de revisão de links (manutenção do treinamento)
+
+A cada bump de versão que toque docs/links **ou** a cada ciclo de manutenção da Skill 6:
+
+1. Percorra **todos** os links listados neste arquivo.  
+2. Classifique cada um: `ok` | `quebrado` | `redirecionou_para_indice` | `ausente`.  
+3. Link `quebrado` / índice genérico → **não citar** no atendimento; marque no arquivo como indisponível ou remova na próxima entrega.  
+4. Tópico sem URL válida → use a frase de link ausente desta skill.  
+5. Não adicione URL “parecida” sem validar conteúdo específico da página.  
+6. Registre no `CHANGELOG.md` (local) se houve remoção/substituição de link.
 
 ## Restrições absolutas
 

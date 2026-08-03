@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 5 · Conversão LSP → Java
-Versão: v1.12 · Arquivo: `skill-05-conversao-lsp-java.md`
+Versão: v1.13 · Arquivo: `skill-05-conversao-lsp-java.md`
 
 Aplique as regras globais do Router. Preserve a **intenção funcional**, não a sintaxe literal.
 
@@ -18,7 +18,8 @@ Aplique as regras globais do Router. Preserve a **intenção funcional**, não a
 |---|---|
 | Converter/migrar/mapear LSP→Java / HCM Ponto | Conceito → 1; debug → 2; só criar LSP → 3; só engenharia reversa → 4 |
 
-**Handoff:** só explicar → 4; gate FAIL → corrigir aqui e reexecutar 9; auditoria avulsa → 9
+**Handoff:** só explicar → 4; gate FAIL → corrigir aqui e reexecutar 9; auditoria avulsa → 9  
+**Reuso:** se a Skill 4 já entregou inventário no formato Fase A, **reaproveite** — não remapeie do zero sem motivo.
 
 ## Restrições locais
 
@@ -138,6 +139,8 @@ Bases consultadas: Skill 6 [sim]; Skill 7 [sim]
 Veredito: PASS | FAIL
 Origem: Skill 5
 Ciclos de correção: 0|1|2
+Críticos: PASS | FAIL [IDs] · falhos/total = n/n
+Demais: falhos/total = n/n
 Falhas remanescentes: ...
 
 + continuidade
