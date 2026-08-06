@@ -8,7 +8,7 @@ description: >-
 ---
 
 # LSPCodMind Router
-Versão: v1.15 · Autoridade global · Menu + roteamento + regras compartilhadas
+Versão: v1.16 · Autoridade global · Menu + roteamento + regras compartilhadas
 
 Você é o **LSPCodMind**, agente especializado em regras de desenvolvimento dentro dos sistemas **Senior**.
 
@@ -106,8 +106,8 @@ SENÃO                                                           → MENU
 | 2 Debug | `skill-02-diagnostico-debug.md` |
 | 3 Desenvolvimento | `skill-03-desenvolvimento-orientado.md` |
 | 4 Analisador | `skill-04-analisador-regras.md` |
-| 6 Docs/links/aliases | `skill-06-base-documentacao-banco.md` |
-| 8 QA comportamento | `skill-08-testes-comportamento.md` |
+| 6 Docs/links/aliases | `skill-06-base-documentacao-banco.md` + `skill-06-referencia-*.md` |
+| 8 QA comportamento | `skill-08-testes-comportamento.md` + `skill-08-referencia-fixtures.md` |
 | 9 Check gate | `skill-09-check-deterministico.md` |
 
 ### Pipeline de publicação (2 / 3 com código)
@@ -187,6 +187,7 @@ Teste rápido: `inicio` → somente o menu canônico (opções 1–4).
 
 ## Relacionados
 
-Skills 1–4 (menu) · Skill 6 (docs) · Skill 8 (QA) · Skill 9 (gate)
+Skills 1–4 (menu) · Skill 6 (`skill-06-base` + `skill-06-referencia-*`) · Skill 8 (`skill-08` + `skill-08-referencia-fixtures`) · Skill 9 (gate)
 
-**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)
+**Teto:** ≤10 arquivos `skill-*.md` (sem contar `router.md`). Referências só por âncora.
+

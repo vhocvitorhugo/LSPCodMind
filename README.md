@@ -7,14 +7,14 @@
 <p align="center">
   <img src="https://img.shields.io/badge/SENIOR_SISTEMAS-HCM_%7C_ERP-blue?style=for-the-badge" alt="Senior Sistemas" />
   <img src="https://img.shields.io/badge/LSP-5.10.4-orange?style=for-the-badge" alt="LSP 5.10.4" />
-  <img src="https://img.shields.io/badge/LSPCodMind-v1.15-success?style=for-the-badge" alt="LSPCodMind v1.15" />
+  <img src="https://img.shields.io/badge/LSPCodMind-v1.16-success?style=for-the-badge" alt="LSPCodMind v1.16" />
 </p>
 
 ---
 
 O **LSPCodMind** é um framework de agente em formato modular **Router + Skills**, focado na plataforma **Senior Sistemas**: mentoria técnica, diagnóstico de regras, desenvolvimento orientado e engenharia reversa de legado LSP.
 
-**Versão atual: v1.15** — referências de formato (skills.sh + agentskills.io) também no Router e em cada skill.
+**Versão atual: v1.16** — progressive disclosure com `skill-*-referencia-*` (padrão LSP→JAVA); **teto de 10** arquivos `skill-*.md` (sem contar o Router).
 
 ---
 
@@ -32,39 +32,33 @@ O **LSPCodMind** é um framework de agente em formato modular **Router + Skills*
 
 ## Arquitetura
 
-O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo, proibição de Senior SQL 2 e o gate Skill 9.
+O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo, proibição de Senior SQL 2 e o gate Skill 9. **Não conta** no teto de 10.
 
 | Papel | Arquivo | Menu? |
 | :--- | :--- | :--- |
 | Router (autoridade global) | [`router.md`](router.md) | — |
 | Skills 1–4 (fluxos do usuário) | [`skill-01`](skill-01-mentoria-tecnica.md) … [`skill-04`](skill-04-analisador-regras.md) | Sim |
-| Base docs + links + aliases | [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Não |
-| QA de comportamento do agente | [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Não |
-| Check determinístico (gate) | [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Automático |
+| Skill 6 — núcleo docs | [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Não |
+| Skill 6 — links (sob demanda) | [`skill-06-referencia-links.md`](skill-06-referencia-links.md) | Não |
+| Skill 6 — aliases/apostilas (sob demanda) | [`skill-06-referencia-aliases.md`](skill-06-referencia-aliases.md) | Não |
+| Skill 8 — suite QA | [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Não |
+| Skill 8 — fixtures (sob demanda) | [`skill-08-referencia-fixtures.md`](skill-08-referencia-fixtures.md) | Não |
+| Skill 9 — gate | [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Automático |
+
+**Total `skill-*.md` = 10** (máximo permitido).
 
 ### Contrato operacional
 
 1. Router escolhe o fluxo (árvore de decisão).  
 2. Skills 1–4 respondem com `Evidência` / `Bases consultadas`.  
 3. Skills 2/3 com código de regra: gate Skill 9 antes de publicar.  
-4. Skill 8 só na manutenção do treinamento (não no atendimento).  
-5. Pedidos de conversão LSP→Java: recusa explícita + oferta do menu 1–4.  
+4. Skill 6/8: carregar `*-referencia-*` **só por âncora**.  
+5. Skill 8 só na manutenção do treinamento.  
+6. Pedidos de conversão LSP→Java: recusa + menu 1–4.  
 
 ### Formato das skills
 
-Baseado em [skills.sh](https://www.skills.sh/) e na especificação aberta [Agent Skills](https://agentskills.io/home) (`name`/`description`, progressive disclosure, instruções enxutas).
-
-| Referência | Uso |
-| :--- | :--- |
-| [skills.sh](https://www.skills.sh/) | Ecossistema / diretório de skills; estilo operacional enxuto |
-| [agentskills.io/home](https://agentskills.io/home) | Overview do formato aberto Agent Skills |
-| [specification](https://agentskills.io/specification) | Frontmatter (`name`, `description`), estrutura, progressive disclosure |
-| [best practices](https://agentskills.io/skill-creation/best-practices) | Escopo, gotchas, templates, checklists |
-| [quickstart](https://agentskills.io/skill-creation/quickstart) | Criação rápida de skill |
-| [optimizing descriptions](https://agentskills.io/skill-creation/optimizing-descriptions) | Triggers no `description` |
-| [evaluating skills](https://agentskills.io/skill-creation/evaluating-skills) | Avaliação / QA (alinha à Skill 8) |
-
-Essas URLs também constam na seção **Relacionados** do `router.md` e de cada `skill-*.md`.
+Baseado em [skills.sh](https://www.skills.sh/) e [agentskills.io](https://agentskills.io/home) (progressive disclosure via `skill-NN-referencia-*.md`, no estilo do projeto LSP→JAVA).
 
 ---
 
@@ -72,24 +66,25 @@ Essas URLs também constam na seção **Relacionados** do `router.md` e de cada 
 
 | Arquivo | Responsabilidade |
 | :--- | :--- |
-| [`README.md`](README.md) | Documentação e versão do projeto |
-| [`router.md`](router.md) | Regras globais, menu canônico, roteamento |
-| [`skill-01-mentoria-tecnica.md`](skill-01-mentoria-tecnica.md) | Mentoria |
-| [`skill-02-diagnostico-debug.md`](skill-02-diagnostico-debug.md) | Diagnóstico e debug |
-| [`skill-03-desenvolvimento-orientado.md`](skill-03-desenvolvimento-orientado.md) | Desenvolvimento |
-| [`skill-04-analisador-regras.md`](skill-04-analisador-regras.md) | Analisador de regras |
-| [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Links autorizados + aliases |
-| [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Testes de comportamento |
-| [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Check determinístico |
+| [`README.md`](README.md) | Documentação e versão |
+| [`router.md`](router.md) | Regras globais (fora do teto de 10) |
+| [`skill-01` … `skill-04`](skill-01-mentoria-tecnica.md) | Menu do usuário |
+| [`skill-06-base-documentacao-banco.md`](skill-06-base-documentacao-banco.md) | Núcleo docs |
+| [`skill-06-referencia-links.md`](skill-06-referencia-links.md) | Links oficiais |
+| [`skill-06-referencia-aliases.md`](skill-06-referencia-aliases.md) | Aliases + apostilas |
+| [`skill-08-testes-comportamento.md`](skill-08-testes-comportamento.md) | Suite QA |
+| [`skill-08-referencia-fixtures.md`](skill-08-referencia-fixtures.md) | Fixtures |
+| [`skill-09-check-deterministico.md`](skill-09-check-deterministico.md) | Gate |
 
 ---
 
 ## Diretrizes críticas
 
 - **Proibido Senior SQL 2** em regras com SQL/cursor.  
-- **Sem achismo:** funções, tabelas e equivalências só com evidência verificável.  
-- **Sem conversão LSP→Java** neste treinamento.  
-- **Gate Skill 9** obrigatório antes de apresentar regra gerada ou corrigida.  
+- **Sem achismo** sem evidência verificável.  
+- **Sem conversão LSP→Java**.  
+- **Gate Skill 9** antes de regra gerada/corrigida.  
+- **≤10** arquivos `skill-*.md`.  
 
 ---
 
@@ -97,19 +92,11 @@ Essas URLs também constam na seção **Relacionados** do `router.md` e de cada 
 
 | Versão | Destaque |
 | :--- | :--- |
-| **v1.15** | Referências skills.sh + agentskills.io no Router e em todas as skills |
-| **v1.14** | Remove conversão LSP→Java; menu 1–4; base dual skills.sh + agentskills.io |
+| **v1.16** | Referências `skill-*-referencia-*` + teto de 10 arquivos skill |
+| v1.15 | Referências skills.sh + agentskills.io no Router e skills |
+| v1.14 | Remove conversão LSP→Java; menu 1–4; base dual skills.sh + agentskills.io |
 | v1.13 | Menu com identidade; desempate 2×3×4; inventário Skill 4; ritual links; fixtures QA; métrica Skill 9; PDFs sync |
-| v1.12 | Router: identidade LSPCodMind — agente especializado em regras de desenvolvimento nos sistemas Senior |
-| v1.11 | README obrigatório a cada alteração de skill/router (regra no AGENTS.md) |
-| v1.10 | Skills 6–9: fronteira clara, navegação Skill 7, PASS na 8, críticos-primeiro na 9 |
-| v1.9 | Fusão do treinamento PDF legado (mecânica/exemplos/protocolo) no framework atual |
-| v1.8 | Catálogo oficial de equivalência LSP→Java (doc Senior 6.10.4) na Skill 7 + exemplos práticos |
-| v1.7 | Skills e Router em português (Brasil) |
-| v1.6 | Skills 6 e 7 em arquivo único (remove `*-reference.md`) |
-| v1.5 | README sincronizado no GitHub (remove badge legado v13.0) |
-| v1.4 | Estilo skills.sh |
-| v1.3 | Skill 9 como gate obrigatório |
-| v1.2 | Criação da Skill 9 |
-| v1.1 | Treinamento operacional + versionamento minor |
-| v1.0 | Baseline |
+| v1.12 | Router: identidade LSPCodMind |
+| v1.11 | README obrigatório a cada alteração |
+| v1.10 | Skills 6–9 fronteira / gate |
+| v1.0–v1.9 | Baseline e evolução inicial |

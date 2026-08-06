@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 3 · Desenvolvimento Orientado
-Versão: v1.15 · Arquivo: `skill-03-desenvolvimento-orientado.md`
+Versão: v1.16 · Arquivo: `skill-03-desenvolvimento-orientado.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -64,5 +64,3 @@ Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ## Relacionados
 
 Router · Skill 6 · gate Skill 9
-
-**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)

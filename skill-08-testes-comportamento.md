@@ -3,12 +3,13 @@ name: testes-comportamento
 description: >-
   Suite interna de QA do comportamento do LSPCodMind (menu, roteamento, gate).
   Use somente ao manter ou validar o treinamento — nunca no atendimento ao
-  usuário final. Para conformidade de artefato use a Skill 9.
+  usuário final. Fixtures em skill-08-referencia-fixtures. Para conformidade de
+  artefato use a Skill 9.
 disable-model-invocation: true
 ---
 
 # Skill 8 · Testes de Comportamento
-Versão: v1.15 · QA interno · `skill-08-testes-comportamento.md`
+Versão: v1.16 · QA interno · `skill-08-testes-comportamento.md`
 
 | Papel | Regra |
 |---|---|
@@ -18,12 +19,15 @@ Versão: v1.15 · QA interno · `skill-08-testes-comportamento.md`
 
 Aplique as regras globais do Router.
 
+**Progressive disclosure:** fixtures sanitizadas ficam em [`skill-08-referencia-fixtures.md`](skill-08-referencia-fixtures.md) — carregue só quando o caso precisar de artefato.
+
 ## Como executar
 
 1. Rodar cada caso aplicável da suite.  
 2. Marcar **PASS** só se **todos** os critérios da coluna PASS forem verdadeiros.  
 3. Qualquer critério falho → **FAIL** do caso (e da suite se for crítico).  
-4. Registrar: `# | PASS/FAIL | evidência curta`.
+4. Registrar: `# | PASS/FAIL | evidência curta`.  
+5. Se o caso precisar de LSP sanitizado → abrir `skill-08-referencia-fixtures.md` (F-CUR / F-SQL).
 
 **Suite PASS** = todos os casos aplicáveis PASS.  
 **Suite FAIL** = qualquer caso crítico FAIL, ou ≥1 FAIL em caso obrigatório da mudança.
@@ -48,34 +52,8 @@ Aplique as regras globais do Router.
 | 14 | | Mentoria: “o que é HorSit?” | Skill 1; exemplo ≤ ~15 linhas; sem regra completa | Despeja regra substituível |
 | 15 | Sim | Menu não lista conversão | Opções exatamente 1–4 conforme Router | Ainda mostra opção 5 Conversão |
 
-## Fixtures sanitizadas (regressão LSP)
-
-Use trechos fictícios abaixo nos casos 3/8 quando precisar de artefato. **Não** são regras de cliente.
-
-### F-CUR — cursor (sanitizado)
-
-```text
-Definir Alfa aEmpresa;
-CriarCursor('R030EMP');
-AbrirCursor('R030EMP');
-// ... leitura ...
-FecharCursor('R030EMP');
-```
-
-PASS esperado em análise: inventário com cursor; ciclo abrir→ler→fechar nos riscos.
-
-### F-SQL — SQL em regra (sanitizado)
-
-```text
-ExecSQL('SELECT ... FROM R014SIN WHERE ...');
-```
-
-PASS esperado: recusa Senior SQL 2; link SQL em regra da Skill 6.
-
 Caso 8 cobre o gate; não duplicar “publicar sem Skill 9” como caso separado.
 
 ## Relacionados
 
-Router · Skill 9 (gate de artefato ≠ esta suite de comportamento)
-
-**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices) · [evaluating skills](https://agentskills.io/skill-creation/evaluating-skills)
+Router · Skill 9 · [`skill-08-referencia-fixtures.md`](skill-08-referencia-fixtures.md)

@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 9 · Check Determinístico
-Versão: v1.15 · Gate obrigatório · `skill-09-check-deterministico.md`
+Versão: v1.16 · Gate obrigatório · `skill-09-check-deterministico.md`
 
 Checks binários apenas — cite evidência observável. Proibido “parece ok”.
 
@@ -119,5 +119,3 @@ Gate PASS após Skill 3 limpa · FAIL crítico `CHK-FULL` por stub → corrige �
 ## Relacionados
 
 Router (gate) · Skills 2/3 · vs Skill 8 (QA de comportamento ≠ gate de artefato)
-
-**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)
