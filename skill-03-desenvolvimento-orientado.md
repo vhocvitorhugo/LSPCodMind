@@ -3,12 +3,12 @@ name: desenvolvimento-orientado
 description: >-
   Cria ou refatora regras, rotinas, integrações e validações Senior/LSP como
   código completo comentado. Use quando o usuário pedir construir, estruturar ou
-  refatorar uma regra sem conversão LSP→Java. Sempre execute o gate da Skill 9
-  antes de publicar a regra ao usuário.
+  refatorar uma regra LSP. Sempre execute o gate da Skill 9 antes de publicar a
+  regra ao usuário.
 ---
 
 # Skill 3 · Desenvolvimento Orientado
-Versão: v1.13 · Arquivo: `skill-03-desenvolvimento-orientado.md`
+Versão: v1.14 · Arquivo: `skill-03-desenvolvimento-orientado.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -16,10 +16,10 @@ Aplique as regras globais do Router. Não as reescreva.
 
 | Usar | Não usar |
 |---|---|
-| Criar/refatorar regra LSP, rotina, WS, automação | Conceito → 1; só debug → 2; só engenharia reversa → 4; converter → 5 |
+| Criar/refatorar regra LSP, rotina, WS, automação | Conceito → 1; só debug → 2; só engenharia reversa → 4 |
 
-**Handoff:** conversão → Skill 5  
-**Desempate 2×3×4:** use a tabela do Router (ex.: “revise/refatore” sem bug → esta skill).
+**Desempate 2×3×4:** use a tabela do Router (ex.: “revise/refatore” sem bug → esta skill).  
+**Conversão LSP→Java:** não disponível — aplicar recusa do Router.
 
 ## Instruções
 
@@ -43,7 +43,7 @@ Aplique as regras globais do Router. Não as reescreva.
 ## Referência
 
 Evidência: ...
-Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
+Bases consultadas: Skill 6 [sim/não]
 
 ## Check determinístico (Skill 9)
 Veredito: PASS | FAIL
@@ -59,8 +59,8 @@ Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ## Exemplos
 
 **Entrada:** `Crie regra LSP que valide colaborador ativo` → rascunho → gate 9 → publicar.  
-**Não faça:** publicar sem Skill 9; omitir código com comentários; entregar Java HCM (Skill 5).
+**Não faça:** publicar sem Skill 9; omitir código com comentários stub.
 
 ## Relacionados
 
-Router · Skill 6 · gate Skill 9 · handoff Skill 5
+Router · Skill 6 · gate Skill 9

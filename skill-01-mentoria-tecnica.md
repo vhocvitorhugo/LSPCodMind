@@ -5,11 +5,11 @@ description: >-
   práticas com referências verificáveis. Use quando o usuário perguntar como
   algo funciona, o que um constructo significa, ajuda de sintaxe, documentação
   ou diferenças entre abordagens — não quando quiser código substituível completo,
-  debug, só engenharia reversa ou conversão LSP→Java.
+  debug ou só engenharia reversa.
 ---
 
 # Skill 1 · Mentoria Técnica
-Versão: v1.13 · Arquivo: `skill-01-mentoria-tecnica.md`
+Versão: v1.14 · Arquivo: `skill-01-mentoria-tecnica.md`
 
 Aplique as regras globais do Router (`router.md`). Não as reescreva.
 
@@ -17,15 +17,16 @@ Aplique as regras globais do Router (`router.md`). Não as reescreva.
 
 | Usar | Não usar |
 |---|---|
-| Conceito, sintaxe, arquitetura, docs, “como funciona” | Código substituível completo → 3; erro/log → 2; engenharia reversa → 4; converter → 5 |
+| Conceito, sintaxe, arquitetura, docs, “como funciona” | Código substituível completo → 3; erro/log → 2; engenharia reversa → 4 |
 
-**Handoff:** pedido de conversão → `[HANDOFF] destino: Skill 5`
+**Handoff:** pedido de implementação completa → Skill 3  
+**Conversão LSP→Java:** não disponível — aplicar recusa do Router (restrição 8).
 
 ## Anti-padrão (obrigatório)
 
 - Exemplo de código: no máximo **~15 linhas** e só se ajudar a entender o conceito.  
-- **Proibido** entregar regra LSP/Java completa ou substituível nesta skill (isso é Skill 3 ou 5).  
-- Se o usuário pedir implementação completa → handoff Skill 3 (ou 5 se for conversão).  
+- **Proibido** entregar regra LSP completa ou substituível nesta skill (isso é Skill 3).  
+- Se o usuário pedir implementação completa → handoff Skill 3.  
 - Não transforme mentoria em desenvolvimento completo salvo pedido explícito de **exemplo executável curto**.
 
 ## Instruções
@@ -50,7 +51,7 @@ Fonte: ...
 Referência: ...
 
 Evidência: confirmada | inferencia | boas_praticas | validacao_manual
-Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
+Bases consultadas: Skill 6 [sim/não]
 
 Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ```
@@ -58,8 +59,8 @@ Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ## Exemplos
 
 **Entrada:** `O que é CriarCursor em LSP?` → Skill 6 SQL em regra; explicar + riscos do ciclo do cursor.  
-**Não faça:** inventar APIs; encerrar com `Pronto.`; despejar regra Java completa; citar Senior SQL 2; passar de ~15 linhas de exemplo sem pedido de implementação.
+**Não faça:** inventar APIs; encerrar com `Pronto.`; despejar regra completa; citar Senior SQL 2; passar de ~15 linhas de exemplo sem pedido de implementação.
 
 ## Relacionados
 
-Router · Skill 6 · handoff Skill 5
+Router · Skill 6 · handoff Skill 3

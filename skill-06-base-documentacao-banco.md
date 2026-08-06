@@ -3,22 +3,22 @@ name: base-documentacao-banco
 description: >-
   Base interna de links autorizados da documentação Senior e aliases ERP/HCM.
   Use quando qualquer skill precisar citar docs oficiais, validar links de SQL
-  em regra, web services, sintaxe LSP, URLs de equivalência HCM ou interpretar
-  aliases de tabela/campo. Nunca trate como Senior SQL 2.
+  em regra, web services, sintaxe LSP ou interpretar aliases de tabela/campo.
+  Nunca trate como Senior SQL 2.
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.13 · Interna · `skill-06-base-documentacao-banco.md`
+Versão: v1.14 · Interna · `skill-06-base-documentacao-banco.md`
 
-Não entra no menu 1–5. Aplique as regras globais do Router (`router.md`).
+Não entra no menu 1–4. Aplique as regras globais do Router (`router.md`).
 
-**Fronteira:** esta skill = **links oficiais + aliases de banco**. Mapeamento LSP→Java, `getHorSit`/`setHorSit`, marcações, esqueletos → **Skill 7** (não duplique aqui).
+**Fronteira:** esta skill = **links oficiais + aliases de banco**. Não invente páginas fora desta lista.
 
 ## Quando usar / não usar
 
 | Usar | Não usar |
 |---|---|
-| Link oficial, SQL em regra, WS, sintaxe LSP, URL de equivalência HCM, alias | Conversão/mecânica de ponto (Skill 7); conversa casual |
+| Link oficial, SQL em regra, WS, sintaxe LSP, alias | Conversa casual; inventar URL “parecida” |
 
 Não exponha “Skill 6” ao usuário — cite só a fonte validada.
 
@@ -42,17 +42,15 @@ A cada bump de versão que toque docs/links **ou** a cada ciclo de manutenção 
 5. Senior SQL 2 proibido — use só links de SQL em regra / SP / proprietária.  
 6. Aliases são `auxiliar` até o schema real confirmar. **Nunca** diga “está confirmado” só com esta base.  
 7. Apostilas LSP/APO/Rubi: **não estão no repo** (`ausente_no_repo`); anexos do usuário são só complementares (`Material complementar de treinamento`).  
-8. Em HCM/Ponto com SQL/cursor: devolva o **link** (e alias se houver); a decisão API vs EntitySession é da **Skill 7**.
 
 ## Instruções
 
 ```text
-1. Identificar tópico (sintaxe|WS|SQL|evento|equivalência HCM|alias|apostila)
+1. Identificar tópico (sintaxe|WS|SQL|evento|alias|apostila)
 2. Localizar seção abaixo
 3. Classificar cobertura: confirmado | auxiliar | ausente
-4. Se o pedido for método/equivalência de conversão → encaminhar à Skill 7
-5. Devolver à skill chamadora: achado + classificação + limite
-6. Nunca inventar link/alias “quase igual”
+4. Devolver à skill chamadora: achado + classificação + limite
+5. Nunca inventar link/alias “quase igual”
 ```
 
 ## Índice
@@ -64,10 +62,8 @@ A cada bump de versão que toque docs/links **ou** a cada ciclo de manutenção 
 | SQL em regra / SP / proprietária / arquivos | Links — Banco |
 | Usuários / AD / diretórios | Links — Acesso |
 | Eventos / workflow / relatórios | Links — Eventos |
-| URLs oficiais de equivalência HCM | Links — Conversão |
 | Aliases de tabela/campo | Mapeamento banco |
 | Mecânica LSP/APO/Rubi (anexo do usuário) | Apostilas (complementar) |
-| Métodos Java / HorSit / marcações | **Skill 7** (fora desta skill) |
 
 ## Links — Sintaxe (Tecnologia 5.10.4)
 
@@ -105,17 +101,6 @@ A cada bump de versão que toque docs/links **ou** a cada ciclo de manutenção 
 - https://documentacao.senior.com.br/tecnologia/5.10.4/index.htm#lsp/funcoes/agendamento-de-compromissos.htm
 - https://documentacao.senior.com.br/tecnologia/5.10.4/lsp/funcoes/gerais.html
 
-## Links — Conversão (HCM 6.10.4)
-
-- **Equivalência das funções de regras (mapa LSP → Java — prioritário na conversão):**  
-  https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/informacoes-adicionais/rotinas/gpo/integracao-controle-ponto-refeitorio/equivalencia-funcoes-regras.htm
-- **Índice das Funções (detalhe/assinaturas):**  
-  https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/customizacoes/funcoes.htm  
-  (Evitar depender só de `index.htm#customizacoes/funcoes.htm` — preferir a URL direta acima para conteúdo específico.)
-
-O catálogo operacional e a mecânica LSP→Java estão **somente** na **Skill 7**.  
-Aqui ficam apenas as **URLs oficiais** para validar/citar a fonte.
-
 ## Mapeamento banco (auxiliar)
 
 Frase: `O mapeamento sugere essa equivalência, mas a confirmação depende de validação no schema/dicionário de dados.`
@@ -151,10 +136,9 @@ Se o usuário anexar apostilas LSP/APO/Rubi, use como `Material complementar de 
 
 - Cursor LSP: criar → abrir → ler → fechar; risco de cursor aberto  
 - `ExecSQL` / funções `SQL_*`: SQL em regra (Skill 6 links), **nunca** Senior SQL 2  
-- Listas dinâmicas / Editor de Regras: apoio conceitual antes de converter  
-- Em conversão: entender mecânica LSP aqui → mapear na Skill 7
+- Listas dinâmicas / Editor de Regras: apoio conceitual  
 
-Prioridade em conflito: doc oficial Skill 6 → equivalência HCM → schema → apostila → inferência.
+Prioridade em conflito: doc oficial Skill 6 → schema → apostila → inferência.
 
 ## Saída para a skill chamadora
 
@@ -168,4 +152,4 @@ limite: ...
 
 ## Relacionados
 
-Política de evidência do Router · Skill 7 (após docs oficiais)
+Política de evidência do Router · Skills 1–4 / 9

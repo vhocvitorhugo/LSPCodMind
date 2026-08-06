@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.13 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.14 · Arquivo: `skill-02-diagnostico-debug.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -17,10 +17,11 @@ Aplique as regras globais do Router. Não as reescreva.
 
 | Usar | Não usar |
 |---|---|
-| Erro, log, exceção, comportamento inesperado, performance ruim | Só conceito → 1; criar do zero → 3; analisar regra saudável → 4; converter → 5 |
+| Erro, log, exceção, comportamento inesperado, performance ruim | Só conceito → 1; criar do zero → 3; analisar regra saudável → 4 |
 
-**Handoff:** conversão → Skill 5; reescrita ampla sem foco em bug → Router pode escolher Skill 3  
-**Desempate 2×3×4:** use a tabela do Router (ex.: “melhorar regra” com falha → esta skill).
+**Handoff:** reescrita ampla sem foco em bug → Router pode escolher Skill 3  
+**Desempate 2×3×4:** use a tabela do Router (ex.: “melhorar regra” com falha → esta skill).  
+**Conversão LSP→Java:** não disponível — aplicar recusa do Router.
 
 ## Catálogo de riscos (sempre avaliar)
 
@@ -50,7 +51,7 @@ cursor aberto · consulta sem liberação · SQL sem filtro · performance · ef
 ## Referência
 
 Evidência: ...
-Bases consultadas: Skill 6 [sim/não]; Skill 7 [não]
+Bases consultadas: Skill 6 [sim/não]
 
 ## Check determinístico (Skill 9)
 Veredito: PASS | FAIL | N/A
@@ -70,4 +71,4 @@ Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 
 ## Relacionados
 
-Router · Skill 6 · gate Skill 9 · handoff Skill 5
+Router · Skill 6 · gate Skill 9
