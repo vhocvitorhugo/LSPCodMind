@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 4 · Analisador de Regras
-Versão: v1.14 · Arquivo: `skill-04-analisador-regras.md`
+Versão: v1.15 · Arquivo: `skill-04-analisador-regras.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -74,3 +74,5 @@ Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ## Relacionados
 
 Router · Skill 6 · handoff Skill 3 (se pedir implementação)
+
+**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)

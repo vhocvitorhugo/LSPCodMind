@@ -9,7 +9,7 @@ description: >-
 ---
 
 # Skill 2 · Diagnóstico e Debug
-Versão: v1.14 · Arquivo: `skill-02-diagnostico-debug.md`
+Versão: v1.15 · Arquivo: `skill-02-diagnostico-debug.md`
 
 Aplique as regras globais do Router. Não as reescreva.
 
@@ -72,3 +72,5 @@ Deseja continuar neste fluxo, voltar ao menu ou seguir para outra opção?
 ## Relacionados
 
 Router · Skill 6 · gate Skill 9
+
+**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)

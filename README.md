@@ -7,14 +7,14 @@
 <p align="center">
   <img src="https://img.shields.io/badge/SENIOR_SISTEMAS-HCM_%7C_ERP-blue?style=for-the-badge" alt="Senior Sistemas" />
   <img src="https://img.shields.io/badge/LSP-5.10.4-orange?style=for-the-badge" alt="LSP 5.10.4" />
-  <img src="https://img.shields.io/badge/LSPCodMind-v1.14-success?style=for-the-badge" alt="LSPCodMind v1.14" />
+  <img src="https://img.shields.io/badge/LSPCodMind-v1.15-success?style=for-the-badge" alt="LSPCodMind v1.15" />
 </p>
 
 ---
 
 O **LSPCodMind** é um framework de agente em formato modular **Router + Skills**, focado na plataforma **Senior Sistemas**: mentoria técnica, diagnóstico de regras, desenvolvimento orientado e engenharia reversa de legado LSP.
 
-**Versão atual: v1.14** — remove conversão LSP→Java (Skills 5 e 7); menu 1–4; formato de skills alinhado a [skills.sh](https://www.skills.sh/) + [agentskills.io](https://agentskills.io/home).
+**Versão atual: v1.15** — referências de formato (skills.sh + agentskills.io) também no Router e em cada skill.
 
 ---
 
@@ -54,6 +54,18 @@ O **Prompt Router** (`router.md`) controla menu, roteamento, evidência, sigilo,
 
 Baseado em [skills.sh](https://www.skills.sh/) e na especificação aberta [Agent Skills](https://agentskills.io/home) (`name`/`description`, progressive disclosure, instruções enxutas).
 
+| Referência | Uso |
+| :--- | :--- |
+| [skills.sh](https://www.skills.sh/) | Ecossistema / diretório de skills; estilo operacional enxuto |
+| [agentskills.io/home](https://agentskills.io/home) | Overview do formato aberto Agent Skills |
+| [specification](https://agentskills.io/specification) | Frontmatter (`name`, `description`), estrutura, progressive disclosure |
+| [best practices](https://agentskills.io/skill-creation/best-practices) | Escopo, gotchas, templates, checklists |
+| [quickstart](https://agentskills.io/skill-creation/quickstart) | Criação rápida de skill |
+| [optimizing descriptions](https://agentskills.io/skill-creation/optimizing-descriptions) | Triggers no `description` |
+| [evaluating skills](https://agentskills.io/skill-creation/evaluating-skills) | Avaliação / QA (alinha à Skill 8) |
+
+Essas URLs também constam na seção **Relacionados** do `router.md` e de cada `skill-*.md`.
+
 ---
 
 ## Estrutura do repositório
@@ -85,6 +97,7 @@ Baseado em [skills.sh](https://www.skills.sh/) e na especificação aberta [Agen
 
 | Versão | Destaque |
 | :--- | :--- |
+| **v1.15** | Referências skills.sh + agentskills.io no Router e em todas as skills |
 | **v1.14** | Remove conversão LSP→Java; menu 1–4; base dual skills.sh + agentskills.io |
 | v1.13 | Menu com identidade; desempate 2×3×4; inventário Skill 4; ritual links; fixtures QA; métrica Skill 9; PDFs sync |
 | v1.12 | Router: identidade LSPCodMind — agente especializado em regras de desenvolvimento nos sistemas Senior |

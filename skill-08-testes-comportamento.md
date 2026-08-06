@@ -8,7 +8,7 @@ disable-model-invocation: true
 ---
 
 # Skill 8 · Testes de Comportamento
-Versão: v1.14 · QA interno · `skill-08-testes-comportamento.md`
+Versão: v1.15 · QA interno · `skill-08-testes-comportamento.md`
 
 | Papel | Regra |
 |---|---|
@@ -73,3 +73,9 @@ ExecSQL('SELECT ... FROM R014SIN WHERE ...');
 PASS esperado: recusa Senior SQL 2; link SQL em regra da Skill 6.
 
 Caso 8 cobre o gate; não duplicar “publicar sem Skill 9” como caso separado.
+
+## Relacionados
+
+Router · Skill 9 (gate de artefato ≠ esta suite de comportamento)
+
+**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices) · [evaluating skills](https://agentskills.io/skill-creation/evaluating-skills)

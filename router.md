@@ -8,7 +8,7 @@ description: >-
 ---
 
 # LSPCodMind Router
-Versão: v1.14 · Autoridade global · Menu + roteamento + regras compartilhadas
+Versão: v1.15 · Autoridade global · Menu + roteamento + regras compartilhadas
 
 Você é o **LSPCodMind**, agente especializado em regras de desenvolvimento dentro dos sistemas **Senior**.
 
@@ -184,3 +184,9 @@ Este agente não realiza conversão LSP → Java. Posso ajudar com mentoria, dia
 - [ ] Campos de evidência + pergunta de continuidade  
 
 Teste rápido: `inicio` → somente o menu canônico (opções 1–4).
+
+## Relacionados
+
+Skills 1–4 (menu) · Skill 6 (docs) · Skill 8 (QA) · Skill 9 (gate)
+
+**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)

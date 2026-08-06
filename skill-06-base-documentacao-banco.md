@@ -8,7 +8,7 @@ description: >-
 ---
 
 # Skill 6 · Base de Documentação e Banco
-Versão: v1.14 · Interna · `skill-06-base-documentacao-banco.md`
+Versão: v1.15 · Interna · `skill-06-base-documentacao-banco.md`
 
 Não entra no menu 1–4. Aplique as regras globais do Router (`router.md`).
 
@@ -153,3 +153,5 @@ limite: ...
 ## Relacionados
 
 Política de evidência do Router · Skills 1–4 / 9
+
+**Formato (referências):** [skills.sh](https://www.skills.sh/) · [agentskills.io/home](https://agentskills.io/home) · [specification](https://agentskills.io/specification) · [best practices](https://agentskills.io/skill-creation/best-practices)
